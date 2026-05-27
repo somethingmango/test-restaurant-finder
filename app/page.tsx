@@ -2,7 +2,23 @@
 
 import React, { useMemo, useState } from 'react';
 
-const RESTAURANTS = [
+type MenuItem = {
+  name: string;
+  calories: number;
+  protein: number;
+  description: string;
+  customization: string;
+  tags: string[];
+};
+
+type Restaurant = {
+  name: string;
+  aliases: string[];
+  note: string;
+  items: MenuItem[];
+};
+
+const RESTAURANTS: Restaurant[] = [
   {
     name: 'Chipotle',
     aliases: ['chipotle', 'chipotle mexican grill'],
@@ -186,11 +202,11 @@ const RESTAURANTS = [
   },
 ];
 
-function normalize(input) {
+function normalize(input: string) {
   return input.trim().toLowerCase();
 }
 
-function scoreItem(item) {
+function scoreItem(item: MenuItem) {
   return Number(((item.protein / item.calories) * 100).toFixed(1));
 }
 
@@ -202,7 +218,7 @@ const chainSuggestions = [
   'McDonald’s',
 ];
 
-const styles = {
+const styles: Record<string, React.CSSProperties> = {
   page: {
     minHeight: '100vh',
     background:
@@ -437,7 +453,6 @@ const styles = {
     border: '1px solid rgba(255,255,255,.8)',
     boxShadow: '0 18px 46px rgba(88, 28, 135, .12)',
   },
-  mobileNote: { display: 'none' },
 };
 
 export default function Page() {
@@ -448,8 +463,9 @@ export default function Page() {
   const [includeRice, setIncludeRice] = useState(false);
   const [includeCheese, setIncludeCheese] = useState(false);
 
-  const restaurant = useMemo(() => {
+  const restaurant = useMemo<Restaurant | undefined>(() => {
     const normalized = normalize(submittedQuery);
+
     return RESTAURANTS.find((r) =>
       r.aliases.some(
         (alias) => alias.includes(normalized) || normalized.includes(alias)
@@ -457,8 +473,9 @@ export default function Page() {
     );
   }, [submittedQuery]);
 
-  const results = useMemo(() => {
+  const results = useMemo<MenuItem[]>(() => {
     if (!restaurant) return [];
+
     return restaurant.items
       .filter((item) => item.calories <= maxCalories)
       .filter((item) => item.protein >= minProtein)
@@ -470,15 +487,19 @@ export default function Page() {
       .slice(0, 5);
   }, [restaurant, maxCalories, minProtein, includeRice, includeCheese]);
 
-  function handleSearch(event) {
+  function handleSearch(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmittedQuery(query || 'Chipotle');
   }
 
-  function pickSuggestion(chain) {
+  function pickSuggestion(chain: string) {
     setQuery(chain);
     setSubmittedQuery(chain);
   }
+
+  const restaurantSlug = restaurant
+    ? restaurant.name.toLowerCase().replaceAll(' ', '')
+    : 'restaurant';
 
   return (
     <main style={styles.page}>
@@ -547,12 +568,14 @@ export default function Page() {
             />
           </div>
           <button
+            type="button"
             style={includeRice ? styles.toggleActive : styles.toggle}
             onClick={() => setIncludeRice(!includeRice)}
           >
             Rice
           </button>
           <button
+            type="button"
             style={includeCheese ? styles.toggleActive : styles.toggle}
             onClick={() => setIncludeCheese(!includeCheese)}
           >
@@ -578,58 +601,58 @@ export default function Page() {
           </section>
         )}
 
-        {results.map((item, index) => (
-          <article key={item.name} style={styles.card}>
-            <div style={styles.cardHead}>
-              <div style={styles.urlLine}>
-                <span style={styles.favicon}>🍽️</span>
-                <span>
-                  {restaurant.name.toLowerCase().replaceAll(' ', '')}.com /
-                  macro-pick / #{index + 1}
-                </span>
-              </div>
-              <h3 style={styles.cardTitle}>{item.name}</h3>
-              <div style={styles.tagRow}>
-                {item.tags.map((tag) => (
-                  <span key={tag} style={styles.tag}>
-                    {tag}
+        {restaurant &&
+          results.map((item, index) => (
+            <article key={item.name} style={styles.card}>
+              <div style={styles.cardHead}>
+                <div style={styles.urlLine}>
+                  <span style={styles.favicon}>🍽️</span>
+                  <span>
+                    {restaurantSlug}.com / macro-pick / #{index + 1}
                   </span>
-                ))}
-              </div>
-            </div>
-
-            <div style={styles.cardBody}>
-              <div style={styles.description}>
-                <p>{item.description}</p>
-                <div style={styles.orderBox}>
-                  <strong>How to order it:</strong>
-                  <p style={{ margin: '8px 0 0' }}>{item.customization}</p>
+                </div>
+                <h3 style={styles.cardTitle}>{item.name}</h3>
+                <div style={styles.tagRow}>
+                  {item.tags.map((tag) => (
+                    <span key={tag} style={styles.tag}>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              <div style={styles.metrics}>
-                <div style={styles.metric}>
-                  <div>
-                    <div style={styles.metricNum}>{item.calories}</div>
-                    <div style={styles.metricLabel}>calories</div>
+              <div style={styles.cardBody}>
+                <div style={styles.description}>
+                  <p>{item.description}</p>
+                  <div style={styles.orderBox}>
+                    <strong>How to order it:</strong>
+                    <p style={{ margin: '8px 0 0' }}>{item.customization}</p>
                   </div>
                 </div>
-                <div style={styles.metric}>
-                  <div>
-                    <div style={styles.metricNum}>{item.protein}g</div>
-                    <div style={styles.metricLabel}>protein</div>
+
+                <div style={styles.metrics}>
+                  <div style={styles.metric}>
+                    <div>
+                      <div style={styles.metricNum}>{item.calories}</div>
+                      <div style={styles.metricLabel}>calories</div>
+                    </div>
                   </div>
-                </div>
-                <div style={styles.metric}>
-                  <div>
-                    <div style={styles.metricNum}>{scoreItem(item)}</div>
-                    <div style={styles.metricLabel}>protein score</div>
+                  <div style={styles.metric}>
+                    <div>
+                      <div style={styles.metricNum}>{item.protein}g</div>
+                      <div style={styles.metricLabel}>protein</div>
+                    </div>
+                  </div>
+                  <div style={styles.metric}>
+                    <div>
+                      <div style={styles.metricNum}>{scoreItem(item)}</div>
+                      <div style={styles.metricLabel}>protein score</div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
 
         {restaurant && results.length === 0 && (
           <section style={styles.empty}>
