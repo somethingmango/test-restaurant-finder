@@ -5,6 +5,7 @@ export type MenuItem = {
     description: string;
     customization: string;
     tags: string[];
+    source: string;
   };
   
   export type Restaurant = {
@@ -18,184 +19,178 @@ export type MenuItem = {
     {
       name: 'Chipotle',
       aliases: ['chipotle', 'chipotle mexican grill'],
-      note: 'Best move: bowl format, lean protein, beans or light rice, and salsa instead of heavy sauces.',
+      note: 'Best move: bowl or salad format, lean protein, beans or light rice, and salsa instead of queso, chips, or vinaigrette.',
       items: [
         {
-          name: 'Double Chicken Salad Bowl',
-          calories: 520,
-          protein: 66,
+          name: 'Chicken Salad Bowl',
+          calories: 465,
+          protein: 47,
           description:
-            'Romaine base, double chicken, black beans, fajita veggies, tomato salsa, and cheese.',
+            'Romaine, chicken, black beans, fajita veggies, tomato salsa, and cheese.',
           customization:
-            'Use salsa as dressing. Skip vinaigrette to save a lot of calories.',
-          tags: ['highest protein', 'low carb', 'has cheese', 'chicken'],
+            'Use salsa as dressing. Skip vinaigrette to save calories.',
+          tags: ['chicken', 'salad', 'has cheese', 'lower calorie'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
         },
         {
-          name: 'Chicken Burrito Bowl — No Rice',
-          calories: 430,
-          protein: 39,
+          name: 'Double Chicken Salad Bowl',
+          calories: 645,
+          protein: 79,
           description:
-            'Chicken, black beans, fajita veggies, tomato salsa, cheese, and lettuce.',
+            'Romaine, double chicken, black beans, fajita veggies, tomato salsa, and cheese.',
           customization:
-            'No rice makes this lighter while still feeling like a real meal.',
-          tags: ['lower calorie', 'has cheese', 'chicken'],
+            'Very high protein. Skip vinaigrette and queso.',
+          tags: ['chicken', 'salad', 'has cheese', 'highest protein'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
         },
         {
           name: 'Chicken Bowl — Light Rice + Beans',
-          calories: 560,
-          protein: 43,
+          calories: 675,
+          protein: 51,
           description:
-            'Chicken, light rice, black beans, fajita veggies, tomato salsa, light sour cream, and cheese.',
+            'Chicken, light rice, black beans, fajita veggies, tomato salsa, sour cream, and cheese.',
           customization:
-            'Ask for light rice and light sour cream. Skip queso and vinaigrette.',
-          tags: ['has rice', 'has cheese', 'filling', 'chicken'],
+            'Ask for light rice and light sour cream. Skip queso and chips.',
+          tags: ['chicken', 'has rice', 'has cheese', 'filling'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
         },
         {
-          name: 'Steak Bowl — Light Rice',
-          calories: 610,
-          protein: 42,
+          name: 'Steak Salad Bowl',
+          calories: 435,
+          protein: 36,
+          description:
+            'Romaine, steak, black beans, fajita veggies, tomato salsa, and cheese.',
+          customization:
+            'Use salsa as dressing. Add rice only if you have calories to spare.',
+          tags: ['steak', 'salad', 'has cheese', 'lower calorie'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
+        },
+        {
+          name: 'Steak Bowl — Light Rice + Beans',
+          calories: 645,
+          protein: 40,
           description:
             'Steak, light rice, black beans, fajita veggies, tomato salsa, sour cream, and cheese.',
-          customization: 'Keep sour cream and cheese, but skip queso and chips.',
-          tags: ['has rice', 'has cheese', 'steak', 'filling'],
-        },
-      ],
-    },
-    {
-      name: 'Taco Bell',
-      aliases: ['taco bell', 'tacobell'],
-      note: 'Best move: chicken, bowls, fresco-style tacos, and light creamy sauces.',
-      items: [
-        {
-          name: 'Two Chicken Soft Tacos Fresco Style',
-          calories: 320,
-          protein: 24,
-          description:
-            'Two chicken soft tacos made lighter with pico instead of cheese and creamy sauce.',
-          customization: 'Order fresco style. Add extra chicken if available.',
-          tags: ['lower calorie', 'easy order', 'chicken'],
-        },
-        {
-          name: 'Chicken Power Menu Bowl — Light Sauce',
-          calories: 460,
-          protein: 27,
-          description:
-            'Chicken, rice, black beans, lettuce, pico, cheese, guacamole, and avocado ranch sauce.',
           customization:
-            'Ask for light avocado ranch or remove it if you want to cut more calories.',
-          tags: ['has rice', 'has cheese', 'chicken', 'bowl'],
+            'Keep cheese or sour cream, but ideally not queso.',
+          tags: ['steak', 'has rice', 'has cheese', 'filling'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
         },
         {
-          name: 'Cantina Chicken Bowl — No Creamy Sauce',
-          calories: 490,
-          protein: 25,
+          name: 'Barbacoa Salad Bowl',
+          calories: 455,
+          protein: 39,
           description:
-            'Chicken bowl with rice, beans, lettuce, cabbage, pico, guacamole, and cheese.',
-          customization: 'Remove creamy sauces and keep pico for flavor.',
-          tags: ['has rice', 'has cheese', 'chicken', 'filling'],
-        },
-        {
-          name: 'Chicken Soft Taco + Bean Burrito Fresco',
-          calories: 510,
-          protein: 25,
-          description:
-            'A lighter combo that keeps protein decent without going all-in on fried items.',
+            'Romaine, barbacoa, black beans, fajita veggies, tomato salsa, and cheese.',
           customization:
-            'Order fresco style and skip creamy sauces. Use hot sauce for flavor.',
-          tags: ['budget', 'filling', 'chicken'],
+            'A strong lower-calorie protein option. Skip vinaigrette.',
+          tags: ['barbacoa', 'salad', 'has cheese'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
         },
-      ],
-    },
-    {
-      name: 'Wendy’s',
-      aliases: ['wendys', 'wendy’s', "wendy's"],
-      note: 'Best move: chili, grilled-style chicken options when available, or simple burgers without mayo-heavy sauces.',
-      items: [
         {
-          name: 'Small Chili',
-          calories: 280,
-          protein: 19,
+          name: 'Carnitas Salad Bowl',
+          calories: 495,
+          protein: 38,
           description:
-            'Beef-and-bean chili that is filling, non-fried, and relatively low calorie.',
-          customization: 'Pair with water or unsweetened tea. Skip fries.',
-          tags: ['lower calorie', 'filling', 'chili'],
+            'Romaine, carnitas, black beans, fajita veggies, tomato salsa, and cheese.',
+          customization:
+            'Good protein, but higher calories than chicken or steak.',
+          tags: ['carnitas', 'salad', 'has cheese'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
         },
         {
-          name: 'Large Chili',
-          calories: 370,
+          name: 'Chicken Bowl — No Rice',
+          calories: 575,
+          protein: 47,
+          description:
+            'Chicken, black beans, fajita veggies, tomato salsa, sour cream, cheese, and lettuce.',
+          customization:
+            'No rice keeps calories lower while still feeling like a full bowl.',
+          tags: ['chicken', 'has cheese', 'lower calorie'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
+        },
+        {
+          name: 'Chicken + Fajita Veggie Bowl',
+          calories: 355,
+          protein: 41,
+          description:
+            'Chicken, black beans, fajita veggies, tomato salsa, and lettuce.',
+          customization:
+            'Skip cheese and sour cream for the leanest version.',
+          tags: ['chicken', 'lowest calorie', 'high protein'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
+        },
+        {
+          name: 'Steak + Fajita Veggie Bowl',
+          calories: 325,
+          protein: 30,
+          description:
+            'Steak, black beans, fajita veggies, tomato salsa, and lettuce.',
+          customization:
+            'Very light option. Add cheese if you want more flavor and protein.',
+          tags: ['steak', 'lowest calorie'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
+        },
+        {
+          name: 'Sofritas Salad Bowl',
+          calories: 435,
           protein: 23,
           description:
-            'A larger portion of Wendy’s chili with more protein and still reasonable calories.',
+            'Romaine, sofritas, black beans, fajita veggies, tomato salsa, and cheese.',
           customization:
-            'Good as a full meal. Avoid adding cheese or crackers if cutting calories.',
-          tags: ['filling', 'chili', 'high protein'],
+            'A vegetarian option, but lower protein than chicken or steak.',
+          tags: ['vegetarian', 'salad', 'has cheese'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
         },
         {
-          name: 'Grilled Chicken Wrap',
-          calories: 420,
-          protein: 27,
-          description: 'Chicken wrap with cheese and sauce.',
-          customization: 'Ask for light sauce if available.',
-          tags: ['has cheese', 'easy order', 'chicken'],
-        },
-        {
-          name: 'Jr. Cheeseburger + Small Chili',
-          calories: 570,
-          protein: 33,
+          name: 'Chicken Burrito — Light Rice',
+          calories: 995,
+          protein: 59,
           description:
-            'A more satisfying combo that stays lighter than a large burger and fries.',
-          customization: 'Skip mayo and fries. Keep ketchup/mustard for flavor.',
-          tags: ['has cheese', 'filling', 'burger'],
+            'Tortilla, chicken, light rice, black beans, fajita veggies, tomato salsa, sour cream, and cheese.',
+          customization:
+            'Higher calorie because of the tortilla. Choose a bowl if cutting calories.',
+          tags: ['chicken', 'has rice', 'has cheese', 'burrito'],
+          source: 'Chipotle official nutrition calculator / nutrition facts PDF',
         },
       ],
     },
-    {
-      name: 'McDonald’s',
-      aliases: ['mcdonalds', 'mcdonald’s', "mcdonald's", 'mcd'],
-      note: 'Best move: eggs, simple burgers, McNuggets without sugary sauces, and no fries/sugary drinks.',
-      items: [
-        {
-          name: 'Egg McMuffin',
-          calories: 310,
-          protein: 17,
-          description: 'Egg, Canadian bacon, cheese, and English muffin.',
-          customization: 'Pair with black coffee or unsweetened iced coffee.',
-          tags: ['breakfast', 'has cheese', 'lower calorie'],
-        },
-        {
-          name: 'McDouble',
-          calories: 400,
-          protein: 22,
-          description:
-            'Beef patties, cheese, pickles, onions, ketchup, and mustard.',
-          customization:
-            'Good when you want a burger without Big Mac-level calories.',
-          tags: ['has cheese', 'burger', 'easy order'],
-        },
-        {
-          name: '6 Piece Chicken McNuggets',
-          calories: 250,
-          protein: 14,
-          description: 'A smaller fried option that keeps calories controlled.',
-          customization:
-            'Choose a lighter sauce or use less sauce. Pair with apple slices if available.',
-          tags: ['lower calorie', 'chicken', 'simple'],
-        },
-        {
-          name: 'Two Hamburgers — No Fries',
-          calories: 500,
-          protein: 26,
-          description: 'Two regular hamburgers without fries or a sugary drink.',
-          customization: 'Add extra pickles/onions. Skip mayo-based sauces.',
-          tags: ['simple', 'burger', 'filling'],
-        },
-      ],
-    },
+  
     {
       name: 'Chick-fil-A',
       aliases: ['chickfila', 'chick-fil-a', 'chick fil a'],
-      note: 'Best move: grilled chicken, nuggets, fruit, and sauce control.',
+      note: 'Best move: grilled nuggets, grilled chicken sandwiches, fruit, and sauce control.',
       items: [
+        {
+          name: '8 Count Grilled Nuggets',
+          calories: 130,
+          protein: 25,
+          description: 'Grilled bite-sized chicken breast nuggets.',
+          customization:
+            'Add fruit or a side salad if you need more volume. Go light on sauces.',
+          tags: ['chicken', 'grilled', 'lowest calorie', 'high protein'],
+          source: 'Chick-fil-A official nutrition guide',
+        },
+        {
+          name: '12 Count Grilled Nuggets',
+          calories: 200,
+          protein: 38,
+          description: 'Larger serving of grilled chicken nuggets.',
+          customization:
+            'One of the best protein-per-calorie fast food options.',
+          tags: ['chicken', 'grilled', 'highest protein', 'low carb'],
+          source: 'Chick-fil-A official nutrition guide',
+        },
+        {
+          name: '5 Count Grilled Nuggets',
+          calories: 80,
+          protein: 16,
+          description: 'Smaller serving of grilled chicken nuggets.',
+          customization:
+            'Good snack-sized protein option.',
+          tags: ['chicken', 'grilled', 'snack', 'lowest calorie'],
+          source: 'Chick-fil-A official nutrition guide',
+        },
         {
           name: 'Grilled Chicken Sandwich',
           calories: 390,
@@ -203,320 +198,594 @@ export type MenuItem = {
           description:
             'Grilled chicken filet on a multigrain bun with lettuce and tomato.',
           customization:
-            'Use sauce lightly. Pair with fruit or a side salad instead of fries.',
-          tags: ['grilled', 'chicken', 'sandwich'],
+            'Use sauce lightly. Pair with fruit instead of fries.',
+          tags: ['chicken', 'grilled', 'sandwich'],
+          source: 'Chick-fil-A official nutrition guide',
         },
         {
-          name: '8 Count Grilled Nuggets',
-          calories: 130,
-          protein: 25,
-          description: 'Bite-sized grilled chicken nuggets.',
+          name: 'Chick-fil-A Chicken Sandwich',
+          calories: 420,
+          protein: 29,
+          description:
+            'Classic breaded chicken sandwich with pickles on a toasted bun.',
           customization:
-            'Add a fruit cup or side salad if you need more volume.',
-          tags: ['lowest calorie', 'high protein', 'chicken', 'low carb'],
+            'Still reasonable calories, but grilled is the leaner choice.',
+          tags: ['chicken', 'sandwich'],
+          source: 'Chick-fil-A official nutrition guide',
         },
         {
-          name: '12 Count Grilled Nuggets',
-          calories: 200,
-          protein: 38,
-          description: 'A larger serving of grilled chicken nuggets.',
-          customization: 'Go easy on sauces to keep calories lower.',
-          tags: ['highest protein', 'chicken', 'low carb'],
+          name: 'Spicy Chicken Sandwich',
+          calories: 450,
+          protein: 28,
+          description:
+            'Spicy breaded chicken filet on a toasted bun.',
+          customization:
+            'Skip fries and sugary drinks to keep the meal balanced.',
+          tags: ['chicken', 'sandwich', 'spicy'],
+          source: 'Chick-fil-A official nutrition guide',
         },
         {
-          name: 'Grilled Chicken Cool Wrap',
+          name: 'Chick-fil-A Cool Wrap',
           calories: 660,
           protein: 43,
           description:
             'Grilled chicken, lettuce, shredded cheese, and flaxseed flatbread.',
           customization:
             'Use half the dressing or choose a lighter sauce.',
-          tags: ['has cheese', 'chicken', 'filling'],
+          tags: ['chicken', 'wrap', 'has cheese', 'high protein'],
+          source: 'Chick-fil-A official nutrition guide',
         },
-      ],
-    },
-    {
-      name: 'Panera',
-      aliases: ['panera', 'panera bread'],
-      note: 'Best move: protein-heavy salads, soups, and half portions when needed.',
-      items: [
         {
-          name: 'Greek Salad with Chicken',
+          name: 'Grilled Chicken Club Sandwich',
+          calories: 520,
+          protein: 38,
+          description:
+            'Grilled chicken sandwich with bacon and cheese.',
+          customization:
+            'Higher calorie than the regular grilled sandwich, but more protein.',
+          tags: ['chicken', 'grilled', 'has cheese', 'sandwich'],
+          source: 'Chick-fil-A official nutrition guide',
+        },
+        {
+          name: 'Chicken, Egg & Cheese Muffin',
+          calories: 410,
+          protein: 27,
+          description:
+            'Chicken, egg, and cheese on an English muffin.',
+          customization:
+            'Good breakfast protein option. Skip hash browns if cutting calories.',
+          tags: ['breakfast', 'chicken', 'has cheese'],
+          source: 'Chick-fil-A official nutrition guide',
+        },
+        {
+          name: 'Bacon, Egg & Cheese Muffin',
+          calories: 300,
+          protein: 16,
+          description:
+            'Bacon, egg, and cheese on an English muffin.',
+          customization:
+            'Lower calorie breakfast pick, but less protein than chicken options.',
+          tags: ['breakfast', 'has cheese'],
+          source: 'Chick-fil-A official nutrition guide',
+        },
+        {
+          name: 'Sausage, Egg & Cheese Muffin',
           calories: 490,
-          protein: 33,
-          description:
-            'Chicken, romaine, tomatoes, cucumbers, red onions, feta, olives, and Greek dressing.',
-          customization:
-            'Ask for dressing on the side and use half.',
-          tags: ['salad', 'chicken', 'has cheese'],
-        },
-        {
-          name: 'Caesar Salad with Chicken',
-          calories: 440,
-          protein: 32,
-          description:
-            'Romaine, chicken, parmesan, Caesar dressing, and croutons.',
-          customization:
-            'Use light dressing and go easy on croutons.',
-          tags: ['salad', 'chicken', 'has cheese'],
-        },
-        {
-          name: 'Turkey Chili',
-          calories: 300,
-          protein: 21,
-          description:
-            'A hearty chili option with beans and turkey.',
-          customization:
-            'Good when you want something warm and filling without a sandwich.',
-          tags: ['chili', 'filling', 'lower calorie'],
-        },
-        {
-          name: 'Mediterranean Bowl with Chicken',
-          calories: 650,
-          protein: 35,
-          description:
-            'Chicken, grains, greens, hummus, feta, cucumbers, tomatoes, and sauce.',
-          customization:
-            'Ask for light sauce or sauce on the side.',
-          tags: ['bowl', 'has rice', 'has cheese', 'chicken'],
-        },
-      ],
-    },
-    {
-      name: 'Starbucks',
-      aliases: ['starbucks', 'sbux'],
-      note: 'Best move: egg bites, wraps, and unsweetened drinks.',
-      items: [
-        {
-          name: 'Egg White & Roasted Red Pepper Egg Bites',
-          calories: 170,
-          protein: 12,
-          description:
-            'Egg white bites with roasted red pepper and cheese.',
-          customization:
-            'Pair with unsweetened coffee or tea.',
-          tags: ['breakfast', 'lower calorie', 'has cheese'],
-        },
-        {
-          name: 'Turkey Bacon, Cheddar & Egg White Sandwich',
-          calories: 230,
-          protein: 17,
-          description:
-            'Turkey bacon, egg whites, and cheese on an English muffin.',
-          customization:
-            'Good breakfast pick when you want protein without a pastry.',
-          tags: ['breakfast', 'has cheese', 'sandwich'],
-        },
-        {
-          name: 'Spinach, Feta & Egg White Wrap',
-          calories: 290,
-          protein: 20,
-          description:
-            'Egg whites, spinach, feta, and tomatoes in a wrap.',
-          customization:
-            'Pair with black coffee or unsweetened iced coffee.',
-          tags: ['breakfast', 'has cheese', 'vegetarian'],
-        },
-        {
-          name: 'Bacon & Gruyère Egg Bites',
-          calories: 300,
-          protein: 19,
-          description:
-            'Egg bites with bacon and Gruyère cheese.',
-          customization:
-            'Higher calorie than egg white bites, but more protein and very filling.',
-          tags: ['breakfast', 'has cheese', 'filling'],
-        },
-      ],
-    },
-    {
-      name: 'Dunkin’',
-      aliases: ['dunkin', 'dunkin’', "dunkin'", 'dunkin donuts'],
-      note: 'Best move: egg wraps, wake-up wraps, and unsweetened coffee drinks.',
-      items: [
-        {
-          name: 'Egg & Cheese Wake-Up Wrap',
-          calories: 180,
-          protein: 7,
-          description: 'Egg and cheese in a small wrap.',
-          customization:
-            'Order two if you need more protein while keeping calories reasonable.',
-          tags: ['breakfast', 'has cheese', 'lower calorie'],
-        },
-        {
-          name: 'Turkey Sausage, Egg & Cheese Sandwich',
-          calories: 470,
           protein: 23,
           description:
-            'Turkey sausage, egg, and cheese on an English muffin or bread.',
+            'Sausage, egg, and cheese on an English muffin.',
           customization:
-            'Skip sweetened coffee drinks to keep the meal lighter.',
+            'More filling, but higher fat/calories than egg white or grilled options.',
           tags: ['breakfast', 'has cheese', 'filling'],
+          source: 'Chick-fil-A official nutrition guide',
         },
         {
-          name: 'Bacon, Egg & Cheese Wake-Up Wrap',
-          calories: 220,
-          protein: 10,
+          name: 'Chick-fil-A Chicken Biscuit',
+          calories: 460,
+          protein: 19,
           description:
-            'Bacon, egg, and cheese in a smaller wrap.',
+            'Breaded chicken filet served on a biscuit.',
           customization:
-            'A lighter way to get the breakfast sandwich vibe.',
-          tags: ['breakfast', 'has cheese', 'lower calorie'],
-        },
-        {
-          name: 'Avocado Toast with Bacon',
-          calories: 290,
-          protein: 11,
-          description:
-            'Avocado spread on toast with bacon topping.',
-          customization:
-            'Pair with unsweetened coffee. Not super high protein, but lighter.',
-          tags: ['breakfast', 'lower calorie'],
+            'Tasty but not the best protein-to-calorie option.',
+          tags: ['breakfast', 'chicken'],
+          source: 'Chick-fil-A official nutrition guide',
         },
       ],
     },
+  
     {
       name: 'Subway',
       aliases: ['subway'],
-      note: 'Best move: 6-inch subs, grilled chicken, turkey, lots of vegetables, and light sauces.',
+      note: 'Best move: 6-inch subs, chicken/turkey/roast beef, lots of vegetables, and mustard or vinegar instead of creamy sauces.',
       items: [
         {
-          name: '6-Inch Rotisserie-Style Chicken Sub',
-          calories: 350,
-          protein: 29,
+          name: '6-Inch Grilled Chicken & Fresh Avocado',
+          calories: 450,
+          protein: 35,
           description:
-            'Rotisserie-style chicken on bread with vegetables.',
+            'Grilled chicken, avocado, bread, and standard vegetables.',
           customization:
-            'Load up vegetables. Choose mustard or vinegar instead of creamy sauces.',
-          tags: ['sandwich', 'chicken', 'high protein'],
+            'Use mustard or vinegar instead of creamy sauce.',
+          tags: ['chicken', 'sandwich', 'high protein'],
+          source: 'Subway U.S. nutrition PDF',
         },
         {
-          name: '6-Inch Grilled Chicken Sub',
-          calories: 360,
+          name: '6-Inch Grilled Chicken & Smashed Avocado',
+          calories: 470,
+          protein: 35,
+          description:
+            'Grilled chicken with smashed avocado on a 6-inch sub.',
+          customization:
+            'Avocado adds calories but helps the sandwich feel more filling.',
+          tags: ['chicken', 'sandwich', 'high protein'],
+          source: 'Subway U.S. nutrition PDF',
+        },
+        {
+          name: '6-Inch Ham & Turkey Stacker',
+          calories: 290,
+          protein: 20,
+          description:
+            'A lighter 6-inch sub with ham and turkey.',
+          customization:
+            'Add vegetables and choose mustard for flavor.',
+          tags: ['sandwich', 'lower calorie'],
+          source: 'Subway U.S. nutrition PDF',
+        },
+        {
+          name: '6-Inch Turkey & Ranch Delite',
+          calories: 380,
+          protein: 26,
+          description:
+            'Turkey-based 6-inch sub with ranch-style flavor.',
+          customization:
+            'Ask for light ranch if possible.',
+          tags: ['sandwich', 'lower calorie'],
+          source: 'Subway U.S. nutrition PDF',
+        },
+        {
+          name: '6-Inch Seasoned Steak & Fresh Avocado',
+          calories: 430,
+          protein: 35,
+          description:
+            'Seasoned steak and avocado on a 6-inch sub.',
+          customization:
+            'Good high-protein option. Keep sauces light.',
+          tags: ['steak', 'sandwich', 'high protein'],
+          source: 'Subway U.S. nutrition PDF',
+        },
+        {
+          name: '6-Inch Seasoned Steak & Smashed Avocado',
+          calories: 460,
+          protein: 35,
+          description:
+            'Seasoned steak with smashed avocado on a 6-inch sub.',
+          customization:
+            'A little higher calorie than fresh avocado version.',
+          tags: ['steak', 'sandwich', 'high protein'],
+          source: 'Subway U.S. nutrition PDF',
+        },
+        {
+          name: '6-Inch Buffalo Chicken',
+          calories: 510,
+          protein: 31,
+          description:
+            'Buffalo chicken 6-inch sub.',
+          customization:
+            'Skip creamy ranch or use light sauce if available.',
+          tags: ['chicken', 'sandwich', 'spicy'],
+          source: 'Subway U.S. nutrition PDF',
+        },
+        {
+          name: '6-Inch Oven-Roasted Turkey & Ham',
+          calories: 480,
           protein: 27,
           description:
-            'Grilled chicken with vegetables on a 6-inch sub.',
+            'Turkey and ham 6-inch sub.',
           customization:
-            'Skip mayo and creamy sauces. Add extra veggies.',
-          tags: ['sandwich', 'chicken', 'high protein'],
+            'Load vegetables and avoid mayo-heavy sauces.',
+          tags: ['sandwich', 'filling'],
+          source: 'Subway U.S. nutrition PDF',
         },
         {
-          name: '6-Inch Turkey Sub',
-          calories: 280,
-          protein: 18,
+          name: 'Steak Philly Wrap',
+          calories: 710,
+          protein: 46,
           description:
-            'Turkey breast with vegetables on a 6-inch sub.',
+            'Steak Philly wrap with cheese and toppings.',
           customization:
-            'Add lots of veggies and choose mustard for flavor.',
-          tags: ['sandwich', 'lower calorie'],
+            'Higher calorie, but strong protein. Good when your calorie slider is higher.',
+          tags: ['steak', 'wrap', 'has cheese', 'high protein'],
+          source: 'Subway U.S. nutrition PDF',
         },
         {
-          name: 'Chicken Protein Bowl',
-          calories: 370,
-          protein: 32,
+          name: 'Chipotle Philly Wrap',
+          calories: 700,
+          protein: 47,
           description:
-            'Chicken, vegetables, and toppings served as a bowl without bread.',
+            'Steak wrap with chipotle-style flavor.',
           customization:
-            'Use lighter sauce and skip heavy toppings if cutting calories.',
-          tags: ['bowl', 'low carb', 'chicken', 'high protein'],
+            'Use less sauce if possible.',
+          tags: ['steak', 'wrap', 'has cheese', 'high protein'],
+          source: 'Subway U.S. nutrition PDF',
+        },
+        {
+          name: 'Grilled Chicken Wrap',
+          calories: 680,
+          protein: 48,
+          description:
+            'Grilled chicken wrap with vegetables and toppings.',
+          customization:
+            'Good high-protein option when you have room for more calories.',
+          tags: ['chicken', 'wrap', 'high protein'],
+          source: 'Subway U.S. nutrition PDF',
+        },
+        {
+          name: 'Chicken & Bacon Ranch Wrap',
+          calories: 830,
+          protein: 56,
+          description:
+            'Chicken, bacon, ranch, cheese, and vegetables in a wrap.',
+          customization:
+            'Very high protein, but higher calorie. Use light ranch if possible.',
+          tags: ['chicken', 'wrap', 'has cheese', 'high protein'],
+          source: 'Subway U.S. nutrition PDF',
+        },
+        {
+          name: 'Oven-Roasted Turkey Protein Bowl',
+          calories: 410,
+          protein: 21,
+          description:
+            'Turkey and vegetables served as a bowl without bread.',
+          customization:
+            'Good lower-carb option. Add extra turkey if available.',
+          tags: ['bowl', 'lower calorie', 'low carb'],
+          source: 'Subway U.S. nutrition PDF',
         },
       ],
     },
+  
     {
       name: 'Chili’s',
       aliases: ['chilis', 'chili’s', "chili's"],
-      note: 'Best move: grilled chicken, fajitas, salmon, and skipping fries or heavy appetizers.',
+      note: 'Best move: Lighter Choices, sirloin, grilled chicken, salmon, and fajitas without all the toppings/tortillas.',
       items: [
         {
-          name: 'Margarita Grilled Chicken',
-          calories: 650,
-          protein: 48,
+          name: 'Lighter Choice 6 oz Classic Sirloin',
+          calories: 240,
+          protein: 37,
           description:
-            'Grilled chicken with rice, beans, pico, and tortilla strips.',
+            'A lighter sirloin option listed under Chili’s Lighter Choices.',
           customization:
-            'Ask for light rice or skip tortilla strips if you want to lower calories.',
+            'Pair with steamed broccoli if available.',
+          tags: ['steak', 'lowest calorie', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: '6 oz Classic Sirloin',
+          calories: 300,
+          protein: 34,
+          description:
+            'Classic 6 oz sirloin listed without extra heavy sides.',
+          customization:
+            'Choose vegetables instead of fries or loaded sides.',
+          tags: ['steak', 'lower calorie', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: '10 oz Classic Sirloin',
+          calories: 440,
+          protein: 56,
+          description:
+            'Larger sirloin option with strong protein.',
+          customization:
+            'Best when paired with a lighter side.',
+          tags: ['steak', 'highest protein'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Lighter Choice Salmon',
+          calories: 540,
+          protein: 47,
+          description:
+            'Salmon from the Lighter Choices section.',
+          customization:
+            'Pair with vegetables. Skip extra sauces if possible.',
+          tags: ['salmon', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Mango-Chile Chicken',
+          calories: 540,
+          protein: 38,
+          description:
+            'Chicken entrée with mango-chile flavor.',
+          customization:
+            'A solid lighter chicken option. Watch sugary drinks and sides.',
+          tags: ['chicken', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Mango-Chile Tilapia',
+          calories: 550,
+          protein: 38,
+          description:
+            'Tilapia entrée with mango-chile flavor.',
+          customization:
+            'Good if you eat fish. Pair with vegetables.',
+          tags: ['fish', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Lighter Choice Margarita Grilled Chicken',
+          calories: 610,
+          protein: 51,
+          description:
+            'Grilled chicken with rice and beans.',
+          customization:
+            'Ask for lighter rice or extra vegetables if available.',
           tags: ['chicken', 'has rice', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
         },
         {
-          name: 'Grilled Chicken Fajitas',
-          calories: 590,
-          protein: 46,
+          name: 'Grilled Chicken Salad',
+          calories: 430,
+          protein: 39,
           description:
-            'Grilled chicken fajitas with peppers and onions.',
-          customization:
-            'Use fewer tortillas and go light on sour cream/cheese.',
-          tags: ['chicken', 'fajitas', 'high protein'],
-        },
-        {
-          name: 'Ancho Salmon',
-          calories: 630,
-          protein: 48,
-          description:
-            'Seasoned salmon with rice and vegetables.',
-          customization:
-            'Good if you eat salmon. Ask for extra vegetables instead of extra rice.',
-          tags: ['salmon', 'has rice', 'high protein'],
-        },
-        {
-          name: 'Santa Fe Grilled Chicken Salad',
-          calories: 680,
-          protein: 36,
-          description:
-            'Grilled chicken salad with toppings and dressing.',
+            'Grilled chicken salad from the Lighter Choices section.',
           customization:
             'Ask for dressing on the side and use half.',
-          tags: ['salad', 'chicken', 'filling'],
+          tags: ['chicken', 'salad', 'lower calorie'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Santa Fe Chicken Salad',
+          calories: 690,
+          protein: 38,
+          description:
+            'Chicken salad with Santa Fe-style toppings.',
+          customization:
+            'Use dressing lightly. This is higher calorie for a salad.',
+          tags: ['chicken', 'salad', 'filling'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Fajita Grilled Chicken',
+          calories: 110,
+          protein: 20,
+          description:
+            'Grilled chicken portion from fajitas, listed without tortillas and toppings.',
+          customization:
+            'Add peppers/onions for volume. Tortillas and toppings increase calories.',
+          tags: ['chicken', 'fajitas', 'lowest calorie'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Fajita Grilled Steak',
+          calories: 200,
+          protein: 18,
+          description:
+            'Grilled steak portion from fajitas, listed without tortillas and toppings.',
+          customization:
+            'Add peppers/onions; go light on toppings.',
+          tags: ['steak', 'fajitas', 'lower calorie'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Fajita Pork Carnitas',
+          calories: 220,
+          protein: 29,
+          description:
+            'Carnitas portion from fajitas, listed without tortillas and toppings.',
+          customization:
+            'High protein for the calories. Watch toppings and tortillas.',
+          tags: ['pork', 'fajitas', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Chipotle Chicken Bowl',
+          calories: 940,
+          protein: 59,
+          description:
+            'Fresh Mex bowl with chipotle chicken.',
+          customization:
+            'Higher calorie, but high protein. Save for higher calorie slider settings.',
+          tags: ['chicken', 'bowl', 'has rice', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Margarita Chicken Bowl',
+          calories: 920,
+          protein: 57,
+          description:
+            'Fresh Mex bowl with margarita chicken.',
+          customization:
+            'High protein, but calorie-dense. Skip appetizers and sugary drinks.',
+          tags: ['chicken', 'bowl', 'has rice', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
+        },
+        {
+          name: 'Half Rack Memphis Dry Rub Ribs',
+          calories: 940,
+          protein: 45,
+          description:
+            'Half rack ribs with dry rub.',
+          customization:
+            'High calorie, but still protein-heavy. Better than full rack if managing calories.',
+          tags: ['ribs', 'high protein'],
+          source: 'Chili’s official nutrition PDF',
         },
       ],
     },
+  
     {
       name: 'The Cheesecake Factory',
-      aliases: [
-        'cheesecake factory',
-        'the cheesecake factory',
-        'cheesecake',
-      ],
-      note: 'Best move: SkinnyLicious menu, grilled protein, salads with dressing on the side, and boxing half early.',
+      aliases: ['cheesecake factory', 'the cheesecake factory', 'cheesecake'],
+      note: 'Best move: SkinnyLicious menu, grilled proteins, lighter tacos/specialties, and boxing half early.',
       items: [
         {
-          name: 'SkinnyLicious Grilled Chicken',
-          calories: 590,
-          protein: 53,
+          name: 'SkinnyLicious Steak Medallions',
+          calories: 440,
+          protein: 45,
           description:
-            'Grilled chicken served with vegetables or lighter sides.',
+            'Steak medallions from the SkinnyLicious menu.',
           customization:
-            'Ask for sauces on the side. Avoid adding bread or appetizers.',
-          tags: ['skinnylicious', 'chicken', 'high protein'],
+            'One of the better protein-per-calorie options here.',
+          tags: ['skinnylicious', 'steak', 'high protein'],
+          source: 'The Cheesecake Factory official nutritional guide',
         },
         {
-          name: 'SkinnyLicious Chicken Pasta',
-          calories: 590,
-          protein: 39,
+          name: 'SkinnyLicious Asian Chicken Lettuce Wrap Tacos',
+          calories: 450,
+          protein: 29,
           description:
-            'A lighter pasta option with chicken and vegetables.',
+            'Chicken lettuce wrap tacos from the SkinnyLicious menu.',
           customization:
-            'Box half if portions are large. Skip bread to keep calories controlled.',
-          tags: ['skinnylicious', 'chicken', 'pasta'],
+            'Good lighter option. Watch sauces if served on the side.',
+          tags: ['skinnylicious', 'chicken', 'lower calorie'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Chicken Soft Tacos',
+          calories: 520,
+          protein: 32,
+          description:
+            'Chicken soft tacos from the SkinnyLicious menu.',
+          customization:
+            'A reasonable pick compared with heavier entrées.',
+          tags: ['skinnylicious', 'chicken', 'tacos'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Shrimp Soft Tacos',
+          calories: 520,
+          protein: 31,
+          description:
+            'Shrimp soft tacos from the SkinnyLicious menu.',
+          customization:
+            'Solid option if you eat shrimp.',
+          tags: ['skinnylicious', 'shrimp', 'tacos'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Grilled Branzino',
+          calories: 530,
+          protein: 36,
+          description:
+            'Grilled branzino from the SkinnyLicious menu.',
+          customization:
+            'Good lighter seafood option.',
+          tags: ['skinnylicious', 'fish', 'high protein'],
+          source: 'The Cheesecake Factory official nutritional guide',
         },
         {
           name: 'SkinnyLicious Turkey & Avocado Sandwich',
           calories: 550,
-          protein: 34,
+          protein: 38,
           description:
-            'Turkey and avocado sandwich from the lighter menu.',
+            'Turkey and avocado sandwich from the SkinnyLicious menu.',
           customization:
             'Choose salad or vegetables instead of fries if available.',
           tags: ['skinnylicious', 'sandwich', 'filling'],
+          source: 'The Cheesecake Factory official nutritional guide',
         },
         {
-          name: 'SkinnyLicious Asian Chicken Salad',
-          calories: 590,
-          protein: 40,
+          name: 'SkinnyLicious Veggie Burger',
+          calories: 550,
+          protein: 14,
           description:
-            'Chicken salad with Asian-style vegetables and dressing.',
+            'Vegetarian burger from the SkinnyLicious menu.',
           customization:
-            'Ask for dressing on the side and use half.',
-          tags: ['skinnylicious', 'salad', 'chicken'],
+            'Not high protein, but useful as a lighter vegetarian option.',
+          tags: ['skinnylicious', 'vegetarian', 'burger'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Crispy Chicken Sandwich',
+          calories: 560,
+          protein: 25,
+          description:
+            'Crispy chicken sandwich from the SkinnyLicious menu.',
+          customization:
+            'Reasonable for Cheesecake Factory, but grilled proteins rank better.',
+          tags: ['skinnylicious', 'chicken', 'sandwich'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Grilled Turkey Burger',
+          calories: 560,
+          protein: 29,
+          description:
+            'Grilled turkey burger from the SkinnyLicious menu.',
+          customization:
+            'Good burger-style option with better calories than many entrées.',
+          tags: ['skinnylicious', 'burger', 'filling'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Hamburger',
+          calories: 570,
+          protein: 35,
+          description:
+            'Hamburger from the SkinnyLicious menu.',
+          customization:
+            'Good if you want a burger without going full Cheesecake Factory chaos.',
+          tags: ['skinnylicious', 'burger', 'high protein'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Spicy Crispy Chicken Sandwich',
+          calories: 580,
+          protein: 25,
+          description:
+            'Spicy crispy chicken sandwich from the SkinnyLicious menu.',
+          customization:
+            'Higher calorie than fish/taco options, but still moderate.',
+          tags: ['skinnylicious', 'chicken', 'sandwich', 'spicy'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Chicken Pasta',
+          calories: 590,
+          protein: 46,
+          description:
+            'Chicken pasta from the SkinnyLicious specialties section.',
+          customization:
+            'Box half if portions feel large. Skip bread if cutting calories.',
+          tags: ['skinnylicious', 'chicken', 'pasta', 'high protein'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Sesame Ginger Chicken',
+          calories: 590,
+          protein: 46,
+          description:
+            'Sesame ginger chicken from the SkinnyLicious specialties section.',
+          customization:
+            'Good high-protein option. Watch added sauces.',
+          tags: ['skinnylicious', 'chicken', 'high protein'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Lemon-Garlic Shrimp',
+          calories: 550,
+          protein: 32,
+          description:
+            'Lemon-garlic shrimp from the SkinnyLicious menu.',
+          customization:
+            'Good lighter seafood option.',
+          tags: ['skinnylicious', 'shrimp'],
+          source: 'The Cheesecake Factory official nutritional guide',
+        },
+        {
+          name: 'SkinnyLicious Grilled Salmon',
+          calories: 590,
+          protein: 45,
+          description:
+            'Grilled salmon from the SkinnyLicious menu.',
+          customization:
+            'High-protein seafood option with moderate calories.',
+          tags: ['skinnylicious', 'salmon', 'high protein'],
+          source: 'The Cheesecake Factory official nutritional guide',
         },
       ],
     },
