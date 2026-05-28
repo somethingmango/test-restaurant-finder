@@ -36,222 +36,6 @@ const chainSuggestions = [
   'Cheesecake Factory',
 ];
 
-const styles: Record<string, React.CSSProperties> = {
-  page: {
-    minHeight: '100vh',
-    background:
-      'radial-gradient(circle at top left, #fff2d8 0%, #f2d7ff 36%, #d6e6ff 100%)',
-    color: '#1f2937',
-    fontFamily: 'Inter, Arial, sans-serif',
-    padding: '32px 20px 60px',
-  },
-  shell: { maxWidth: 1120, margin: '0 auto' },
-  hero: { textAlign: 'center', padding: '28px 0 22px' },
-  logo: {
-    fontSize: 'clamp(48px, 8vw, 96px)',
-    lineHeight: 0.92,
-    margin: 0,
-    letterSpacing: -4,
-    color: 'white',
-    WebkitTextStroke: '2px #6d28d9',
-    textShadow: '0 8px 24px rgba(109,40,217,.18)',
-  },
-  tagline: {
-    margin: '12px 0 0',
-    fontSize: 28,
-    letterSpacing: 3,
-    fontWeight: 800,
-    color: '#3b0764',
-  },
-  subtag: { margin: '8px 0 0', fontSize: 18, color: '#6b7280' },
-  searchPanel: {
-    background: 'rgba(255,255,255,.68)',
-    backdropFilter: 'blur(16px)',
-    border: '1px solid rgba(255,255,255,.78)',
-    borderRadius: 30,
-    boxShadow: '0 24px 70px rgba(80, 30, 120, .18)',
-    overflow: 'hidden',
-    marginTop: 22,
-  },
-  searchTop: {
-    display: 'grid',
-    gridTemplateColumns: '1fr auto',
-    gap: 14,
-    padding: 26,
-    borderBottom: '1px solid rgba(255,255,255,.78)',
-  },
-  searchInputWrap: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 14,
-    background: 'white',
-    border: '1px solid #eadcff',
-    borderRadius: 999,
-    padding: '10px 12px 10px 22px',
-  },
-  magnifier: { fontSize: 22, color: '#7c3aed' },
-  input: {
-    width: '100%',
-    border: 0,
-    outline: 0,
-    fontSize: 22,
-    background: 'transparent',
-    color: '#111827',
-  },
-  searchButton: {
-    border: 0,
-    borderRadius: 999,
-    padding: '0 34px',
-    background: '#16a34a',
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 900,
-    cursor: 'pointer',
-    boxShadow: '0 12px 24px rgba(22,163,74,.22)',
-  },
-  helperRow: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    gap: 10,
-    padding: '18px 22px 24px',
-  },
-  chip: {
-    border: '1px solid rgba(124,58,237,.22)',
-    background: 'rgba(255,255,255,.68)',
-    color: '#6d28d9',
-    borderRadius: 999,
-    padding: '10px 16px',
-    fontSize: 14,
-    fontWeight: 800,
-    cursor: 'pointer',
-  },
-  filterBar: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: 18,
-    alignItems: 'center',
-    margin: '22px 0 16px',
-    background: 'rgba(255,255,255,.58)',
-    border: '1px solid rgba(255,255,255,.76)',
-    borderRadius: 24,
-    padding: 18,
-  },
-  filterLabel: {
-    fontSize: 13,
-    fontWeight: 900,
-    color: '#6b21a8',
-    marginBottom: 7,
-  },
-  range: { width: '100%', accentColor: '#16a34a' },
-  status: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: 18,
-    background: 'rgba(255,255,255,.72)',
-    border: '1px solid rgba(255,255,255,.8)',
-    borderRadius: 24,
-    padding: '18px 22px',
-    marginBottom: 16,
-  },
-  statusTitle: { margin: 0, fontSize: 24, fontWeight: 950 },
-  statusNote: { margin: '4px 0 0', color: '#6b7280', lineHeight: 1.4 },
-  resultCount: {
-    background: '#dcfce7',
-    color: '#166534',
-    padding: '9px 13px',
-    borderRadius: 999,
-    fontWeight: 950,
-    whiteSpace: 'nowrap',
-  },
-  card: {
-    background: 'rgba(255,255,255,.76)',
-    border: '1px solid rgba(255,255,255,.86)',
-    borderRadius: 28,
-    marginBottom: 18,
-    boxShadow: '0 18px 46px rgba(88, 28, 135, .14)',
-    overflow: 'hidden',
-  },
-  cardHead: {
-    padding: '22px 24px',
-    borderBottom: '1px solid rgba(255,255,255,.9)',
-  },
-  urlLine: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 10,
-    color: '#7c3aed',
-    fontWeight: 900,
-    fontSize: 15,
-    marginBottom: 14,
-  },
-  favicon: {
-    width: 30,
-    height: 30,
-    borderRadius: 999,
-    background: 'white',
-    display: 'grid',
-    placeItems: 'center',
-    boxShadow: '0 2px 8px rgba(0,0,0,.08)',
-  },
-  cardTitle: { fontSize: 28, margin: 0, fontWeight: 950, letterSpacing: -0.5 },
-  tagRow: { display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 14 },
-  tag: {
-    background: 'rgba(255,255,255,.78)',
-    color: '#6d28d9',
-    border: '1px solid rgba(124,58,237,.18)',
-    borderRadius: 999,
-    padding: '7px 11px',
-    fontSize: 12,
-    fontWeight: 900,
-  },
-  cardBody: { display: 'grid', gridTemplateColumns: '1fr 210px', gap: 0 },
-  description: {
-    padding: 24,
-    color: '#4b5563',
-    fontSize: 16,
-    lineHeight: 1.55,
-  },
-  orderBox: {
-    marginTop: 16,
-    background: 'rgba(220,252,231,.72)',
-    border: '1px dashed #16a34a',
-    borderRadius: 20,
-    padding: 16,
-    color: '#14532d',
-  },
-  metrics: {
-    display: 'grid',
-    gridTemplateRows: '1fr 1fr 1fr',
-    background: 'rgba(255,255,255,.58)',
-    borderLeft: '1px solid rgba(255,255,255,.9)',
-  },
-  metric: {
-    display: 'grid',
-    placeItems: 'center',
-    textAlign: 'center',
-    padding: 16,
-    borderBottom: '1px solid rgba(255,255,255,.9)',
-  },
-  metricNum: { fontSize: 30, fontWeight: 950, color: '#111827' },
-  metricLabel: {
-    fontSize: 12,
-    fontWeight: 900,
-    color: '#6b7280',
-    textTransform: 'uppercase',
-    letterSpacing: 0.8,
-  },
-  empty: {
-    textAlign: 'center',
-    padding: 44,
-    background: 'rgba(255,255,255,.72)',
-    borderRadius: 28,
-    border: '1px solid rgba(255,255,255,.8)',
-    boxShadow: '0 18px 46px rgba(88, 28, 135, .12)',
-  },
-};
-
 export default function Page() {
   const [query, setQuery] = useState('');
   const [submittedQuery, setSubmittedQuery] = useState('Chipotle');
@@ -308,51 +92,53 @@ export default function Page() {
 
   const displayTitle = restaurant
     ? restaurant.name
-    : `Search results for "${submittedQuery}"`;
+    : `Search results for “${submittedQuery}”`;
 
   const displayNote = restaurant
     ? restaurant.note
     : 'Searching across all hard-coded restaurant items.';
 
-  const restaurantSlug = restaurant
-    ? restaurant.name.toLowerCase().replaceAll(' ', '')
-    : 'skinny-mangos';
-
   return (
-    <main style={styles.page}>
-      <div style={styles.shell}>
-        <header style={styles.hero}>
-          <h1 style={styles.logo}>Skinny Mango’s</h1>
-          <p style={styles.tagline}>Healthy Food Finder</p>
-          <p style={styles.subtag}>
-            Search any restaurant chain and find lower-calorie, high-protein
-            meals that still feel worth ordering.
+    <main className="page">
+      <div className="orb orbOne" />
+      <div className="orb orbTwo" />
+      <div className="orb orbThree" />
+
+      <section className="shell">
+        <header className="hero">
+          <div className="eyebrow">Fast food, but make it strategic.</div>
+          <h1>Skinny Mango’s</h1>
+          <p className="tagline">Healthy Food Finder</p>
+          <p className="subtag">
+            Search restaurant chains and find lower-calorie, higher-protein
+            options that still feel worth ordering.
           </p>
         </header>
 
-        <section style={styles.searchPanel}>
-          <form style={styles.searchTop} onSubmit={handleSearch}>
-            <div style={styles.searchInputWrap}>
-              <span style={styles.magnifier}>⌕</span>
+        <section className="searchGlass">
+          <form className="searchForm" onSubmit={handleSearch}>
+            <div className="searchInputWrap">
+              <span className="searchIcon">⌕</span>
               <input
-                style={styles.input}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search restaurants, like Chipotle or Chili’s"
+                placeholder="Search restaurants, like McDonald’s or Chili’s"
+                className="searchInput"
               />
             </div>
-            <button style={styles.searchButton} type="submit">
+
+            <button className="searchButton" type="submit">
               Search
             </button>
           </form>
 
-          <div style={styles.helperRow}>
+          <div className="suggestions">
             {chainSuggestions.map((chain) => (
               <button
                 key={chain}
-                style={styles.chip}
-                onClick={() => pickSuggestion(chain)}
                 type="button"
+                className="chip"
+                onClick={() => pickSuggestion(chain)}
               >
                 {chain}
               </button>
@@ -360,102 +146,713 @@ export default function Page() {
           </div>
         </section>
 
-        <section style={styles.filterBar}>
-          <div>
-            <div style={styles.filterLabel}>Max calories: {maxCalories}</div>
-            <input
-              style={styles.range}
-              type="range"
-              min="250"
-              max="1500"
-              step="50"
-              value={maxCalories}
-              onChange={(e) => setMaxCalories(Number(e.target.value))}
-            />
+        <section className="filterGlass">
+          <div className="filterHeader">
+            <div>
+              <h2>Fine tune your picks</h2>
+              <p>Raise calories to unlock bigger entrées. Raise protein to get stricter.</p>
+            </div>
+            <div className="miniPill">
+              Ranked by protein-per-calorie
+            </div>
           </div>
-          <div>
-            <div style={styles.filterLabel}>Minimum protein: {minProtein}g</div>
-            <input
-              style={styles.range}
-              type="range"
-              min="0"
-              max="80"
-              step="5"
-              value={minProtein}
-              onChange={(e) => setMinProtein(Number(e.target.value))}
-            />
+
+          <div className="filters">
+            <label className="sliderCard">
+              <div className="sliderTop">
+                <span>Max calories</span>
+                <strong>{maxCalories}</strong>
+              </div>
+              <input
+                type="range"
+                min="250"
+                max="1500"
+                step="50"
+                value={maxCalories}
+                onChange={(e) => setMaxCalories(Number(e.target.value))}
+              />
+            </label>
+
+            <label className="sliderCard">
+              <div className="sliderTop">
+                <span>Minimum protein</span>
+                <strong>{minProtein}g</strong>
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="90"
+                step="5"
+                value={minProtein}
+                onChange={(e) => setMinProtein(Number(e.target.value))}
+              />
+            </label>
           </div>
         </section>
 
-        <section style={styles.status}>
+        <section className="resultHeader glassCard">
           <div>
-            <h2 style={styles.statusTitle}>{displayTitle}</h2>
-            <p style={styles.statusNote}>{displayNote}</p>
+            <p className="resultKicker">Now searching</p>
+            <h2>{displayTitle}</h2>
+            <p>{displayNote}</p>
           </div>
-          <div style={styles.resultCount}>{results.length} picks found</div>
+          <div className="countBubble">{results.length} picks</div>
         </section>
 
-        {results.map((item, index) => (
-          <article key={`${item.name}-${index}`} style={styles.card}>
-            <div style={styles.cardHead}>
-              <div style={styles.urlLine}>
-                <span style={styles.favicon}>🍽️</span>
-                <span>
-                  {restaurantSlug}.com / healthy-pick / #{index + 1}
-                </span>
-              </div>
-              <h3 style={styles.cardTitle}>{item.name}</h3>
-              <div style={styles.tagRow}>
-                {item.tags.map((tag) => (
-                  <span key={tag} style={styles.tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+        <section className="results">
+          {results.map((item, index) => (
+            <article key={`${item.name}-${index}`} className="resultCard">
+              <div className="rankBadge">#{index + 1}</div>
 
-            <div style={styles.cardBody}>
-              <div style={styles.description}>
-                <p>{item.description}</p>
-                <div style={styles.orderBox}>
-                  <strong>How to order it:</strong>
-                  <p style={{ margin: '8px 0 0' }}>{item.customization}</p>
+              <div className="resultMain">
+                <div className="resultMeta">
+                  <span>Best match</span>
+                  <span>•</span>
+                  <span>{scoreItem(item)} protein score</span>
                 </div>
+
+                <h3>{item.name}</h3>
+
+                <div className="tagRow">
+                  {item.tags.slice(0, 5).map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+
+                <p className="description">{item.description}</p>
+
+                <div className="orderBox">
+                  <strong>How to order it</strong>
+                  <p>{item.customization}</p>
+                </div>
+
+                <p className="sourceLine">Source: {item.source}</p>
               </div>
 
-              <div style={styles.metrics}>
-                <div style={styles.metric}>
-                  <div>
-                    <div style={styles.metricNum}>{item.calories}</div>
-                    <div style={styles.metricLabel}>calories</div>
-                  </div>
+              <div className="metrics">
+                <div className="metricBubble">
+                  <strong>{item.calories}</strong>
+                  <span>calories</span>
                 </div>
-                <div style={styles.metric}>
-                  <div>
-                    <div style={styles.metricNum}>{item.protein}g</div>
-                    <div style={styles.metricLabel}>protein</div>
-                  </div>
+                <div className="metricBubble">
+                  <strong>{item.protein}g</strong>
+                  <span>protein</span>
                 </div>
-                <div style={styles.metric}>
-                  <div>
-                    <div style={styles.metricNum}>{scoreItem(item)}</div>
-                    <div style={styles.metricLabel}>protein score</div>
-                  </div>
+                <div className="metricBubble">
+                  <strong>{scoreItem(item)}</strong>
+                  <span>score</span>
                 </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
 
-        {results.length === 0 && (
-          <section style={styles.empty}>
-            <h2>No options match those filters</h2>
-            <p>
-              Try another chain, raise max calories, or lower minimum protein.
-            </p>
-          </section>
-        )}
-      </div>
+          {results.length === 0 && (
+            <section className="empty glassCard">
+              <h2>No options match those filters</h2>
+              <p>
+                Try another chain, raise max calories, or lower minimum protein.
+              </p>
+            </section>
+          )}
+        </section>
+      </section>
+
+      <style jsx>{`
+        .page {
+          min-height: 100vh;
+          position: relative;
+          overflow: hidden;
+          color: #1f2937;
+          background:
+            radial-gradient(circle at 15% 10%, rgba(255, 214, 102, 0.9), transparent 28%),
+            radial-gradient(circle at 82% 12%, rgba(244, 114, 182, 0.5), transparent 30%),
+            radial-gradient(circle at 50% 90%, rgba(59, 130, 246, 0.45), transparent 34%),
+            linear-gradient(135deg, #fff7ed 0%, #f5d0fe 42%, #dbeafe 100%);
+          font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          padding: 34px 20px 70px;
+        }
+
+        .page::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px);
+          background-size: 46px 46px;
+          mask-image: linear-gradient(to bottom, black, transparent 78%);
+          pointer-events: none;
+        }
+
+        .orb {
+          position: absolute;
+          border-radius: 999px;
+          filter: blur(8px);
+          opacity: .65;
+          pointer-events: none;
+        }
+
+        .orbOne {
+          width: 220px;
+          height: 220px;
+          background: rgba(255, 255, 255, .45);
+          top: 90px;
+          left: -60px;
+        }
+
+        .orbTwo {
+          width: 260px;
+          height: 260px;
+          background: rgba(22, 163, 74, .2);
+          right: -90px;
+          top: 240px;
+        }
+
+        .orbThree {
+          width: 190px;
+          height: 190px;
+          background: rgba(124, 58, 237, .18);
+          left: 20%;
+          bottom: 80px;
+        }
+
+        .shell {
+          position: relative;
+          z-index: 1;
+          max-width: 1120px;
+          margin: 0 auto;
+        }
+
+        .hero {
+          text-align: center;
+          padding: 24px 0 26px;
+        }
+
+        .eyebrow {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 9px 14px;
+          border-radius: 999px;
+          background: rgba(255,255,255,.42);
+          border: 1px solid rgba(255,255,255,.58);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 12px 30px rgba(88,28,135,.12);
+          backdrop-filter: blur(18px);
+          color: #6d28d9;
+          font-weight: 900;
+          font-size: 13px;
+          letter-spacing: .2px;
+          margin-bottom: 14px;
+        }
+
+        h1 {
+          font-size: clamp(54px, 9vw, 112px);
+          line-height: .86;
+          margin: 0;
+          letter-spacing: -5px;
+          color: rgba(255,255,255,.92);
+          -webkit-text-stroke: 2px rgba(109, 40, 217, .8);
+          text-shadow:
+            0 10px 30px rgba(109,40,217,.2),
+            inset 0 1px 0 rgba(255,255,255,.9);
+        }
+
+        .tagline {
+          margin: 16px 0 0;
+          font-size: clamp(22px, 3vw, 34px);
+          font-weight: 950;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+          color: #3b0764;
+        }
+
+        .subtag {
+          margin: 10px auto 0;
+          max-width: 720px;
+          font-size: 18px;
+          line-height: 1.5;
+          color: rgba(55, 65, 81, .78);
+        }
+
+        .searchGlass,
+        .filterGlass,
+        .glassCard,
+        .resultCard {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, .66),
+            rgba(255, 255, 255, .32)
+          );
+          border: 1px solid rgba(255, 255, 255, .74);
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.86),
+            0 24px 70px rgba(88, 28, 135, .16);
+          backdrop-filter: blur(24px) saturate(1.4);
+          -webkit-backdrop-filter: blur(24px) saturate(1.4);
+        }
+
+        .searchGlass {
+          border-radius: 34px;
+          overflow: hidden;
+        }
+
+        .searchForm {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 14px;
+          padding: 20px;
+          border-bottom: 1px solid rgba(255,255,255,.55);
+        }
+
+        .searchInputWrap {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          min-height: 62px;
+          border-radius: 999px;
+          padding: 0 18px 0 22px;
+          background: rgba(255,255,255,.72);
+          border: 1px solid rgba(255,255,255,.9);
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.95),
+            0 10px 28px rgba(76, 29, 149, .08);
+        }
+
+        .searchIcon {
+          font-size: 24px;
+          color: #7c3aed;
+          font-weight: 900;
+        }
+
+        .searchInput {
+          width: 100%;
+          border: none;
+          outline: none;
+          background: transparent;
+          color: #111827;
+          font-size: 21px;
+          font-weight: 700;
+        }
+
+        .searchInput::placeholder {
+          color: rgba(107, 114, 128, .72);
+          font-weight: 600;
+        }
+
+        .searchButton {
+          min-width: 138px;
+          border: none;
+          border-radius: 999px;
+          padding: 0 28px;
+          background: linear-gradient(135deg, #22c55e, #16a34a);
+          color: white;
+          font-size: 18px;
+          font-weight: 950;
+          cursor: pointer;
+          box-shadow:
+            0 16px 30px rgba(22,163,74,.28),
+            inset 0 1px 0 rgba(255,255,255,.35);
+          transition: transform .18s ease, box-shadow .18s ease;
+        }
+
+        .searchButton:hover {
+          transform: translateY(-1px);
+          box-shadow:
+            0 18px 38px rgba(22,163,74,.34),
+            inset 0 1px 0 rgba(255,255,255,.35);
+        }
+
+        .suggestions {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+          padding: 18px 22px 22px;
+        }
+
+        .chip {
+          border: 1px solid rgba(124,58,237,.18);
+          background: rgba(255,255,255,.48);
+          color: #5b21b6;
+          border-radius: 999px;
+          padding: 10px 15px;
+          font-weight: 900;
+          cursor: pointer;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+          transition: transform .18s ease, background .18s ease;
+        }
+
+        .chip:hover {
+          transform: translateY(-1px);
+          background: rgba(255,255,255,.72);
+        }
+
+        .filterGlass {
+          border-radius: 28px;
+          padding: 20px;
+          margin: 22px 0 18px;
+        }
+
+        .filterHeader {
+          display: flex;
+          justify-content: space-between;
+          gap: 18px;
+          align-items: flex-start;
+          margin-bottom: 18px;
+        }
+
+        .filterHeader h2 {
+          margin: 0;
+          font-size: 22px;
+          color: #3b0764;
+          letter-spacing: -.4px;
+        }
+
+        .filterHeader p {
+          margin: 5px 0 0;
+          color: rgba(75, 85, 99, .82);
+          line-height: 1.45;
+        }
+
+        .miniPill {
+          white-space: nowrap;
+          border-radius: 999px;
+          background: rgba(220,252,231,.72);
+          border: 1px solid rgba(22,163,74,.22);
+          color: #166534;
+          font-size: 12px;
+          font-weight: 950;
+          padding: 9px 12px;
+        }
+
+        .filters {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+
+        .sliderCard {
+          border-radius: 22px;
+          background: rgba(255,255,255,.48);
+          border: 1px solid rgba(255,255,255,.68);
+          padding: 16px;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+        }
+
+        .sliderTop {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          margin-bottom: 12px;
+        }
+
+        .sliderTop span {
+          color: #6b21a8;
+          font-size: 13px;
+          font-weight: 950;
+          text-transform: uppercase;
+          letter-spacing: .6px;
+        }
+
+        .sliderTop strong {
+          color: #111827;
+          font-size: 22px;
+          font-weight: 950;
+        }
+
+        input[type='range'] {
+          width: 100%;
+          accent-color: #16a34a;
+          cursor: pointer;
+        }
+
+        .resultHeader {
+          border-radius: 28px;
+          padding: 22px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          margin-bottom: 18px;
+        }
+
+        .resultKicker {
+          margin: 0 0 4px;
+          color: #7c3aed;
+          font-size: 12px;
+          font-weight: 950;
+          text-transform: uppercase;
+          letter-spacing: .9px;
+        }
+
+        .resultHeader h2 {
+          margin: 0;
+          color: #111827;
+          font-size: 30px;
+          letter-spacing: -.8px;
+        }
+
+        .resultHeader p:last-child {
+          margin: 6px 0 0;
+          color: rgba(75,85,99,.84);
+          line-height: 1.45;
+        }
+
+        .countBubble {
+          min-width: 96px;
+          text-align: center;
+          border-radius: 999px;
+          padding: 12px 14px;
+          background: rgba(220,252,231,.78);
+          border: 1px solid rgba(22,163,74,.24);
+          color: #166534;
+          font-weight: 950;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+        }
+
+        .results {
+          display: grid;
+          gap: 18px;
+        }
+
+        .resultCard {
+          position: relative;
+          border-radius: 32px;
+          padding: 22px;
+          display: grid;
+          grid-template-columns: 1fr 230px;
+          gap: 22px;
+          overflow: hidden;
+        }
+
+        .resultCard::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background:
+            radial-gradient(circle at top left, rgba(255,255,255,.65), transparent 34%),
+            radial-gradient(circle at bottom right, rgba(22,163,74,.11), transparent 36%);
+          pointer-events: none;
+        }
+
+        .rankBadge {
+          position: absolute;
+          top: 18px;
+          right: 18px;
+          width: 42px;
+          height: 42px;
+          display: grid;
+          place-items: center;
+          border-radius: 999px;
+          background: rgba(255,255,255,.72);
+          border: 1px solid rgba(255,255,255,.86);
+          color: #6d28d9;
+          font-weight: 950;
+          box-shadow: 0 8px 22px rgba(76,29,149,.12);
+          z-index: 2;
+        }
+
+        .resultMain,
+        .metrics {
+          position: relative;
+          z-index: 1;
+        }
+
+        .resultMeta {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: #16a34a;
+          font-size: 13px;
+          font-weight: 950;
+          text-transform: uppercase;
+          letter-spacing: .7px;
+          margin-bottom: 10px;
+        }
+
+        .resultMain h3 {
+          margin: 0;
+          max-width: 760px;
+          color: #111827;
+          font-size: clamp(25px, 3.5vw, 38px);
+          line-height: 1.02;
+          letter-spacing: -1.2px;
+        }
+
+        .tagRow {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin: 15px 0 0;
+        }
+
+        .tagRow span {
+          border-radius: 999px;
+          padding: 7px 10px;
+          background: rgba(255,255,255,.56);
+          border: 1px solid rgba(124,58,237,.14);
+          color: #6d28d9;
+          font-size: 12px;
+          font-weight: 900;
+        }
+
+        .description {
+          margin: 18px 0 0;
+          color: rgba(55,65,81,.88);
+          font-size: 16px;
+          line-height: 1.55;
+        }
+
+        .orderBox {
+          margin-top: 16px;
+          border-radius: 22px;
+          padding: 16px;
+          background: rgba(220,252,231,.55);
+          border: 1px solid rgba(22,163,74,.22);
+          color: #14532d;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
+        }
+
+        .orderBox strong {
+          display: block;
+          margin-bottom: 6px;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: .7px;
+        }
+
+        .orderBox p {
+          margin: 0;
+          line-height: 1.5;
+        }
+
+        .sourceLine {
+          margin: 14px 0 0;
+          color: rgba(107,114,128,.76);
+          font-size: 12px;
+          font-weight: 700;
+        }
+
+        .metrics {
+          display: grid;
+          gap: 12px;
+          align-content: center;
+          padding-right: 44px;
+        }
+
+        .metricBubble {
+          border-radius: 26px;
+          padding: 18px;
+          text-align: center;
+          background: rgba(255,255,255,.58);
+          border: 1px solid rgba(255,255,255,.76);
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.85),
+            0 12px 26px rgba(76,29,149,.08);
+        }
+
+        .metricBubble strong {
+          display: block;
+          color: #111827;
+          font-size: 34px;
+          line-height: 1;
+          font-weight: 950;
+          letter-spacing: -1px;
+        }
+
+        .metricBubble span {
+          display: block;
+          margin-top: 7px;
+          color: rgba(75,85,99,.76);
+          font-size: 12px;
+          font-weight: 950;
+          text-transform: uppercase;
+          letter-spacing: .8px;
+        }
+
+        .empty {
+          border-radius: 30px;
+          padding: 42px;
+          text-align: center;
+        }
+
+        .empty h2 {
+          margin: 0;
+          color: #111827;
+          font-size: 28px;
+        }
+
+        .empty p {
+          margin: 10px 0 0;
+          color: rgba(75,85,99,.82);
+        }
+
+        @media (max-width: 820px) {
+          .page {
+            padding: 24px 14px 50px;
+          }
+
+          h1 {
+            letter-spacing: -3px;
+          }
+
+          .searchForm {
+            grid-template-columns: 1fr;
+          }
+
+          .searchButton {
+            min-height: 56px;
+          }
+
+          .filterHeader,
+          .resultHeader {
+            flex-direction: column;
+            align-items: stretch;
+          }
+
+          .miniPill,
+          .countBubble {
+            width: fit-content;
+          }
+
+          .filters {
+            grid-template-columns: 1fr;
+          }
+
+          .resultCard {
+            grid-template-columns: 1fr;
+          }
+
+          .metrics {
+            grid-template-columns: repeat(3, 1fr);
+            padding-right: 0;
+          }
+
+          .rankBadge {
+            top: 14px;
+            right: 14px;
+          }
+        }
+
+        @media (max-width: 560px) {
+          .searchInput {
+            font-size: 17px;
+          }
+
+          .resultHeader h2 {
+            font-size: 25px;
+          }
+
+          .metrics {
+            grid-template-columns: 1fr;
+          }
+
+          .metricBubble strong {
+            font-size: 28px;
+          }
+        }
+      `}</style>
     </main>
   );
 }
