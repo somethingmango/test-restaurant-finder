@@ -127,8 +127,8 @@ const styles: Record<string, React.CSSProperties> = {
   },
   filterBar: {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr auto auto',
-    gap: 14,
+    gridTemplateColumns: '1fr 1fr',
+    gap: 18,
     alignItems: 'center',
     margin: '22px 0 16px',
     background: 'rgba(255,255,255,.58)',
@@ -143,26 +143,6 @@ const styles: Record<string, React.CSSProperties> = {
     marginBottom: 7,
   },
   range: { width: '100%', accentColor: '#16a34a' },
-  toggle: {
-    border: '1px solid rgba(109,40,217,.25)',
-    background: 'rgba(255,255,255,.72)',
-    color: '#4c1d95',
-    borderRadius: 999,
-    padding: '12px 16px',
-    fontSize: 14,
-    fontWeight: 900,
-    cursor: 'pointer',
-  },
-  toggleActive: {
-    border: '1px solid #16a34a',
-    background: '#dcfce7',
-    color: '#166534',
-    borderRadius: 999,
-    padding: '12px 16px',
-    fontSize: 14,
-    fontWeight: 900,
-    cursor: 'pointer',
-  },
   status: {
     display: 'flex',
     alignItems: 'center',
@@ -276,8 +256,6 @@ export default function Page() {
   const [submittedQuery, setSubmittedQuery] = useState('Chipotle');
   const [maxCalories, setMaxCalories] = useState(700);
   const [minProtein, setMinProtein] = useState(20);
-  const [includeRice, setIncludeRice] = useState(false);
-  const [includeCheese, setIncludeCheese] = useState(false);
 
   const normalizedQuery = normalize(submittedQuery);
 
@@ -310,15 +288,12 @@ export default function Page() {
             }))
         );
 
-    return smartRank(baseItems)
+    const filteredItems = baseItems
       .filter((item) => item.calories <= maxCalories)
-      .filter((item) => item.protein >= minProtein)
-      .filter((item) => (includeRice ? item.tags.includes('has rice') : true))
-      .filter((item) =>
-        includeCheese ? item.tags.includes('has cheese') : true
-      )
-      .slice(0, 5);
-  }, [restaurant, normalizedQuery, maxCalories, minProtein, includeRice, includeCheese]);
+      .filter((item) => item.protein >= minProtein);
+
+    return smartRank(filteredItems);
+  }, [restaurant, normalizedQuery, maxCalories, minProtein]);
 
   function handleSearch(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -391,7 +366,7 @@ export default function Page() {
               style={styles.range}
               type="range"
               min="250"
-              max="900"
+              max="1500"
               step="50"
               value={maxCalories}
               onChange={(e) => setMaxCalories(Number(e.target.value))}
@@ -402,27 +377,13 @@ export default function Page() {
             <input
               style={styles.range}
               type="range"
-              min="5"
-              max="70"
+              min="0"
+              max="80"
               step="5"
               value={minProtein}
               onChange={(e) => setMinProtein(Number(e.target.value))}
             />
           </div>
-          <button
-            type="button"
-            style={includeRice ? styles.toggleActive : styles.toggle}
-            onClick={() => setIncludeRice(!includeRice)}
-          >
-            Rice
-          </button>
-          <button
-            type="button"
-            style={includeCheese ? styles.toggleActive : styles.toggle}
-            onClick={() => setIncludeCheese(!includeCheese)}
-          >
-            Cheese
-          </button>
         </section>
 
         <section style={styles.status}>
@@ -489,8 +450,7 @@ export default function Page() {
           <section style={styles.empty}>
             <h2>No options match those filters</h2>
             <p>
-              Try another chain, raise max calories, lower minimum protein, or
-              turn off Rice/Cheese filters.
+              Try another chain, raise max calories, or lower minimum protein.
             </p>
           </section>
         )}
