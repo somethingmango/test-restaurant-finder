@@ -106,7 +106,7 @@ export default function Page() {
 
       <section className="shell">
         <header className="hero">
-          <div className="eyebrow">Fast food, but make it skinny.</div>
+          <div className="eyebrow">Like, fast food, but make it skinny.</div>
           <h1>Skinny Mango’s</h1>
           <p className="tagline">Healthy Food Finder</p>
           <p className="subtag">
@@ -150,11 +150,12 @@ export default function Page() {
           <div className="filterHeader">
             <div>
               <h2>Fine tune your picks</h2>
-              <p>Raise calories to unlock bigger entrées. Raise protein to get stricter.</p>
+              <p>
+                Raise calories to unlock bigger entrées. Raise protein to get
+                stricter.
+              </p>
             </div>
-            <div className="miniPill">
-              Ranked by protein-per-calorie
-            </div>
+            <div className="miniPill">Ranked by protein-per-calorie</div>
           </div>
 
           <div className="filters">
@@ -268,7 +269,8 @@ export default function Page() {
             radial-gradient(circle at 82% 12%, rgba(244, 114, 182, 0.5), transparent 30%),
             radial-gradient(circle at 50% 90%, rgba(59, 130, 246, 0.45), transparent 34%),
             linear-gradient(135deg, #fff7ed 0%, #f5d0fe 42%, #dbeafe 100%);
-          font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, 'Segoe UI', sans-serif;
           padding: 34px 20px 70px;
         }
 
@@ -277,8 +279,8 @@ export default function Page() {
           position: absolute;
           inset: 0;
           background-image:
-            linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px);
+            linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
           background-size: 46px 46px;
           mask-image: linear-gradient(to bottom, black, transparent 78%);
           pointer-events: none;
@@ -288,14 +290,14 @@ export default function Page() {
           position: absolute;
           border-radius: 999px;
           filter: blur(8px);
-          opacity: .65;
+          opacity: 0.65;
           pointer-events: none;
         }
 
         .orbOne {
           width: 220px;
           height: 220px;
-          background: rgba(255, 255, 255, .45);
+          background: rgba(255, 255, 255, 0.45);
           top: 90px;
           left: -60px;
         }
@@ -303,7 +305,7 @@ export default function Page() {
         .orbTwo {
           width: 260px;
           height: 260px;
-          background: rgba(22, 163, 74, .2);
+          background: rgba(22, 163, 74, 0.2);
           right: -90px;
           top: 240px;
         }
@@ -311,7 +313,7 @@ export default function Page() {
         .orbThree {
           width: 190px;
           height: 190px;
-          background: rgba(124, 58, 237, .18);
+          background: rgba(124, 58, 237, 0.18);
           left: 20%;
           bottom: 80px;
         }
@@ -334,27 +336,27 @@ export default function Page() {
           justify-content: center;
           padding: 9px 14px;
           border-radius: 999px;
-          background: rgba(255,255,255,.42);
-          border: 1px solid rgba(255,255,255,.58);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 12px 30px rgba(88,28,135,.12);
+          background: rgba(255, 255, 255, 0.42);
+          border: 1px solid rgba(255, 255, 255, 0.58);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.7),
+            0 12px 30px rgba(88, 28, 135, 0.12);
           backdrop-filter: blur(18px);
           color: #6d28d9;
           font-weight: 900;
           font-size: 13px;
-          letter-spacing: .2px;
+          letter-spacing: 0.2px;
           margin-bottom: 14px;
         }
 
         h1 {
           font-size: clamp(54px, 9vw, 112px);
-          line-height: .86;
+          line-height: 0.86;
           margin: 0;
           letter-spacing: -5px;
-          color: rgba(255,255,255,.92);
-          -webkit-text-stroke: 2px rgba(109, 40, 217, .8);
-          text-shadow:
-            0 10px 30px rgba(109,40,217,.2),
-            inset 0 1px 0 rgba(255,255,255,.9);
+          color: rgba(255, 255, 255, 0.92);
+          -webkit-text-stroke: 2px rgba(109, 40, 217, 0.8);
+          text-shadow: 0 10px 30px rgba(109, 40, 217, 0.2);
         }
 
         .tagline {
@@ -371,7 +373,7 @@ export default function Page() {
           max-width: 720px;
           font-size: 18px;
           line-height: 1.5;
-          color: rgba(55, 65, 81, .78);
+          color: rgba(55, 65, 81, 0.78);
         }
 
         .searchGlass,
@@ -380,13 +382,13 @@ export default function Page() {
         .resultCard {
           background: linear-gradient(
             135deg,
-            rgba(255, 255, 255, .66),
-            rgba(255, 255, 255, .32)
+            rgba(255, 255, 255, 0.66),
+            rgba(255, 255, 255, 0.32)
           );
-          border: 1px solid rgba(255, 255, 255, .74);
+          border: 1px solid rgba(255, 255, 255, 0.74);
           box-shadow:
-            inset 0 1px 0 rgba(255,255,255,.86),
-            0 24px 70px rgba(88, 28, 135, .16);
+            inset 0 1px 0 rgba(255, 255, 255, 0.86),
+            0 24px 70px rgba(88, 28, 135, 0.16);
           backdrop-filter: blur(24px) saturate(1.4);
           -webkit-backdrop-filter: blur(24px) saturate(1.4);
         }
@@ -401,7 +403,7 @@ export default function Page() {
           grid-template-columns: 1fr auto;
           gap: 14px;
           padding: 20px;
-          border-bottom: 1px solid rgba(255,255,255,.55);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.55);
         }
 
         .searchInputWrap {
@@ -411,11 +413,11 @@ export default function Page() {
           min-height: 62px;
           border-radius: 999px;
           padding: 0 18px 0 22px;
-          background: rgba(255,255,255,.72);
-          border: 1px solid rgba(255,255,255,.9);
+          background: rgba(255, 255, 255, 0.72);
+          border: 1px solid rgba(255, 255, 255, 0.9);
           box-shadow:
-            inset 0 1px 0 rgba(255,255,255,.95),
-            0 10px 28px rgba(76, 29, 149, .08);
+            inset 0 1px 0 rgba(255, 255, 255, 0.95),
+            0 10px 28px rgba(76, 29, 149, 0.08);
         }
 
         .searchIcon {
@@ -435,7 +437,7 @@ export default function Page() {
         }
 
         .searchInput::placeholder {
-          color: rgba(107, 114, 128, .72);
+          color: rgba(107, 114, 128, 0.72);
           font-weight: 600;
         }
 
@@ -450,16 +452,18 @@ export default function Page() {
           font-weight: 950;
           cursor: pointer;
           box-shadow:
-            0 16px 30px rgba(22,163,74,.28),
-            inset 0 1px 0 rgba(255,255,255,.35);
-          transition: transform .18s ease, box-shadow .18s ease;
+            0 16px 30px rgba(22, 163, 74, 0.28),
+            inset 0 1px 0 rgba(255, 255, 255, 0.35);
+          transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
         }
 
         .searchButton:hover {
           transform: translateY(-1px);
           box-shadow:
-            0 18px 38px rgba(22,163,74,.34),
-            inset 0 1px 0 rgba(255,255,255,.35);
+            0 18px 38px rgba(22, 163, 74, 0.34),
+            inset 0 1px 0 rgba(255, 255, 255, 0.35);
         }
 
         .suggestions {
@@ -471,20 +475,22 @@ export default function Page() {
         }
 
         .chip {
-          border: 1px solid rgba(124,58,237,.18);
-          background: rgba(255,255,255,.48);
+          border: 1px solid rgba(124, 58, 237, 0.18);
+          background: rgba(255, 255, 255, 0.48);
           color: #5b21b6;
           border-radius: 999px;
           padding: 10px 15px;
           font-weight: 900;
           cursor: pointer;
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
-          transition: transform .18s ease, background .18s ease;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+          transition:
+            transform 0.18s ease,
+            background 0.18s ease;
         }
 
         .chip:hover {
           transform: translateY(-1px);
-          background: rgba(255,255,255,.72);
+          background: rgba(255, 255, 255, 0.72);
         }
 
         .filterGlass {
@@ -505,20 +511,20 @@ export default function Page() {
           margin: 0;
           font-size: 22px;
           color: #3b0764;
-          letter-spacing: -.4px;
+          letter-spacing: -0.4px;
         }
 
         .filterHeader p {
           margin: 5px 0 0;
-          color: rgba(75, 85, 99, .82);
+          color: rgba(75, 85, 99, 0.82);
           line-height: 1.45;
         }
 
         .miniPill {
           white-space: nowrap;
           border-radius: 999px;
-          background: rgba(220,252,231,.72);
-          border: 1px solid rgba(22,163,74,.22);
+          background: rgba(220, 252, 231, 0.72);
+          border: 1px solid rgba(22, 163, 74, 0.22);
           color: #166534;
           font-size: 12px;
           font-weight: 950;
@@ -533,10 +539,10 @@ export default function Page() {
 
         .sliderCard {
           border-radius: 22px;
-          background: rgba(255,255,255,.48);
-          border: 1px solid rgba(255,255,255,.68);
+          background: rgba(255, 255, 255, 0.48);
+          border: 1px solid rgba(255, 255, 255, 0.68);
           padding: 16px;
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
         }
 
         .sliderTop {
@@ -552,7 +558,7 @@ export default function Page() {
           font-size: 13px;
           font-weight: 950;
           text-transform: uppercase;
-          letter-spacing: .6px;
+          letter-spacing: 0.6px;
         }
 
         .sliderTop strong {
@@ -583,19 +589,19 @@ export default function Page() {
           font-size: 12px;
           font-weight: 950;
           text-transform: uppercase;
-          letter-spacing: .9px;
+          letter-spacing: 0.9px;
         }
 
         .resultHeader h2 {
           margin: 0;
           color: #111827;
           font-size: 30px;
-          letter-spacing: -.8px;
+          letter-spacing: -0.8px;
         }
 
         .resultHeader p:last-child {
           margin: 6px 0 0;
-          color: rgba(75,85,99,.84);
+          color: rgba(75, 85, 99, 0.84);
           line-height: 1.45;
         }
 
@@ -604,11 +610,11 @@ export default function Page() {
           text-align: center;
           border-radius: 999px;
           padding: 12px 14px;
-          background: rgba(220,252,231,.78);
-          border: 1px solid rgba(22,163,74,.24);
+          background: rgba(220, 252, 231, 0.78);
+          border: 1px solid rgba(22, 163, 74, 0.24);
           color: #166534;
           font-weight: 950;
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
         }
 
         .results {
@@ -631,8 +637,8 @@ export default function Page() {
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(circle at top left, rgba(255,255,255,.65), transparent 34%),
-            radial-gradient(circle at bottom right, rgba(22,163,74,.11), transparent 36%);
+            radial-gradient(circle at top left, rgba(255, 255, 255, 0.65), transparent 34%),
+            radial-gradient(circle at bottom right, rgba(22, 163, 74, 0.11), transparent 36%);
           pointer-events: none;
         }
 
@@ -645,11 +651,11 @@ export default function Page() {
           display: grid;
           place-items: center;
           border-radius: 999px;
-          background: rgba(255,255,255,.72);
-          border: 1px solid rgba(255,255,255,.86);
+          background: rgba(255, 255, 255, 0.72);
+          border: 1px solid rgba(255, 255, 255, 0.86);
           color: #6d28d9;
           font-weight: 950;
-          box-shadow: 0 8px 22px rgba(76,29,149,.12);
+          box-shadow: 0 8px 22px rgba(76, 29, 149, 0.12);
           z-index: 2;
         }
 
@@ -667,7 +673,7 @@ export default function Page() {
           font-size: 13px;
           font-weight: 950;
           text-transform: uppercase;
-          letter-spacing: .7px;
+          letter-spacing: 0.7px;
           margin-bottom: 10px;
         }
 
@@ -690,8 +696,8 @@ export default function Page() {
         .tagRow span {
           border-radius: 999px;
           padding: 7px 10px;
-          background: rgba(255,255,255,.56);
-          border: 1px solid rgba(124,58,237,.14);
+          background: rgba(255, 255, 255, 0.56);
+          border: 1px solid rgba(124, 58, 237, 0.14);
           color: #6d28d9;
           font-size: 12px;
           font-weight: 900;
@@ -699,7 +705,7 @@ export default function Page() {
 
         .description {
           margin: 18px 0 0;
-          color: rgba(55,65,81,.88);
+          color: rgba(55, 65, 81, 0.88);
           font-size: 16px;
           line-height: 1.55;
         }
@@ -708,10 +714,10 @@ export default function Page() {
           margin-top: 16px;
           border-radius: 22px;
           padding: 16px;
-          background: rgba(220,252,231,.55);
-          border: 1px solid rgba(22,163,74,.22);
+          background: rgba(220, 252, 231, 0.55);
+          border: 1px solid rgba(22, 163, 74, 0.22);
           color: #14532d;
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
         }
 
         .orderBox strong {
@@ -719,7 +725,7 @@ export default function Page() {
           margin-bottom: 6px;
           font-size: 14px;
           text-transform: uppercase;
-          letter-spacing: .7px;
+          letter-spacing: 0.7px;
         }
 
         .orderBox p {
@@ -729,7 +735,7 @@ export default function Page() {
 
         .sourceLine {
           margin: 14px 0 0;
-          color: rgba(107,114,128,.76);
+          color: rgba(107, 114, 128, 0.76);
           font-size: 12px;
           font-weight: 700;
         }
@@ -745,11 +751,11 @@ export default function Page() {
           border-radius: 26px;
           padding: 18px;
           text-align: center;
-          background: rgba(255,255,255,.58);
-          border: 1px solid rgba(255,255,255,.76);
+          background: rgba(255, 255, 255, 0.58);
+          border: 1px solid rgba(255, 255, 255, 0.76);
           box-shadow:
-            inset 0 1px 0 rgba(255,255,255,.85),
-            0 12px 26px rgba(76,29,149,.08);
+            inset 0 1px 0 rgba(255, 255, 255, 0.85),
+            0 12px 26px rgba(76, 29, 149, 0.08);
         }
 
         .metricBubble strong {
@@ -764,11 +770,11 @@ export default function Page() {
         .metricBubble span {
           display: block;
           margin-top: 7px;
-          color: rgba(75,85,99,.76);
+          color: rgba(75, 85, 99, 0.76);
           font-size: 12px;
           font-weight: 950;
           text-transform: uppercase;
-          letter-spacing: .8px;
+          letter-spacing: 0.8px;
         }
 
         .empty {
@@ -785,7 +791,7 @@ export default function Page() {
 
         .empty p {
           margin: 10px 0 0;
-          color: rgba(75,85,99,.82);
+          color: rgba(75, 85, 99, 0.82);
         }
 
         @media (max-width: 820px) {
