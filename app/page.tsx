@@ -106,7 +106,7 @@ export default function Page() {
 
       <section className="shell">
         <header className="hero">
-          <div className="eyebrow">Fast food, but make it strategic.</div>
+          <div className="eyebrow">Fast food, but make it skinny.</div>
           <h1>Skinny Mango’s</h1>
           <p className="tagline">Healthy Food Finder</p>
           <p className="subtag">
