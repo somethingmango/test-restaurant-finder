@@ -1,206 +1,7 @@
 'use client';
 
 import React, { useMemo, useState } from 'react';
-
-type MenuItem = {
-  name: string;
-  calories: number;
-  protein: number;
-  description: string;
-  customization: string;
-  tags: string[];
-};
-
-type Restaurant = {
-  name: string;
-  aliases: string[];
-  note: string;
-  items: MenuItem[];
-};
-
-const RESTAURANTS: Restaurant[] = [
-  {
-    name: 'Chipotle',
-    aliases: ['chipotle', 'chipotle mexican grill'],
-    note: 'Best move: bowl format, lean protein, beans or light rice, and salsa over heavy sauces.',
-    items: [
-      {
-        name: 'Chicken Bowl — Light Rice + Beans',
-        calories: 560,
-        protein: 43,
-        description:
-          'Chicken, light white or brown rice, black beans, fajita veggies, tomato salsa, light sour cream, and cheese.',
-        customization:
-          'Ask for light rice and light sour cream. Skip queso and vinaigrette.',
-        tags: ['has rice', 'has cheese', 'filling'],
-      },
-      {
-        name: 'Double Chicken Salad Bowl',
-        calories: 520,
-        protein: 66,
-        description:
-          'Romaine base, double chicken, black beans, fajita veggies, tomato salsa, and cheese.',
-        customization:
-          'Use salsa as dressing. Skip vinaigrette to save a lot of calories.',
-        tags: ['highest protein', 'low carb', 'has cheese'],
-      },
-      {
-        name: 'Steak Bowl — No Queso',
-        calories: 610,
-        protein: 42,
-        description:
-          'Steak, light rice, black beans, fajita veggies, tomato salsa, sour cream, and cheese.',
-        customization: 'Keep sour cream and cheese, but skip queso and chips.',
-        tags: ['has rice', 'has cheese', 'satisfying'],
-      },
-      {
-        name: 'Chicken Burrito Bowl — No Rice',
-        calories: 430,
-        protein: 39,
-        description:
-          'Chicken, black beans, fajita veggies, tomato salsa, cheese, and lettuce.',
-        customization:
-          'No rice makes this one lighter while still feeling like a real meal.',
-        tags: ['lower calorie', 'has cheese'],
-      },
-    ],
-  },
-  {
-    name: 'Taco Bell',
-    aliases: ['taco bell', 'tacobell'],
-    note: 'Best move: power-bowl style orders, fresco-style tacos, and less creamy sauce.',
-    items: [
-      {
-        name: 'Chicken Power Menu Bowl — Light Sauce',
-        calories: 460,
-        protein: 27,
-        description:
-          'Chicken, rice, black beans, lettuce, pico, cheese, guacamole, and avocado ranch sauce.',
-        customization:
-          'Ask for light avocado ranch or remove it if you want to cut more calories.',
-        tags: ['has rice', 'has cheese'],
-      },
-      {
-        name: 'Two Chicken Soft Tacos Fresco Style',
-        calories: 320,
-        protein: 24,
-        description:
-          'Simple chicken soft tacos made lighter with pico instead of cheese and creamy sauce.',
-        customization: 'Order fresco style. Add extra chicken if available.',
-        tags: ['lower calorie', 'easy order'],
-      },
-      {
-        name: 'Cantina Chicken Bowl — No Creamy Sauce',
-        calories: 490,
-        protein: 25,
-        description: 'Chicken bowl with rice, beans, veggies, and toppings.',
-        customization: 'Remove creamy sauces and keep the pico for flavor.',
-        tags: ['has rice', 'filling'],
-      },
-    ],
-  },
-  {
-    name: 'CAVA',
-    aliases: ['cava', 'cava grill'],
-    note: 'Best move: greens + grains, grilled chicken, lots of vegetables, and one lighter dressing.',
-    items: [
-      {
-        name: 'Grilled Chicken Greens + Grains Bowl',
-        calories: 590,
-        protein: 42,
-        description:
-          'Half greens, half rice, grilled chicken, cucumbers, tomatoes, pickled onions, and tzatziki.',
-        customization:
-          'Use light dressing or sauce on the side. Skip pita chips if cutting calories.',
-        tags: ['has rice', 'filling'],
-      },
-      {
-        name: 'Double Chicken Salad Bowl',
-        calories: 540,
-        protein: 58,
-        description:
-          'Greens base, double grilled chicken, cucumbers, tomatoes, cabbage, and yogurt-based sauce.',
-        customization: 'Keep sauces to one or ask for them on the side.',
-        tags: ['highest protein', 'low carb'],
-      },
-      {
-        name: 'Chicken + Lentil Avocado Bowl, Light Dressing',
-        calories: 650,
-        protein: 45,
-        description:
-          'A more filling option with chicken, lentils, greens, and avocado.',
-        customization: 'Go light on dressing and skip pita on the side.',
-        tags: ['filling', 'higher calorie'],
-      },
-    ],
-  },
-  {
-    name: 'Wendy’s',
-    aliases: ['wendys', 'wendy’s', "wendy's"],
-    note: 'Best move: chili, lighter wraps, or simple burger builds without mayo-heavy sauces.',
-    items: [
-      {
-        name: 'Large Chili',
-        calories: 340,
-        protein: 22,
-        description:
-          'A high-satiety option with beef and beans that is relatively low calorie.',
-        customization: 'Add a side salad if you need more volume.',
-        tags: ['lower calorie', 'filling'],
-      },
-      {
-        name: 'Grilled Chicken Wrap',
-        calories: 420,
-        protein: 27,
-        description: 'Chicken wrap with cheese and sauce.',
-        customization: 'Ask for light sauce if available.',
-        tags: ['has cheese', 'easy order'],
-      },
-      {
-        name: 'Jr. Cheeseburger + Chili',
-        calories: 630,
-        protein: 38,
-        description:
-          'A more satisfying combo that keeps calories reasonable compared with larger burgers and fries.',
-        customization: 'Skip mayo and fries. Keep ketchup/mustard for flavor.',
-        tags: ['has cheese', 'filling'],
-      },
-    ],
-  },
-  {
-    name: 'McDonald’s',
-    aliases: ['mcdonalds', 'mcdonald’s', "mcdonald's", 'mcd'],
-    note: 'Best move: eggs, simple burgers, and no fries/sugary drinks when cutting calories.',
-    items: [
-      {
-        name: 'Egg McMuffin',
-        calories: 310,
-        protein: 17,
-        description: 'Egg, Canadian bacon, cheese, and English muffin.',
-        customization: 'Pair with black coffee or unsweetened iced coffee.',
-        tags: ['breakfast', 'has cheese'],
-      },
-      {
-        name: 'Two Hamburger Meal — No Fries',
-        calories: 500,
-        protein: 26,
-        description: 'Two regular hamburgers without fries or sugary drink.',
-        customization: 'Add extra pickles/onions. Skip mayo-based sauces.',
-        tags: ['simple', 'lower calorie'],
-      },
-      {
-        name: 'McDouble',
-        calories: 400,
-        protein: 22,
-        description:
-          'Beef patties, cheese, pickles, onions, ketchup, and mustard.',
-        customization:
-          'Good when you want a burger without going into Big Mac calorie territory.',
-        tags: ['has cheese', 'easy order'],
-      },
-    ],
-  },
-];
+import { RESTAURANTS, type MenuItem, type Restaurant } from './data/restaurants';
 
 function normalize(input: string) {
   return input.trim().toLowerCase();
@@ -210,12 +11,28 @@ function scoreItem(item: MenuItem) {
   return Number(((item.protein / item.calories) * 100).toFixed(1));
 }
 
+function smartRank(items: MenuItem[]) {
+  return [...items]
+    .sort((a, b) => {
+      const scoreA = scoreItem(a) * 10 + a.protein * 0.8 - a.calories * 0.01;
+      const scoreB = scoreItem(b) * 10 + b.protein * 0.8 - b.calories * 0.01;
+      return scoreB - scoreA;
+    })
+    .slice(0, 5);
+}
+
 const chainSuggestions = [
   'Chipotle',
-  'CAVA',
   'Taco Bell',
   'Wendy’s',
   'McDonald’s',
+  'Chick-fil-A',
+  'Panera',
+  'Starbucks',
+  'Dunkin’',
+  'Subway',
+  'Chili’s',
+  'Cheesecake Factory',
 ];
 
 const styles: Record<string, React.CSSProperties> = {
@@ -230,7 +47,7 @@ const styles: Record<string, React.CSSProperties> = {
   shell: { maxWidth: 1120, margin: '0 auto' },
   hero: { textAlign: 'center', padding: '28px 0 22px' },
   logo: {
-    fontSize: 'clamp(54px, 9vw, 108px)',
+    fontSize: 'clamp(48px, 8vw, 96px)',
     lineHeight: 0.92,
     margin: 0,
     letterSpacing: -4,
@@ -270,7 +87,6 @@ const styles: Record<string, React.CSSProperties> = {
     border: '1px solid #eadcff',
     borderRadius: 999,
     padding: '10px 12px 10px 22px',
-    boxShadow: 'inset 0 0 0 1px rgba(255,255,255,.7)',
   },
   magnifier: { fontSize: 22, color: '#7c3aed' },
   input: {
@@ -326,7 +142,7 @@ const styles: Record<string, React.CSSProperties> = {
     color: '#6b21a8',
     marginBottom: 7,
   },
-  range: { width: '100%' },
+  range: { width: '100%', accentColor: '#16a34a' },
   toggle: {
     border: '1px solid rgba(109,40,217,.25)',
     background: 'rgba(255,255,255,.72)',
@@ -463,29 +279,46 @@ export default function Page() {
   const [includeRice, setIncludeRice] = useState(false);
   const [includeCheese, setIncludeCheese] = useState(false);
 
-  const restaurant = useMemo<Restaurant | undefined>(() => {
-    const normalized = normalize(submittedQuery);
+  const normalizedQuery = normalize(submittedQuery);
 
+  const restaurant = useMemo<Restaurant | undefined>(() => {
     return RESTAURANTS.find((r) =>
       r.aliases.some(
-        (alias) => alias.includes(normalized) || normalized.includes(alias)
+        (alias) =>
+          alias.includes(normalizedQuery) || normalizedQuery.includes(alias)
       )
     );
-  }, [submittedQuery]);
+  }, [normalizedQuery]);
 
   const results = useMemo<MenuItem[]>(() => {
-    if (!restaurant) return [];
+    const baseItems = restaurant
+      ? restaurant.items
+      : RESTAURANTS.flatMap((r) =>
+          r.items
+            .filter((item) => {
+              const haystack = normalize(
+                `${r.name} ${item.name} ${item.description} ${item.tags.join(
+                  ' '
+                )}`
+              );
 
-    return restaurant.items
+              return haystack.includes(normalizedQuery);
+            })
+            .map((item) => ({
+              ...item,
+              name: `${r.name}: ${item.name}`,
+            }))
+        );
+
+    return smartRank(baseItems)
       .filter((item) => item.calories <= maxCalories)
       .filter((item) => item.protein >= minProtein)
       .filter((item) => (includeRice ? item.tags.includes('has rice') : true))
       .filter((item) =>
         includeCheese ? item.tags.includes('has cheese') : true
       )
-      .sort((a, b) => scoreItem(b) - scoreItem(a))
       .slice(0, 5);
-  }, [restaurant, maxCalories, minProtein, includeRice, includeCheese]);
+  }, [restaurant, normalizedQuery, maxCalories, minProtein, includeRice, includeCheese]);
 
   function handleSearch(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -497,9 +330,17 @@ export default function Page() {
     setSubmittedQuery(chain);
   }
 
+  const displayTitle = restaurant
+    ? restaurant.name
+    : `Search results for "${submittedQuery}"`;
+
+  const displayNote = restaurant
+    ? restaurant.note
+    : 'Searching across all hard-coded restaurant items.';
+
   const restaurantSlug = restaurant
     ? restaurant.name.toLowerCase().replaceAll(' ', '')
-    : 'restaurant';
+    : 'skinny-mangos';
 
   return (
     <main style={styles.page}>
@@ -521,7 +362,7 @@ export default function Page() {
                 style={styles.input}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search restaurants, like Chipotle or CAVA"
+                placeholder="Search restaurants, like Chipotle or Chili’s"
               />
             </div>
             <button style={styles.searchButton} type="submit">
@@ -535,6 +376,7 @@ export default function Page() {
                 key={chain}
                 style={styles.chip}
                 onClick={() => pickSuggestion(chain)}
+                type="button"
               >
                 {chain}
               </button>
@@ -548,7 +390,7 @@ export default function Page() {
             <input
               style={styles.range}
               type="range"
-              min="300"
+              min="250"
               max="900"
               step="50"
               value={maxCalories}
@@ -560,7 +402,7 @@ export default function Page() {
             <input
               style={styles.range}
               type="range"
-              min="10"
+              min="5"
               max="70"
               step="5"
               value={minProtein}
@@ -583,83 +425,72 @@ export default function Page() {
           </button>
         </section>
 
-        {restaurant ? (
-          <section style={styles.status}>
-            <div>
-              <h2 style={styles.statusTitle}>{restaurant.name}</h2>
-              <p style={styles.statusNote}>{restaurant.note}</p>
-            </div>
-            <div style={styles.resultCount}>{results.length} picks found</div>
-          </section>
-        ) : (
-          <section style={styles.empty}>
-            <h2>No restaurant match yet</h2>
-            <p>
-              Try one of the starter chains: Chipotle, CAVA, Taco Bell, Wendy’s,
-              or McDonald’s.
-            </p>
-          </section>
-        )}
+        <section style={styles.status}>
+          <div>
+            <h2 style={styles.statusTitle}>{displayTitle}</h2>
+            <p style={styles.statusNote}>{displayNote}</p>
+          </div>
+          <div style={styles.resultCount}>{results.length} picks found</div>
+        </section>
 
-        {restaurant &&
-          results.map((item, index) => (
-            <article key={item.name} style={styles.card}>
-              <div style={styles.cardHead}>
-                <div style={styles.urlLine}>
-                  <span style={styles.favicon}>🍽️</span>
-                  <span>
-                    {restaurantSlug}.com / macro-pick / #{index + 1}
+        {results.map((item, index) => (
+          <article key={`${item.name}-${index}`} style={styles.card}>
+            <div style={styles.cardHead}>
+              <div style={styles.urlLine}>
+                <span style={styles.favicon}>🍽️</span>
+                <span>
+                  {restaurantSlug}.com / healthy-pick / #{index + 1}
+                </span>
+              </div>
+              <h3 style={styles.cardTitle}>{item.name}</h3>
+              <div style={styles.tagRow}>
+                {item.tags.map((tag) => (
+                  <span key={tag} style={styles.tag}>
+                    {tag}
                   </span>
-                </div>
-                <h3 style={styles.cardTitle}>{item.name}</h3>
-                <div style={styles.tagRow}>
-                  {item.tags.map((tag) => (
-                    <span key={tag} style={styles.tag}>
-                      {tag}
-                    </span>
-                  ))}
+                ))}
+              </div>
+            </div>
+
+            <div style={styles.cardBody}>
+              <div style={styles.description}>
+                <p>{item.description}</p>
+                <div style={styles.orderBox}>
+                  <strong>How to order it:</strong>
+                  <p style={{ margin: '8px 0 0' }}>{item.customization}</p>
                 </div>
               </div>
 
-              <div style={styles.cardBody}>
-                <div style={styles.description}>
-                  <p>{item.description}</p>
-                  <div style={styles.orderBox}>
-                    <strong>How to order it:</strong>
-                    <p style={{ margin: '8px 0 0' }}>{item.customization}</p>
+              <div style={styles.metrics}>
+                <div style={styles.metric}>
+                  <div>
+                    <div style={styles.metricNum}>{item.calories}</div>
+                    <div style={styles.metricLabel}>calories</div>
                   </div>
                 </div>
-
-                <div style={styles.metrics}>
-                  <div style={styles.metric}>
-                    <div>
-                      <div style={styles.metricNum}>{item.calories}</div>
-                      <div style={styles.metricLabel}>calories</div>
-                    </div>
+                <div style={styles.metric}>
+                  <div>
+                    <div style={styles.metricNum}>{item.protein}g</div>
+                    <div style={styles.metricLabel}>protein</div>
                   </div>
-                  <div style={styles.metric}>
-                    <div>
-                      <div style={styles.metricNum}>{item.protein}g</div>
-                      <div style={styles.metricLabel}>protein</div>
-                    </div>
-                  </div>
-                  <div style={styles.metric}>
-                    <div>
-                      <div style={styles.metricNum}>{scoreItem(item)}</div>
-                      <div style={styles.metricLabel}>protein score</div>
-                    </div>
+                </div>
+                <div style={styles.metric}>
+                  <div>
+                    <div style={styles.metricNum}>{scoreItem(item)}</div>
+                    <div style={styles.metricLabel}>protein score</div>
                   </div>
                 </div>
               </div>
-            </article>
-          ))}
+            </div>
+          </article>
+        ))}
 
-        {restaurant && results.length === 0 && (
+        {results.length === 0 && (
           <section style={styles.empty}>
             <h2>No options match those filters</h2>
             <p>
-              Raise the max calories or lower the minimum protein to see more
-              options.
+              Try another chain, raise max calories, lower minimum protein, or
+              turn off Rice/Cheese filters.
             </p>
           </section>
         )}
