@@ -24,6 +24,7 @@ function smartRank(items: MenuItem[]) {
 const chainSuggestions = [
   'Chipotle',
   'Taco Bell',
+  'Burger King'
   'Wendy’s',
   'McDonald’s',
   'Chick-fil-A',
