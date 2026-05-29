@@ -26,14 +26,24 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.hero {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.hero .eyebrow {
+  align-self: center !important;
+}
+
 span.mangoMark {
-  width: 136px !important;
+  width: 128px !important;
   height: 148px !important;
   display: inline-block !important;
   flex: 0 0 auto !important;
   border: 0 !important;
   border-radius: 0 !important;
-  background: url('/mango-logo.svg?v=3') center / 100% 100% no-repeat !important;
+  background: url('/mango-logo.png?v=1') center / contain no-repeat !important;
   box-shadow: none !important;
   filter: drop-shadow(0 14px 20px rgba(109, 40, 217, 0.22)) !important;
   transform: none !important;
@@ -46,14 +56,14 @@ span.mangoMark > * {
 
 @media (max-width: 720px) {
   span.mangoMark {
-    width: 92px !important;
-    height: 100px !important;
+    width: 88px !important;
+    height: 102px !important;
   }
 }
 
 @media (max-width: 520px) {
   span.mangoMark {
-    width: 78px !important;
+    width: 74px !important;
     height: 86px !important;
   }
 }
