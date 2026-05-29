@@ -127,80 +127,12 @@ export default function Page() {
         <header className="hero">
           <div className="eyebrow">Like, fast food, but make it skinny.</div>
           <h1>
-            <svg
+            <img
               className="mangoMark"
-              viewBox="0 0 180 230"
+              src="/mango-logo.png?v=2"
+              alt=""
               aria-hidden="true"
-            >
-              <defs>
-                <linearGradient id="mangoBody" x1="30" y1="58" x2="148" y2="207">
-                  <stop offset="0" stopColor="#ffdf38" />
-                  <stop offset="0.5" stopColor="#ffc21e" />
-                  <stop offset="1" stopColor="#ff8518" />
-                </linearGradient>
-                <linearGradient id="mangoLeaf" x1="58" y1="14" x2="166" y2="59">
-                  <stop offset="0" stopColor="#71e9a4" />
-                  <stop offset="0.58" stopColor="#36ce76" />
-                  <stop offset="1" stopColor="#20a951" />
-                </linearGradient>
-                <radialGradient id="leafShine" cx="33%" cy="24%" r="60%">
-                  <stop offset="0" stopColor="#a7f3c4" stopOpacity="0.78" />
-                  <stop offset="0.42" stopColor="#a7f3c4" stopOpacity="0" />
-                </radialGradient>
-                <radialGradient id="bodyGlow" cx="24%" cy="29%" r="72%">
-                  <stop offset="0" stopColor="#fff085" stopOpacity="0.68" />
-                  <stop offset="0.54" stopColor="#fff085" stopOpacity="0.16" />
-                  <stop offset="1" stopColor="#fff085" stopOpacity="0" />
-                </radialGradient>
-                <linearGradient id="bodyShade" x1="81" y1="57" x2="145" y2="197">
-                  <stop offset="0" stopColor="#f59e0b" stopOpacity="0" />
-                  <stop offset="1" stopColor="#ef6c00" stopOpacity="0.22" />
-                </linearGradient>
-              </defs>
-              <path
-                className="mangoBodyStroke"
-                d="M88 50C44 54 16 99 14 142c-2 56 34 89 82 91 49 2 79-34 77-88-2-55-34-99-85-95Z"
-              />
-              <path
-                className="mangoBodyFill"
-                d="M88 50C44 54 16 99 14 142c-2 56 34 89 82 91 49 2 79-34 77-88-2-55-34-99-85-95Z"
-              />
-              <path
-                className="mangoBodyGlow"
-                d="M88 50C44 54 16 99 14 142c-2 56 34 89 82 91 49 2 79-34 77-88-2-55-34-99-85-95Z"
-              />
-              <path
-                className="mangoBodyShade"
-                d="M99 55c30 30 43 74 35 113-8 38-36 58-76 57 12 6 25 8 38 8 49 2 79-34 77-88-2-48-26-88-74-90Z"
-              />
-              <path
-                className="mangoInnerRim"
-                d="M78 58C48 66 25 101 25 142c0 44 25 72 61 80"
-              />
-              <path
-                className="mangoLeafStroke"
-                d="M74 18c25 2 66 10 85 18 22 9 29 31 17 47-10 14-31 13-52 8L53 75c5-29 8-58 21-57Z"
-              />
-              <path
-                className="mangoLeafFill"
-                d="M74 18c25 2 66 10 85 18 22 9 29 31 17 47-10 14-31 13-52 8L53 75c5-29 8-58 21-57Z"
-              />
-              <path
-                className="mangoLeafHighlight"
-                d="M74 18c25 2 66 10 85 18 22 9 29 31 17 47-10 14-31 13-52 8L53 75c5-29 8-58 21-57Z"
-              />
-              <path className="mangoWink" d="M47 132c8-16 30-16 39 0" />
-              <circle className="mangoEye" cx="112" cy="125" r="15" />
-              <path className="mangoSmile" d="M66 160c10 28 48 28 58 0" />
-              <ellipse
-                className="mangoCheek"
-                cx="128"
-                cy="151"
-                rx="18"
-                ry="13"
-                transform="rotate(-12 128 151)"
-              />
-            </svg>
+            />
             Skinny Mango
           </h1>
           <p className="tagline">Healthy Food Finder</p>
@@ -479,8 +411,9 @@ export default function Page() {
 
         .mangoMark {
           width: 128px;
-          height: 164px;
+          height: 148px;
           flex: 0 0 auto;
+          object-fit: contain;
           overflow: visible;
           filter: drop-shadow(0 14px 20px rgba(109, 40, 217, 0.22));
         }
