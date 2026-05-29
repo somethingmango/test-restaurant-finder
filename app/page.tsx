@@ -129,6 +129,13 @@ export default function Page() {
           <h1>
             <span className="mangoMark" aria-hidden="true">
               <span className="mangoLeaf" />
+              <span className="mangoShine" />
+              <span className="mangoFace">
+                <span className="mangoEye open" />
+                <span className="mangoEye wink" />
+                <span className="mangoSmile" />
+              </span>
+              <span className="mangoCheek" />
             </span>
             Skinny Mango
           </h1>
@@ -408,28 +415,96 @@ export default function Page() {
 
         .mangoMark {
           position: relative;
-          width: 54px;
-          height: 66px;
+          width: 62px;
+          height: 72px;
           flex: 0 0 auto;
-          border-radius: 56% 44% 52% 48%;
-          background: linear-gradient(145deg, #facc15, #fb923c 62%, #f97316);
+          border-radius: 58% 42% 54% 46% / 62% 46% 54% 38%;
+          background:
+            radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.74), transparent 17%),
+            radial-gradient(circle at 72% 70%, rgba(236, 72, 153, 0.28), transparent 22%),
+            linear-gradient(145deg, #fde047 0%, #fbbf24 38%, #fb923c 72%, #f97316 100%);
           border: 3px solid rgba(109, 40, 217, 0.78);
           box-shadow:
             inset 0 2px 0 rgba(255, 255, 255, 0.58),
+            inset -9px -10px 0 rgba(194, 65, 12, 0.13),
             0 12px 24px rgba(109, 40, 217, 0.18);
-          transform: rotate(-12deg);
+          transform: rotate(-10deg);
         }
 
         .mangoLeaf {
           position: absolute;
-          top: -12px;
-          right: -8px;
-          width: 24px;
-          height: 14px;
+          top: -13px;
+          right: -10px;
+          width: 30px;
+          height: 17px;
           border-radius: 999px 999px 999px 0;
-          background: #16a34a;
+          background: linear-gradient(135deg, #86efac, #16a34a);
           border: 2px solid rgba(109, 40, 217, 0.72);
           transform: rotate(24deg);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.54);
+        }
+
+        .mangoShine {
+          position: absolute;
+          top: 14px;
+          left: 15px;
+          width: 15px;
+          height: 24px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.42);
+          transform: rotate(22deg);
+        }
+
+        .mangoFace {
+          position: absolute;
+          inset: 23px 12px 15px;
+          transform: rotate(8deg);
+        }
+
+        .mangoEye {
+          position: absolute;
+          top: 2px;
+          width: 8px;
+          height: 8px;
+          background: #581c87;
+        }
+
+        .mangoEye.open {
+          left: 8px;
+          border-radius: 999px;
+          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.18);
+        }
+
+        .mangoEye.wink {
+          right: 5px;
+          width: 13px;
+          height: 7px;
+          border-radius: 999px;
+          background: transparent;
+          border-top: 3px solid #581c87;
+          transform: rotate(-8deg);
+        }
+
+        .mangoSmile {
+          position: absolute;
+          left: 15px;
+          top: 17px;
+          width: 18px;
+          height: 10px;
+          border-bottom: 3px solid #581c87;
+          border-radius: 0 0 999px 999px;
+          transform: rotate(-4deg);
+        }
+
+        .mangoCheek {
+          position: absolute;
+          right: 12px;
+          bottom: 18px;
+          width: 12px;
+          height: 7px;
+          border-radius: 999px;
+          background: rgba(244, 114, 182, 0.58);
+          transform: rotate(-10deg);
         }
 
         .tagline {
@@ -1035,9 +1110,18 @@ export default function Page() {
           }
 
           .mangoMark {
-            width: 42px;
-            height: 52px;
+            width: 46px;
+            height: 54px;
             border-width: 2px;
+          }
+
+          .mangoFace {
+            inset: 17px 8px 10px;
+          }
+
+          .mangoLeaf {
+            width: 23px;
+            height: 13px;
           }
 
           .tagline {
@@ -1091,8 +1175,13 @@ export default function Page() {
           }
 
           .mangoMark {
-            width: 36px;
-            height: 44px;
+            width: 38px;
+            height: 46px;
+          }
+
+          .mangoFace {
+            transform: rotate(8deg) scale(0.82);
+            transform-origin: center;
           }
 
           .pickerActions {
