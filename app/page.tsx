@@ -129,6 +129,7 @@ export default function Page() {
           <h1>
             <span className="mangoMark" aria-hidden="true">
               <span className="mangoLeaf" />
+              <span className="mangoInnerRim" />
               <span className="mangoShine" />
               <span className="mangoFace">
                 <span className="mangoEye open" />
@@ -402,7 +403,7 @@ export default function Page() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 18px;
+          gap: 20px;
           font-size: 72px;
           line-height: 0.9;
           margin: 0;
@@ -415,96 +416,115 @@ export default function Page() {
 
         .mangoMark {
           position: relative;
-          width: 62px;
-          height: 72px;
+          width: 82px;
+          height: 112px;
           flex: 0 0 auto;
-          border-radius: 58% 42% 54% 46% / 62% 46% 54% 38%;
+          border-radius: 52% 48% 50% 50% / 58% 54% 46% 42%;
           background:
-            radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.74), transparent 17%),
-            radial-gradient(circle at 72% 70%, rgba(236, 72, 153, 0.28), transparent 22%),
-            linear-gradient(145deg, #fde047 0%, #fbbf24 38%, #fb923c 72%, #f97316 100%);
-          border: 3px solid rgba(109, 40, 217, 0.78);
+            radial-gradient(ellipse at 29% 30%, rgba(255, 239, 148, 0.78), transparent 34%),
+            radial-gradient(ellipse at 32% 72%, rgba(255, 219, 92, 0.72), transparent 42%),
+            linear-gradient(122deg, #ffd433 0%, #ffc01f 44%, #ff9d19 70%, #ff7a18 100%);
+          border: 7px solid #6f43d6;
           box-shadow:
-            inset 0 2px 0 rgba(255, 255, 255, 0.58),
-            inset -9px -10px 0 rgba(194, 65, 12, 0.13),
-            0 12px 24px rgba(109, 40, 217, 0.18);
-          transform: rotate(-10deg);
+            inset -18px -18px 0 rgba(232, 102, 13, 0.15),
+            0 14px 26px rgba(109, 40, 217, 0.18);
+          transform: rotate(4deg);
+          overflow: visible;
         }
 
         .mangoLeaf {
           position: absolute;
-          top: -13px;
-          right: -10px;
-          width: 30px;
-          height: 17px;
-          border-radius: 999px 999px 999px 0;
-          background: linear-gradient(135deg, #86efac, #16a34a);
-          border: 2px solid rgba(109, 40, 217, 0.72);
-          transform: rotate(24deg);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.54);
+          top: -22px;
+          right: -9px;
+          width: 78px;
+          height: 40px;
+          border-radius: 34px 38px 35px 10px;
+          background:
+            radial-gradient(circle at 28% 24%, rgba(134, 239, 172, 0.82), transparent 24%),
+            linear-gradient(135deg, #62dda0 0%, #24c06d 60%, #16a34a 100%);
+          border: 7px solid #6f43d6;
+          transform: rotate(12deg);
+          box-shadow:
+            inset 0 2px 0 rgba(255, 255, 255, 0.35),
+            inset -8px -5px 0 rgba(21, 128, 61, 0.12);
+          z-index: 1;
+        }
+
+        .mangoInnerRim {
+          position: absolute;
+          inset: 10px 9px 8px 7px;
+          border-radius: 52% 48% 50% 50% / 58% 54% 46% 42%;
+          border-left: 5px solid rgba(255, 247, 204, 0.9);
+          border-top: 4px solid rgba(255, 247, 204, 0.84);
+          transform: rotate(-1deg);
+          pointer-events: none;
+          z-index: 2;
         }
 
         .mangoShine {
           position: absolute;
-          top: 14px;
-          left: 15px;
-          width: 15px;
-          height: 24px;
+          right: 10px;
+          bottom: 20px;
+          width: 38px;
+          height: 70px;
           border-radius: 999px;
-          background: rgba(255, 255, 255, 0.42);
-          transform: rotate(22deg);
+          background: linear-gradient(180deg, rgba(255, 214, 93, 0.24), rgba(255, 122, 24, 0.15));
+          transform: rotate(-20deg);
+          z-index: 2;
         }
 
         .mangoFace {
           position: absolute;
-          inset: 23px 12px 15px;
-          transform: rotate(8deg);
+          inset: 44px 20px 25px 18px;
+          transform: rotate(-3deg);
+          z-index: 3;
         }
 
         .mangoEye {
           position: absolute;
-          top: 2px;
-          width: 8px;
-          height: 8px;
+          top: 0;
+          width: 15px;
+          height: 15px;
           background: #581c87;
         }
 
         .mangoEye.open {
-          left: 8px;
+          right: 4px;
           border-radius: 999px;
-          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.18);
         }
 
         .mangoEye.wink {
-          right: 5px;
-          width: 13px;
-          height: 7px;
+          left: 2px;
+          top: 6px;
+          width: 28px;
+          height: 14px;
           border-radius: 999px;
           background: transparent;
-          border-top: 3px solid #581c87;
-          transform: rotate(-8deg);
+          border-top: 6px solid #581c87;
+          transform: rotate(2deg);
         }
 
         .mangoSmile {
           position: absolute;
-          left: 15px;
-          top: 17px;
-          width: 18px;
-          height: 10px;
-          border-bottom: 3px solid #581c87;
+          left: 16px;
+          top: 34px;
+          width: 30px;
+          height: 18px;
+          border-bottom: 6px solid #581c87;
           border-radius: 0 0 999px 999px;
-          transform: rotate(-4deg);
+          transform: rotate(0deg);
         }
 
         .mangoCheek {
           position: absolute;
-          right: 12px;
-          bottom: 18px;
-          width: 12px;
-          height: 7px;
+          right: 14px;
+          bottom: 32px;
+          width: 25px;
+          height: 17px;
           border-radius: 999px;
-          background: rgba(244, 114, 182, 0.58);
-          transform: rotate(-10deg);
+          background: rgba(251, 113, 133, 0.74);
+          transform: rotate(-8deg);
+          z-index: 3;
         }
 
         .tagline {
@@ -1110,18 +1130,36 @@ export default function Page() {
           }
 
           .mangoMark {
-            width: 46px;
-            height: 54px;
-            border-width: 2px;
+            width: 55px;
+            height: 75px;
+            border-width: 5px;
           }
 
           .mangoFace {
-            inset: 17px 8px 10px;
+            inset: 29px 13px 14px 11px;
+            transform: rotate(-3deg) scale(0.72);
+            transform-origin: top left;
           }
 
           .mangoLeaf {
-            width: 23px;
-            height: 13px;
+            top: -16px;
+            right: -7px;
+            width: 52px;
+            height: 28px;
+            border-width: 5px;
+          }
+
+          .mangoInnerRim {
+            inset: 7px 6px 6px 5px;
+            border-left-width: 4px;
+            border-top-width: 3px;
+          }
+
+          .mangoCheek {
+            width: 18px;
+            height: 12px;
+            right: 9px;
+            bottom: 22px;
           }
 
           .tagline {
@@ -1175,13 +1213,27 @@ export default function Page() {
           }
 
           .mangoMark {
-            width: 38px;
-            height: 46px;
+            width: 46px;
+            height: 63px;
+            border-width: 4px;
           }
 
           .mangoFace {
-            transform: rotate(8deg) scale(0.82);
-            transform-origin: center;
+            inset: 23px 9px 11px 8px;
+            transform: rotate(-3deg) scale(0.6);
+            transform-origin: top left;
+          }
+
+          .mangoLeaf {
+            width: 43px;
+            height: 23px;
+            border-width: 4px;
+          }
+
+          .mangoInnerRim {
+            inset: 6px 5px 5px 4px;
+            border-left-width: 3px;
+            border-top-width: 2px;
           }
 
           .pickerActions {
