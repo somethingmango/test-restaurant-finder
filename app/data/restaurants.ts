@@ -725,6 +725,19 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Chipotle official nutrition calculator / nutrition facts PDF"
       },
       {
+        "name": "Barbacoa + Fajita Veggie Bowl",
+        "calories": 345,
+        "protein": 33,
+        "description": "Barbacoa, black beans, fajita veggies, tomato salsa, and lettuce.",
+        "customization": "A solid beef option that stays lighter without rice, sour cream, or cheese.",
+        "tags": [
+          "barbacoa",
+          "bowl",
+          "lower calorie"
+        ],
+        "source": "Chipotle official nutrition calculator / nutrition facts PDF"
+      },
+      {
         "name": "Steak Salad Bowl",
         "calories": 435,
         "protein": 36,
@@ -735,6 +748,19 @@ export const RESTAURANTS: Restaurant[] = [
           "salad",
           "has cheese",
           "lower calorie"
+        ],
+        "source": "Chipotle official nutrition calculator / nutrition facts PDF"
+      },
+      {
+        "name": "Sofritas Salad Bowl",
+        "calories": 435,
+        "protein": 23,
+        "description": "Romaine, sofritas, black beans, fajita veggies, tomato salsa, and cheese.",
+        "customization": "Vegetarian pick with decent protein. Skip cheese if you want it lighter.",
+        "tags": [
+          "vegetarian",
+          "salad",
+          "has cheese"
         ],
         "source": "Chipotle official nutrition calculator / nutrition facts PDF"
       },
@@ -788,6 +814,21 @@ export const RESTAURANTS: Restaurant[] = [
         "customization": "Keep cheese or sour cream, but ideally not queso.",
         "tags": [
           "steak",
+          "bowl",
+          "has rice",
+          "has cheese",
+          "filling"
+        ],
+        "source": "Chipotle official nutrition calculator / nutrition facts PDF"
+      },
+      {
+        "name": "Barbacoa Bowl — Light Rice + Beans",
+        "calories": 665,
+        "protein": 43,
+        "description": "Barbacoa, light rice, black beans, fajita veggies, tomato salsa, sour cream, and cheese.",
+        "customization": "Light rice keeps this from going fully off the rails.",
+        "tags": [
+          "barbacoa",
           "bowl",
           "has rice",
           "has cheese",
@@ -1880,6 +1921,45 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Chick-fil-A official nutrition guide"
       },
       {
+        "name": "8 Count Chick-fil-A Nuggets",
+        "calories": 250,
+        "protein": 27,
+        "description": "Classic breaded chicken nuggets.",
+        "customization": "Still protein-forward. Sauces are where things get sneaky.",
+        "tags": [
+          "chicken",
+          "nuggets",
+          "lower calorie"
+        ],
+        "source": "Chick-fil-A official nutrition guide"
+      },
+      {
+        "name": "Egg White Grill",
+        "calories": 300,
+        "protein": 27,
+        "description": "Grilled chicken, egg whites, and cheese on an English muffin.",
+        "customization": "Breakfast that actually understood the assignment.",
+        "tags": [
+          "breakfast",
+          "chicken",
+          "has cheese"
+        ],
+        "source": "Chick-fil-A official nutrition guide"
+      },
+      {
+        "name": "3 Count Chick-n-Strips",
+        "calories": 310,
+        "protein": 29,
+        "description": "Three breaded chicken strips.",
+        "customization": "Higher calorie than grilled nuggets, but the protein is very real.",
+        "tags": [
+          "chicken",
+          "strips",
+          "high protein"
+        ],
+        "source": "Chick-fil-A official nutrition guide"
+      },
+      {
         "name": "Grilled Chicken Sandwich",
         "calories": 390,
         "protein": 28,
@@ -1928,6 +2008,19 @@ export const RESTAURANTS: Restaurant[] = [
           "grilled",
           "has cheese",
           "sandwich"
+        ],
+        "source": "Chick-fil-A official nutrition guide"
+      },
+      {
+        "name": "Market Salad with Grilled Filet",
+        "calories": 550,
+        "protein": 28,
+        "description": "Greens, grilled chicken, fruit, blue cheese, and toppings.",
+        "customization": "Use dressing lightly. The toppings are cute, but calories count.",
+        "tags": [
+          "salad",
+          "chicken",
+          "has cheese"
         ],
         "source": "Chick-fil-A official nutrition guide"
       },
@@ -1982,6 +2075,19 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Panera official nutrition guide"
       },
       {
+        "name": "Seasonal Greens with Chicken",
+        "calories": 390,
+        "protein": 24,
+        "description": "Mixed greens with chicken and vinaigrette.",
+        "customization": "Ask for dressing on the side. Very respectable, honestly.",
+        "tags": [
+          "salad",
+          "chicken",
+          "lower calorie"
+        ],
+        "source": "Panera official nutrition guide"
+      },
+      {
         "name": "Caesar Salad with Chicken",
         "calories": 440,
         "protein": 32,
@@ -2021,6 +2127,19 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Panera official nutrition guide"
       },
       {
+        "name": "Deli Turkey Sandwich",
+        "calories": 560,
+        "protein": 35,
+        "description": "Turkey sandwich with standard bread and toppings.",
+        "customization": "A cleaner sandwich pick when the bakery case is trying to flirt with you.",
+        "tags": [
+          "sandwich",
+          "turkey",
+          "high protein"
+        ],
+        "source": "Panera official nutrition guide"
+      },
+      {
         "name": "Mediterranean Bowl with Chicken",
         "calories": 650,
         "protein": 35,
@@ -2035,6 +2154,20 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Panera official nutrition guide"
       },
       {
+        "name": "Smokehouse BBQ Chicken Sandwich",
+        "calories": 750,
+        "protein": 45,
+        "description": "Chicken sandwich with barbecue sauce, cheese, and crispy onions.",
+        "customization": "Higher calorie, but strong protein. Half sandwich is the strategic move.",
+        "tags": [
+          "sandwich",
+          "chicken",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Panera official nutrition guide"
+      },
+      {
         "name": "Turkey & Cheddar Sandwich",
         "calories": 880,
         "protein": 50,
@@ -2043,6 +2176,20 @@ export const RESTAURANTS: Restaurant[] = [
         "tags": [
           "sandwich",
           "turkey",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Panera official nutrition guide"
+      },
+      {
+        "name": "Chipotle Chicken Avo Melt",
+        "calories": 930,
+        "protein": 54,
+        "description": "Chicken, avocado, cheese, peppers, and chipotle sauce.",
+        "customization": "High protein and high calorie. Split it or order half if you want balance.",
+        "tags": [
+          "sandwich",
+          "chicken",
           "has cheese",
           "high protein"
         ],
@@ -2086,6 +2233,32 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Starbucks official nutrition information"
       },
       {
+        "name": "Rolled & Steel-Cut Oatmeal",
+        "calories": 160,
+        "protein": 5,
+        "description": "Plain oatmeal with optional toppings.",
+        "customization": "Good light side, but add protein elsewhere.",
+        "tags": [
+          "breakfast",
+          "side",
+          "lower calorie"
+        ],
+        "source": "Starbucks official nutrition information"
+      },
+      {
+        "name": "Potato, Cheddar & Chive Bakes",
+        "calories": 210,
+        "protein": 12,
+        "description": "Egg-and-potato bakes with cheddar and chives.",
+        "customization": "A lighter savory bite when the pastry case is being dramatic.",
+        "tags": [
+          "breakfast",
+          "has cheese",
+          "lower calorie"
+        ],
+        "source": "Starbucks official nutrition information"
+      },
+      {
         "name": "Turkey Bacon, Cheddar & Egg White Sandwich",
         "calories": 230,
         "protein": 17,
@@ -2099,6 +2272,19 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Starbucks official nutrition information"
       },
       {
+        "name": "Kale & Mushroom Egg Bites",
+        "calories": 230,
+        "protein": 15,
+        "description": "Egg bites with kale, mushroom, and cheese.",
+        "customization": "Vegetarian, compact, and more filling than it looks.",
+        "tags": [
+          "breakfast",
+          "vegetarian",
+          "has cheese"
+        ],
+        "source": "Starbucks official nutrition information"
+      },
+      {
         "name": "Spinach, Feta & Egg White Wrap",
         "calories": 290,
         "protein": 20,
@@ -2108,6 +2294,19 @@ export const RESTAURANTS: Restaurant[] = [
           "breakfast",
           "has cheese",
           "vegetarian"
+        ],
+        "source": "Starbucks official nutrition information"
+      },
+      {
+        "name": "Egg, Pesto & Mozzarella Sandwich",
+        "calories": 390,
+        "protein": 21,
+        "description": "Egg, mozzarella, and pesto on bread.",
+        "customization": "A little richer, but still a decent breakfast protein pick.",
+        "tags": [
+          "breakfast",
+          "sandwich",
+          "has cheese"
         ],
         "source": "Starbucks official nutrition information"
       },
@@ -2202,6 +2401,19 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Dunkin’ official nutrition information"
       },
       {
+        "name": "Turkey Sausage, Egg & Cheese Wake-Up Wrap",
+        "calories": 230,
+        "protein": 11,
+        "description": "Turkey sausage, egg, and cheese in a smaller wrap.",
+        "customization": "A slightly leaner breakfast wrap with actual protein.",
+        "tags": [
+          "breakfast",
+          "has cheese",
+          "lower calorie"
+        ],
+        "source": "Dunkin’ official nutrition information"
+      },
+      {
         "name": "Avocado Toast",
         "calories": 240,
         "protein": 6,
@@ -2210,6 +2422,31 @@ export const RESTAURANTS: Restaurant[] = [
         "tags": [
           "breakfast",
           "lower calorie"
+        ],
+        "source": "Dunkin’ official nutrition information"
+      },
+      {
+        "name": "Sausage, Egg & Cheese Wake-Up Wrap",
+        "calories": 290,
+        "protein": 11,
+        "description": "Sausage, egg, and cheese in a smaller wrap.",
+        "customization": "More calorie-dense than the turkey version, but still portion-controlled.",
+        "tags": [
+          "breakfast",
+          "has cheese"
+        ],
+        "source": "Dunkin’ official nutrition information"
+      },
+      {
+        "name": "Egg & Cheese Sandwich",
+        "calories": 340,
+        "protein": 14,
+        "description": "Egg and cheese breakfast sandwich.",
+        "customization": "Simpler than meatier sandwiches and easier to fit into the day.",
+        "tags": [
+          "breakfast",
+          "sandwich",
+          "has cheese"
         ],
         "source": "Dunkin’ official nutrition information"
       },
@@ -2223,6 +2460,20 @@ export const RESTAURANTS: Restaurant[] = [
           "breakfast",
           "has cheese",
           "filling"
+        ],
+        "source": "Dunkin’ official nutrition information"
+      },
+      {
+        "name": "Sourdough Breakfast Sandwich",
+        "calories": 630,
+        "protein": 30,
+        "description": "Egg, cheese, and breakfast meat on sourdough.",
+        "customization": "Filling and high protein, but definitely not tiny. Plan around it.",
+        "tags": [
+          "breakfast",
+          "sandwich",
+          "has cheese",
+          "high protein"
         ],
         "source": "Dunkin’ official nutrition information"
       },
@@ -2261,6 +2512,32 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Subway U.S. nutrition PDF"
       },
       {
+        "name": "6-Inch Oven-Roasted Turkey",
+        "calories": 270,
+        "protein": 20,
+        "description": "Turkey 6-inch sub with standard vegetables.",
+        "customization": "Add veggies and use mustard or vinegar for flavor.",
+        "tags": [
+          "sandwich",
+          "turkey",
+          "lower calorie"
+        ],
+        "source": "Subway U.S. nutrition PDF"
+      },
+      {
+        "name": "6-Inch Subway Club",
+        "calories": 310,
+        "protein": 26,
+        "description": "Turkey, ham, roast beef, vegetables, and bread.",
+        "customization": "A strong protein pick without needing a footlong situation.",
+        "tags": [
+          "sandwich",
+          "high protein",
+          "lower calorie"
+        ],
+        "source": "Subway U.S. nutrition PDF"
+      },
+      {
         "name": "6-Inch Turkey & Ranch Delite",
         "calories": 380,
         "protein": 26,
@@ -2269,6 +2546,19 @@ export const RESTAURANTS: Restaurant[] = [
         "tags": [
           "sandwich",
           "lower calorie"
+        ],
+        "source": "Subway U.S. nutrition PDF"
+      },
+      {
+        "name": "6-Inch Grilled Chicken",
+        "calories": 300,
+        "protein": 27,
+        "description": "Grilled chicken 6-inch sub with standard vegetables.",
+        "customization": "Keep sauces light and this is one of the cleaner Subway moves.",
+        "tags": [
+          "chicken",
+          "sandwich",
+          "high protein"
         ],
         "source": "Subway U.S. nutrition PDF"
       },
