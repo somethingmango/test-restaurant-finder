@@ -178,6 +178,20 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "McDonald’s official nutrition calculator"
       },
       {
+        "name": "4 Piece Chicken McNuggets",
+        "calories": 170,
+        "protein": 9,
+        "description": "Four-piece Chicken McNuggets.",
+        "customization": "Useful as a smaller protein add-on. Sauce calories can sneak up fast.",
+        "tags": [
+          "chicken",
+          "nuggets",
+          "side",
+          "lower calorie"
+        ],
+        "source": "McDonald’s official product nutrition API"
+      },
+      {
         "name": "20 Piece Chicken McNuggets",
         "calories": 830,
         "protein": 46,
@@ -192,6 +206,70 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "McDonald’s official nutrition calculator"
       },
       {
+        "name": "Small French Fries",
+        "calories": 230,
+        "protein": 3,
+        "description": "Small order of McDonald’s World Famous Fries.",
+        "customization": "If fries are happening, small is the least chaotic route.",
+        "tags": [
+          "fries",
+          "side",
+          "lower calorie"
+        ],
+        "source": "McDonald’s official product nutrition API"
+      },
+      {
+        "name": "Medium French Fries",
+        "calories": 320,
+        "protein": 5,
+        "description": "Medium order of McDonald’s World Famous Fries.",
+        "customization": "Better as a shared side than the main character.",
+        "tags": [
+          "fries",
+          "side"
+        ],
+        "source": "McDonald’s official product nutrition API"
+      },
+      {
+        "name": "Large French Fries",
+        "calories": 480,
+        "protein": 7,
+        "description": "Large order of McDonald’s World Famous Fries.",
+        "customization": "Worth showing for transparency. Not exactly protein-ing.",
+        "tags": [
+          "fries",
+          "side",
+          "high calorie"
+        ],
+        "source": "McDonald’s official product nutrition API"
+      },
+      {
+        "name": "Apple Slices",
+        "calories": 15,
+        "protein": 0,
+        "description": "Packaged apple slices.",
+        "customization": "Very light side if you just need something crunchy.",
+        "tags": [
+          "side",
+          "fruit",
+          "lowest calorie"
+        ],
+        "source": "McDonald’s official product nutrition API"
+      },
+      {
+        "name": "Hash Browns",
+        "calories": 140,
+        "protein": 2,
+        "description": "Crispy breakfast hash brown patty.",
+        "customization": "Small breakfast side. Pair with a protein-forward sandwich.",
+        "tags": [
+          "breakfast",
+          "side",
+          "lower calorie"
+        ],
+        "source": "McDonald’s official product nutrition API"
+      },
+      {
         "name": "Egg McMuffin",
         "calories": 310,
         "protein": 17,
@@ -203,6 +281,32 @@ export const RESTAURANTS: Restaurant[] = [
           "lower calorie"
         ],
         "source": "McDonald’s official nutrition calculator"
+      },
+      {
+        "name": "Sausage Burrito",
+        "calories": 310,
+        "protein": 13,
+        "description": "Breakfast burrito with sausage, egg, cheese, peppers, and onions.",
+        "customization": "Not huge protein, but easy to order and moderate calories.",
+        "tags": [
+          "breakfast",
+          "burrito",
+          "has cheese"
+        ],
+        "source": "McDonald’s official product nutrition API"
+      },
+      {
+        "name": "Fruit & Maple Oatmeal",
+        "calories": 320,
+        "protein": 6,
+        "description": "Oatmeal with diced apples, cranberry-raisin blend, and cream.",
+        "customization": "More fiber-friendly than protein-friendly. Still useful for breakfast variety.",
+        "tags": [
+          "breakfast",
+          "oatmeal",
+          "lower protein"
+        ],
+        "source": "McDonald’s official product nutrition API"
       },
       {
         "name": "Sausage McMuffin with Egg",
@@ -2310,6 +2414,20 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "Chili’s official nutrition PDF"
       },
       {
+        "name": "6 oz Classic Sirloin with Grilled Avocado",
+        "calories": 430,
+        "protein": 34,
+        "description": "Classic sirloin served with grilled avocado.",
+        "customization": "A solid protein pick with a little fat for staying power.",
+        "tags": [
+          "steak",
+          "avocado",
+          "high protein",
+          "lower calorie"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
         "name": "Lighter Choice Salmon",
         "calories": 540,
         "protein": 47,
@@ -2317,6 +2435,82 @@ export const RESTAURANTS: Restaurant[] = [
         "customization": "Pair with vegetables. Skip extra sauces if possible.",
         "tags": [
           "salmon",
+          "high protein"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
+        "name": "Mango-Chile Chicken",
+        "calories": 510,
+        "protein": 43,
+        "description": "Grilled chicken entrée with mango-chile flavor.",
+        "customization": "Good restaurant-food-that-still-behaves energy.",
+        "tags": [
+          "chicken",
+          "high protein",
+          "lower calorie"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
+        "name": "Margarita Grilled Chicken",
+        "calories": 630,
+        "protein": 52,
+        "description": "Grilled chicken entrée with margarita-style seasoning.",
+        "customization": "Strong protein. Keep sides simple if you want this to stay reasonable.",
+        "tags": [
+          "chicken",
+          "high protein"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
+        "name": "Chicken Fajitas",
+        "calories": 480,
+        "protein": 60,
+        "description": "Chicken fajitas listed without toppings, tortillas, or sides.",
+        "customization": "Add toppings intentionally. Tortillas, queso, and sour cream change the math.",
+        "tags": [
+          "chicken",
+          "fajitas",
+          "highest protein"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
+        "name": "Seared Shrimp Fajitas",
+        "calories": 370,
+        "protein": 30,
+        "description": "Shrimp fajitas listed without toppings, tortillas, or sides.",
+        "customization": "A lighter fajita base if shrimp is your thing.",
+        "tags": [
+          "shrimp",
+          "fajitas",
+          "lower calorie"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
+        "name": "Original Half Rack Ribs — No Sides",
+        "calories": 470,
+        "protein": 38,
+        "description": "Half rack of original ribs listed without sides.",
+        "customization": "Half rack is the saner ribs lane. Add vegetables if available.",
+        "tags": [
+          "ribs",
+          "high protein"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
+        "name": "Bone-In Wings — Smoked",
+        "calories": 560,
+        "protein": 55,
+        "description": "Smoked bone-in wings.",
+        "customization": "High protein, but watch sauces and ranch.",
+        "tags": [
+          "chicken",
+          "wings",
           "high protein"
         ],
         "source": "Chili’s official nutrition PDF"
@@ -2332,6 +2526,44 @@ export const RESTAURANTS: Restaurant[] = [
           "bowl",
           "has rice",
           "high protein"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
+        "name": "Steamed Broccoli",
+        "calories": 40,
+        "protein": 3,
+        "description": "Side of steamed broccoli.",
+        "customization": "The side that quietly saves the whole order.",
+        "tags": [
+          "side",
+          "vegetable",
+          "lowest calorie"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
+        "name": "Black Beans",
+        "calories": 130,
+        "protein": 7,
+        "description": "Side of black beans.",
+        "customization": "A better side if you want fiber and a little protein.",
+        "tags": [
+          "side",
+          "beans",
+          "lower calorie"
+        ],
+        "source": "Chili’s official nutrition PDF"
+      },
+      {
+        "name": "Homestyle Fries",
+        "calories": 390,
+        "protein": 5,
+        "description": "Side of homestyle fries.",
+        "customization": "Included because fries are real life. Better shared if calories matter.",
+        "tags": [
+          "side",
+          "fries"
         ],
         "source": "Chili’s official nutrition PDF"
       },
@@ -2427,6 +2659,73 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "The Cheesecake Factory official nutritional guide"
       },
       {
+        "name": "SkinnyLicious Asian Chicken Lettuce Wrap Tacos",
+        "calories": 450,
+        "protein": 29,
+        "description": "SkinnyLicious lettuce wrap tacos with chicken.",
+        "customization": "Light enough to feel intentional without feeling sad.",
+        "tags": [
+          "skinnylicious",
+          "chicken",
+          "lettuce wraps",
+          "lower calorie"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "SkinnyLicious Hamburger",
+        "calories": 570,
+        "protein": 35,
+        "description": "SkinnyLicious hamburger.",
+        "customization": "A better burger lane than the full-size versions.",
+        "tags": [
+          "skinnylicious",
+          "burger",
+          "high protein"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "SkinnyLicious Grilled Turkey Burger",
+        "calories": 560,
+        "protein": 29,
+        "description": "SkinnyLicious grilled turkey burger.",
+        "customization": "Moderate calories for a sit-down burger situation.",
+        "tags": [
+          "skinnylicious",
+          "turkey",
+          "burger"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "SkinnyLicious Turkey & Avocado Sandwich",
+        "calories": 550,
+        "protein": 38,
+        "description": "SkinnyLicious turkey and avocado sandwich.",
+        "customization": "Good protein and very normal-person orderable.",
+        "tags": [
+          "skinnylicious",
+          "turkey",
+          "sandwich",
+          "high protein"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "SkinnyLicious Shrimp Soft Tacos",
+        "calories": 520,
+        "protein": 31,
+        "description": "SkinnyLicious shrimp soft tacos.",
+        "customization": "Comparable calories to the chicken tacos with a little seafood switch-up.",
+        "tags": [
+          "skinnylicious",
+          "shrimp",
+          "tacos"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
         "name": "SkinnyLicious Chicken Pasta",
         "calories": 590,
         "protein": 46,
@@ -2441,6 +2740,32 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "The Cheesecake Factory official nutritional guide"
       },
       {
+        "name": "SkinnyLicious Grilled Salmon",
+        "calories": 590,
+        "protein": 45,
+        "description": "SkinnyLicious grilled salmon entrée.",
+        "customization": "A strong seafood pick if you want protein without going pasta mode.",
+        "tags": [
+          "skinnylicious",
+          "salmon",
+          "high protein"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "SkinnyLicious Lemon-Garlic Shrimp",
+        "calories": 550,
+        "protein": 32,
+        "description": "SkinnyLicious lemon-garlic shrimp entrée.",
+        "customization": "Seafood, reasonable calories, and not pretending lettuce is dinner.",
+        "tags": [
+          "skinnylicious",
+          "shrimp",
+          "lower calorie"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
         "name": "Tuscan Chicken",
         "calories": 590,
         "protein": 81,
@@ -2450,6 +2775,32 @@ export const RESTAURANTS: Restaurant[] = [
           "chicken",
           "highest protein",
           "skinnylicious"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "Kids' Grilled Chicken",
+        "calories": 460,
+        "protein": 33,
+        "description": "Kids' menu grilled chicken.",
+        "customization": "Honestly, kids' menu portions can be the move.",
+        "tags": [
+          "kids menu",
+          "chicken",
+          "high protein"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "Kids' Grilled Salmon",
+        "calories": 540,
+        "protein": 32,
+        "description": "Kids' menu grilled salmon.",
+        "customization": "Smaller portion, solid protein, still feels like real food.",
+        "tags": [
+          "kids menu",
+          "salmon",
+          "high protein"
         ],
         "source": "The Cheesecake Factory official nutritional guide"
       },
@@ -2468,6 +2819,20 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "The Cheesecake Factory official nutritional guide"
       },
       {
+        "name": "Factory Turkey Burger",
+        "calories": 940,
+        "protein": 49,
+        "description": "Full-size Factory Turkey Burger.",
+        "customization": "Higher calorie than SkinnyLicious, but useful for comparison.",
+        "tags": [
+          "turkey",
+          "burger",
+          "high protein",
+          "high calorie"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
         "name": "Classic Burger",
         "calories": 1280,
         "protein": 61,
@@ -2481,6 +2846,18 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "The Cheesecake Factory official nutritional guide"
       },
       {
+        "name": "Filet Mignon",
+        "calories": 840,
+        "protein": 67,
+        "description": "Filet mignon entrée.",
+        "customization": "High protein. Keep sides simple if you want the total to behave.",
+        "tags": [
+          "steak",
+          "highest protein"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
         "name": "Chicken Madeira",
         "calories": 1300,
         "protein": 89,
@@ -2489,6 +2866,44 @@ export const RESTAURANTS: Restaurant[] = [
         "tags": [
           "chicken",
           "highest protein",
+          "high calorie"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "Green Beans",
+        "calories": 140,
+        "protein": 3,
+        "description": "Side of green beans.",
+        "customization": "The side dish doing quiet hero work.",
+        "tags": [
+          "side",
+          "vegetable",
+          "lower calorie"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "Fresh Broccoli",
+        "calories": 260,
+        "protein": 8,
+        "description": "Side of fresh broccoli.",
+        "customization": "A higher-calorie veggie side than expected, but still useful.",
+        "tags": [
+          "side",
+          "vegetable"
+        ],
+        "source": "The Cheesecake Factory official nutritional guide"
+      },
+      {
+        "name": "French Fries",
+        "calories": 1060,
+        "protein": 11,
+        "description": "Side of French fries.",
+        "customization": "Listed because fries happen. Definitely a share-it situation.",
+        "tags": [
+          "side",
+          "fries",
           "high calorie"
         ],
         "source": "The Cheesecake Factory official nutritional guide"
