@@ -114,36 +114,6 @@ function proteinMood(minProtein: number) {
   return 'Casual mode. No spreadsheet behavior.';
 }
 
-function whyWeLikeIt(item: MenuItem, rank: number) {
-  const tags = item.tags.map(normalize);
-
-  if (rank === 0) {
-    return 'Best overall fit for your filters. The math is behaving, which is always suspicious but welcome.';
-  }
-
-  if (item.protein >= 45 && item.calories <= 700) {
-    return 'Big protein without turning lunch into a whole budgeting exercise.';
-  }
-
-  if (item.calories <= 500 && item.protein >= 25) {
-    return 'Light enough to feel strategic, with enough protein to actually count.';
-  }
-
-  if (tags.includes('side')) {
-    return 'Good side energy. Helpful when you want something extra without doing too much.';
-  }
-
-  if (tags.includes('breakfast')) {
-    return 'A breakfast pick that gives you more than vibes and a coffee receipt.';
-  }
-
-  if (item.protein >= 30) {
-    return 'Solid protein, realistic order, no secret-menu gymnastics required.';
-  }
-
-  return 'Not the leanest thing here, but still a workable order when it sounds good.';
-}
-
 export default function Page() {
   const [selectedRestaurantName, setSelectedRestaurantName] =
     useState('Chipotle');
@@ -441,11 +411,6 @@ export default function Page() {
                   </div>
 
                   <p className="description">{item.description}</p>
-
-                  <div className="whyBox">
-                    <strong>Why we like it</strong>
-                    <p>{whyWeLikeIt(item, Math.max(actualRank, index))}</p>
-                  </div>
 
                   <div className="orderBox">
                     <strong>How to order it</strong>
@@ -1188,30 +1153,6 @@ export default function Page() {
           color: rgba(55, 65, 81, 0.88);
           font-size: 16px;
           line-height: 1.55;
-        }
-
-        .whyBox {
-          margin-top: 16px;
-          border-radius: 22px;
-          padding: 16px;
-          background: rgba(255, 255, 255, 0.58);
-          border: 1px solid rgba(124, 58, 237, 0.14);
-          color: #312e81;
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68);
-        }
-
-        .whyBox strong {
-          display: block;
-          margin-bottom: 6px;
-          color: #6d28d9;
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 0.7px;
-        }
-
-        .whyBox p {
-          margin: 0;
-          line-height: 1.5;
         }
 
         .orderBox {
