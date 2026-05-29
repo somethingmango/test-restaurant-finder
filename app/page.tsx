@@ -476,10 +476,10 @@ export default function Page() {
           overflow: hidden;
           color: #1f2937;
           background:
-            radial-gradient(circle at 12% 10%, rgba(255, 214, 102, 0.78), transparent 31%),
-            radial-gradient(circle at 85% 14%, rgba(244, 114, 182, 0.44), transparent 32%),
-            radial-gradient(circle at 50% 92%, rgba(59, 130, 246, 0.38), transparent 36%),
-            linear-gradient(135deg, #fff7ed 0%, #f5d0fe 44%, #dbeafe 100%);
+            radial-gradient(circle at 14% 8%, rgba(251, 191, 36, 0.66), transparent 30%),
+            radial-gradient(circle at 82% 14%, rgba(194, 65, 12, 0.24), transparent 31%),
+            radial-gradient(circle at 52% 92%, rgba(20, 184, 166, 0.24), transparent 34%),
+            linear-gradient(135deg, #fff7ed 0%, #fed7aa 46%, #ffedd5 100%);
           font-family: Inter, ui-sans-serif, system-ui, -apple-system,
             BlinkMacSystemFont, 'Segoe UI', sans-serif;
           padding: 30px 16px 64px;
@@ -519,9 +519,9 @@ export default function Page() {
           border: 1px solid rgba(255, 255, 255, 0.58);
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.7),
-            0 12px 30px rgba(88, 28, 135, 0.12);
+            0 12px 30px rgba(120, 45, 8, 0.12);
           backdrop-filter: blur(18px);
-          color: #6d28d9;
+          color: #9a3f12;
           font-weight: 900;
           font-size: 13px;
           margin-bottom: 14px;
@@ -535,11 +535,11 @@ export default function Page() {
           font-size: 72px;
           line-height: 0.9;
           margin: 0;
-          color: #ffffff;
-          -webkit-text-stroke: 3px rgba(109, 40, 217, 0.86);
+          color: #8a3a11;
+          -webkit-text-stroke: 1px rgba(255, 255, 255, 0.72);
           text-shadow:
-            0 4px 0 rgba(109, 40, 217, 0.22),
-            0 14px 34px rgba(109, 40, 217, 0.24);
+            0 3px 0 rgba(255, 255, 255, 0.55),
+            0 14px 34px rgba(154, 63, 18, 0.26);
         }
 
         .mangoMark {
@@ -548,13 +548,13 @@ export default function Page() {
           flex: 0 0 auto;
           object-fit: contain;
           overflow: visible;
-          filter: drop-shadow(0 14px 20px rgba(109, 40, 217, 0.22));
+          filter: drop-shadow(0 14px 20px rgba(154, 63, 18, 0.22));
         }
 
         .mangoBodyStroke,
         .mangoLeafStroke {
           fill: none;
-          stroke: #6f43d6;
+          stroke: #9a3f12;
           stroke-linejoin: round;
           stroke-linecap: round;
         }
@@ -597,13 +597,13 @@ export default function Page() {
         .mangoWink,
         .mangoSmile {
           fill: none;
-          stroke: #581c87;
+          stroke: #5c260c;
           stroke-width: 8;
           stroke-linecap: round;
         }
 
         .mangoEye {
-          fill: #581c87;
+          fill: #5c260c;
         }
 
         .mangoCheek {
@@ -616,7 +616,7 @@ export default function Page() {
           font-weight: 950;
           letter-spacing: 2px;
           text-transform: uppercase;
-          color: #3b0764;
+          color: #5c260c;
         }
 
         .subtag {
@@ -639,7 +639,7 @@ export default function Page() {
           border: 1px solid rgba(255, 255, 255, 0.74);
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.86),
-            0 24px 70px rgba(88, 28, 135, 0.16);
+            0 24px 70px rgba(120, 45, 8, 0.16);
           backdrop-filter: blur(24px) saturate(1.4);
           -webkit-backdrop-filter: blur(24px) saturate(1.4);
         }
@@ -660,7 +660,7 @@ export default function Page() {
 
         .sectionKicker {
           margin: 0 0 5px;
-          color: #7c3aed;
+          color: #b45309;
           font-size: 12px;
           font-weight: 950;
           text-transform: uppercase;
@@ -707,9 +707,9 @@ export default function Page() {
           border-radius: 999px;
           padding: 7px 8px 7px 13px;
           background: rgba(255, 255, 255, 0.58);
-          border: 1px solid rgba(124, 58, 237, 0.16);
+          border: 1px solid rgba(154, 63, 18, 0.18);
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74);
-          color: #5b21b6;
+          color: #8a3a11;
           font-size: 12px;
           font-weight: 950;
           text-transform: uppercase;
@@ -737,9 +737,9 @@ export default function Page() {
 
         .restaurantChip {
           min-height: 72px;
-          border: 1px solid rgba(124, 58, 237, 0.16);
+          border: 1px solid rgba(154, 63, 18, 0.18);
           background: rgba(255, 255, 255, 0.48);
-          color: #312e81;
+          color: #5c260c;
           border-radius: 20px;
           padding: 13px 14px;
           text-align: left;
@@ -758,11 +758,11 @@ export default function Page() {
         }
 
         .restaurantChip.selected {
-          background: linear-gradient(135deg, rgba(34, 197, 94, 0.92), rgba(22, 163, 74, 0.86));
+          background: linear-gradient(135deg, rgba(154, 63, 18, 0.96), rgba(194, 65, 12, 0.9));
           border-color: rgba(255, 255, 255, 0.7);
           color: white;
           box-shadow:
-            0 14px 34px rgba(22, 163, 74, 0.24),
+            0 14px 34px rgba(154, 63, 18, 0.24),
             inset 0 1px 0 rgba(255, 255, 255, 0.34);
         }
 
@@ -779,7 +779,7 @@ export default function Page() {
 
         .restaurantChip small {
           margin-top: 8px;
-          color: rgba(49, 46, 129, 0.62);
+          color: rgba(92, 38, 12, 0.62);
           font-size: 12px;
           font-weight: 900;
         }
@@ -807,7 +807,7 @@ export default function Page() {
           padding: 18px;
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.76),
-            0 12px 30px rgba(76, 29, 149, 0.08);
+            0 12px 30px rgba(120, 45, 8, 0.08);
         }
 
         .sliderTop {
@@ -819,7 +819,7 @@ export default function Page() {
         }
 
         .sliderTop span {
-          color: #6b21a8;
+          color: #8a3a11;
           font-size: 13px;
           font-weight: 950;
           text-transform: uppercase;
@@ -930,16 +930,16 @@ export default function Page() {
 
         .categoryPill {
           min-height: 42px;
-          border: 1px solid rgba(124, 58, 237, 0.16);
+          border: 1px solid rgba(154, 63, 18, 0.18);
           border-radius: 999px;
           padding: 10px 14px;
           background: rgba(255, 255, 255, 0.54);
-          color: #5b21b6;
+          color: #8a3a11;
           font-size: 13px;
           font-weight: 950;
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.72),
-            0 10px 24px rgba(76, 29, 149, 0.08);
+            0 10px 24px rgba(120, 45, 8, 0.08);
           cursor: pointer;
           transition:
             transform 0.18s ease,
@@ -954,18 +954,18 @@ export default function Page() {
         }
 
         .categoryPill.selected {
-          background: linear-gradient(135deg, rgba(109, 40, 217, 0.95), rgba(22, 163, 74, 0.82));
+          background: linear-gradient(135deg, rgba(138, 58, 17, 0.96), rgba(234, 88, 12, 0.84));
           border-color: rgba(255, 255, 255, 0.72);
           color: white;
           box-shadow:
-            0 14px 32px rgba(109, 40, 217, 0.2),
+            0 14px 32px rgba(154, 63, 18, 0.22),
             inset 0 1px 0 rgba(255, 255, 255, 0.28);
         }
 
         .categoryPill.pickForMe {
-          background: linear-gradient(135deg, rgba(250, 204, 21, 0.9), rgba(236, 72, 153, 0.78));
+          background: linear-gradient(135deg, rgba(251, 146, 60, 0.94), rgba(154, 63, 18, 0.88));
           border-color: rgba(255, 255, 255, 0.78);
-          color: #3b0764;
+          color: white;
         }
 
         .categoryPill:disabled {
@@ -1001,17 +1001,17 @@ export default function Page() {
         }
 
         .resultCard.picked {
-          border-color: rgba(236, 72, 153, 0.36);
+          border-color: rgba(154, 63, 18, 0.38);
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.9),
-            0 24px 70px rgba(88, 28, 135, 0.16),
-            0 0 0 4px rgba(250, 204, 21, 0.22);
+            0 24px 70px rgba(120, 45, 8, 0.16),
+            0 0 0 4px rgba(251, 146, 60, 0.24);
         }
 
         .resultCard.picked::before {
           background:
-            radial-gradient(circle at top left, rgba(250, 204, 21, 0.28), transparent 34%),
-            radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.18), transparent 36%);
+            radial-gradient(circle at top left, rgba(251, 146, 60, 0.28), transparent 34%),
+            radial-gradient(circle at bottom right, rgba(154, 63, 18, 0.16), transparent 36%);
         }
 
         .rankBadge {
@@ -1025,9 +1025,9 @@ export default function Page() {
           border-radius: 999px;
           background: rgba(255, 255, 255, 0.72);
           border: 1px solid rgba(255, 255, 255, 0.86);
-          color: #6d28d9;
+          color: #9a3f12;
           font-weight: 950;
-          box-shadow: 0 8px 22px rgba(76, 29, 149, 0.12);
+          box-shadow: 0 8px 22px rgba(120, 45, 8, 0.12);
           z-index: 2;
         }
 
@@ -1144,8 +1144,8 @@ export default function Page() {
 
         .tagBadge.neutral {
           background: rgba(255, 255, 255, 0.58);
-          border-color: rgba(124, 58, 237, 0.14);
-          color: #6d28d9;
+          border-color: rgba(154, 63, 18, 0.16);
+          color: #9a3f12;
         }
 
         .description {
@@ -1200,7 +1200,7 @@ export default function Page() {
           border: 1px solid rgba(255, 255, 255, 0.76);
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.85),
-            0 12px 26px rgba(76, 29, 149, 0.08);
+            0 12px 26px rgba(120, 45, 8, 0.08);
         }
 
         .metricBubble.protein {
@@ -1250,16 +1250,16 @@ export default function Page() {
 
         .showMoreButton {
           min-height: 52px;
-          border: 1px solid rgba(124, 58, 237, 0.18);
+          border: 1px solid rgba(154, 63, 18, 0.2);
           border-radius: 999px;
           padding: 14px 18px;
           background: rgba(255, 255, 255, 0.62);
-          color: #5b21b6;
+          color: #8a3a11;
           font-size: 15px;
           font-weight: 950;
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.76),
-            0 18px 42px rgba(76, 29, 149, 0.12);
+            0 18px 42px rgba(120, 45, 8, 0.12);
           cursor: pointer;
           transition:
             transform 0.18s ease,
@@ -1273,7 +1273,7 @@ export default function Page() {
 
         .showMoreButton.secondary {
           background: rgba(255, 255, 255, 0.38);
-          color: rgba(91, 33, 182, 0.82);
+          color: rgba(138, 58, 17, 0.82);
         }
 
         @media (min-width: 980px) {
