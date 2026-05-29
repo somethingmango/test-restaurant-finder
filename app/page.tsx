@@ -86,6 +86,9 @@ export default function Page() {
     useState('Chipotle');
   const [maxCalories, setMaxCalories] = useState(700);
   const [minProtein, setMinProtein] = useState(20);
+  const [restaurantSort, setRestaurantSort] = useState<'featured' | 'az'>(
+    'featured'
+  );
 
   const restaurant = useMemo<Restaurant | undefined>(() => {
     return RESTAURANTS.find(
@@ -103,6 +106,14 @@ export default function Page() {
     return smartRank(filteredItems);
   }, [restaurant, maxCalories, minProtein]);
 
+  const visibleRestaurants = useMemo(() => {
+    if (restaurantSort === 'az') {
+      return [...RESTAURANTS].sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    return RESTAURANTS;
+  }, [restaurantSort]);
+
   const displayTitle = restaurant ? restaurant.name : selectedRestaurantName;
   const displayNote = restaurant?.note || 'Pick a restaurant to get started.';
   const maxCaloriesMin = 250;
@@ -115,7 +126,12 @@ export default function Page() {
       <section className="shell">
         <header className="hero">
           <div className="eyebrow">Like, fast food, but make it skinny.</div>
-          <h1>Skinny Mango’s</h1>
+          <h1>
+            <span className="mangoMark" aria-hidden="true">
+              <span className="mangoLeaf" />
+            </span>
+            Skinny Mango
+          </h1>
           <p className="tagline">Healthy Food Finder</p>
           <p className="subtag">
             Pick a chain and find lower-calorie, higher-protein options that
@@ -127,13 +143,28 @@ export default function Page() {
           <div className="sectionHeader">
             <div>
               <p className="sectionKicker">Pick your restaurant</p>
-              <h2>Where are we pretending to be responsible?</h2>
+              <h2>Hack your menu</h2>
             </div>
-            <div className="miniPill">{RESTAURANTS.length} chains</div>
+            <div className="pickerActions">
+              <label className="sortControl">
+                <span>Sort</span>
+                <select
+                  value={restaurantSort}
+                  onChange={(event) =>
+                    setRestaurantSort(event.target.value as 'featured' | 'az')
+                  }
+                  aria-label="Sort restaurants"
+                >
+                  <option value="featured">Featured</option>
+                  <option value="az">A-Z</option>
+                </select>
+              </label>
+              <div className="miniPill">{RESTAURANTS.length} chains</div>
+            </div>
           </div>
 
           <div className="restaurantGrid">
-            {RESTAURANTS.map((chain) => {
+            {visibleRestaurants.map((chain) => {
               const selected = chain.name === selectedRestaurantName;
 
               return (
@@ -246,7 +277,7 @@ export default function Page() {
                       >
                         i
                       </button>
-                      <span className="scoreTooltip">
+                      <span className="scoreTooltip" role="tooltip">
                         Protein score compares protein to calories. Higher
                         means more protein for fewer calories.
                       </span>
@@ -361,12 +392,44 @@ export default function Page() {
         }
 
         h1 {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 18px;
           font-size: 72px;
           line-height: 0.9;
           margin: 0;
-          color: rgba(255, 255, 255, 0.92);
-          -webkit-text-stroke: 2px rgba(109, 40, 217, 0.8);
-          text-shadow: 0 10px 30px rgba(109, 40, 217, 0.2);
+          color: #ffffff;
+          -webkit-text-stroke: 3px rgba(109, 40, 217, 0.86);
+          text-shadow:
+            0 4px 0 rgba(109, 40, 217, 0.22),
+            0 14px 34px rgba(109, 40, 217, 0.24);
+        }
+
+        .mangoMark {
+          position: relative;
+          width: 54px;
+          height: 66px;
+          flex: 0 0 auto;
+          border-radius: 56% 44% 52% 48%;
+          background: linear-gradient(145deg, #facc15, #fb923c 62%, #f97316);
+          border: 3px solid rgba(109, 40, 217, 0.78);
+          box-shadow:
+            inset 0 2px 0 rgba(255, 255, 255, 0.58),
+            0 12px 24px rgba(109, 40, 217, 0.18);
+          transform: rotate(-12deg);
+        }
+
+        .mangoLeaf {
+          position: absolute;
+          top: -12px;
+          right: -8px;
+          width: 24px;
+          height: 14px;
+          border-radius: 999px 999px 999px 0;
+          background: #16a34a;
+          border: 2px solid rgba(109, 40, 217, 0.72);
+          transform: rotate(24deg);
         }
 
         .tagline {
@@ -448,6 +511,44 @@ export default function Page() {
           font-size: 12px;
           font-weight: 950;
           padding: 9px 12px;
+        }
+
+        .pickerActions {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+
+        .sortControl {
+          min-height: 42px;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          border-radius: 999px;
+          padding: 7px 8px 7px 13px;
+          background: rgba(255, 255, 255, 0.58);
+          border: 1px solid rgba(124, 58, 237, 0.16);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74);
+          color: #5b21b6;
+          font-size: 12px;
+          font-weight: 950;
+          text-transform: uppercase;
+          letter-spacing: 0.7px;
+        }
+
+        .sortControl select {
+          border: none;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.78);
+          color: #111827;
+          font: inherit;
+          text-transform: none;
+          letter-spacing: 0;
+          padding: 7px 28px 7px 10px;
+          outline: none;
+          cursor: pointer;
         }
 
         .restaurantGrid {
@@ -654,7 +755,7 @@ export default function Page() {
           display: grid;
           grid-template-columns: 1fr 230px;
           gap: 22px;
-          overflow: hidden;
+          overflow: visible;
         }
 
         .resultCard::before {
@@ -665,6 +766,7 @@ export default function Page() {
             radial-gradient(circle at top left, rgba(255, 255, 255, 0.65), transparent 34%),
             radial-gradient(circle at bottom right, rgba(22, 163, 74, 0.11), transparent 36%);
           pointer-events: none;
+          border-radius: inherit;
         }
 
         .rankBadge {
@@ -731,7 +833,7 @@ export default function Page() {
         .scoreTooltip {
           position: absolute;
           left: 50%;
-          bottom: calc(100% + 10px);
+          top: calc(100% + 10px);
           width: 230px;
           transform: translateX(-50%);
           padding: 10px 12px;
@@ -746,6 +848,7 @@ export default function Page() {
           opacity: 0;
           pointer-events: none;
           transition: opacity 0.16s ease;
+          z-index: 5;
         }
 
         .infoWrap:hover .scoreTooltip,
@@ -928,6 +1031,13 @@ export default function Page() {
 
           h1 {
             font-size: 58px;
+            gap: 12px;
+          }
+
+          .mangoMark {
+            width: 42px;
+            height: 52px;
+            border-width: 2px;
           }
 
           .tagline {
@@ -978,6 +1088,15 @@ export default function Page() {
         @media (max-width: 520px) {
           h1 {
             font-size: 48px;
+          }
+
+          .mangoMark {
+            width: 36px;
+            height: 44px;
+          }
+
+          .pickerActions {
+            justify-content: flex-start;
           }
 
           .pickerGlass,
