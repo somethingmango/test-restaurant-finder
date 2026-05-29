@@ -151,20 +151,6 @@ function restaurantQuip(name: string) {
   return quips[name] || 'Fast food, but with a tiny bit of strategy.';
 }
 
-function mangoVerdict(item: MenuItem) {
-  const tags = item.tags.map(normalize);
-
-  if (tags.includes('side') || tags.includes('fries')) return 'Cute little side quest';
-  if (item.protein >= 45 && item.calories <= 750) return 'Protein hero';
-  if (item.calories <= 500 && item.protein >= 20) return 'Suspiciously solid';
-  if (item.calories >= 900) return 'Worth it, but behave';
-  if (item.calories >= 700) return 'Split with a friend';
-  if (tags.includes('breakfast')) return 'Morning chaos approved';
-  if (tags.includes('vegetarian')) return 'Plant-ish plot twist';
-
-  return 'Actually pretty solid';
-}
-
 export default function Page() {
   const [selectedRestaurantName, setSelectedRestaurantName] =
     useState('Chipotle');
@@ -454,8 +440,6 @@ export default function Page() {
                       </span>
                     </span>
                   </div>
-
-                  <div className="verdictBadge">{mangoVerdict(item)}</div>
 
                   <h3>{item.name}</h3>
 
@@ -1125,20 +1109,6 @@ export default function Page() {
           text-transform: uppercase;
           letter-spacing: 0.7px;
           margin-bottom: 10px;
-        }
-
-        .verdictBadge {
-          width: fit-content;
-          max-width: 100%;
-          margin: 0 0 12px;
-          border-radius: 999px;
-          padding: 8px 11px;
-          background: rgba(255, 247, 237, 0.78);
-          border: 1px solid rgba(154, 63, 18, 0.18);
-          color: #8a3a11;
-          font-size: 12px;
-          font-weight: 950;
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76);
         }
 
         .scoreWithInfo {
