@@ -8,9 +8,9 @@ type CategoryFilter = 'best' | 'under500' | 'highProtein' | 'sides' | 'breakfast
 const CATEGORY_FILTERS: { id: CategoryFilter; label: string }[] = [
   { id: 'best', label: 'Best Picks' },
   { id: 'under500', label: 'Under 500' },
-  { id: 'highProtein', label: 'High Protein' },
-  { id: 'sides', label: 'Sides' },
-  { id: 'breakfast', label: 'Breakfast' },
+  { id: 'highProtein', label: 'Protein-ish' },
+  { id: 'sides', label: 'Side Quests' },
+  { id: 'breakfast', label: 'Breakfast Chaos' },
 ];
 
 const DEFAULT_VISIBLE_RESULTS = 5;
@@ -114,6 +114,57 @@ function proteinMood(minProtein: number) {
   return 'Casual mode. No spreadsheet behavior.';
 }
 
+function categoryMicrocopy(category: CategoryFilter) {
+  if (category === 'under500') return 'Tiny calorie budget, big main character energy.';
+  if (category === 'highProtein') return 'The protein is, unfortunately, protein-ing.';
+  if (category === 'sides') return 'Fries count as emotional support. Sometimes.';
+  if (category === 'breakfast') return 'For when breakfast is a meal, a mood, and a negotiation.';
+  return 'The most workable picks rise to the top. As they should.';
+}
+
+function restaurantQuip(name: string) {
+  const quips: Record<string, string> = {
+    'Applebee’s': 'Portions entered the chat.',
+    'Burger King': 'The flame-broiled era can still be managed.',
+    'Chick-fil-A': 'Sauce math matters. Tragically.',
+    'Chipotle': 'Bowls remain undefeated.',
+    'Chili’s': 'Skillet energy, but make it survivable.',
+    'Dunkin’': 'Coffee run, but with a plan.',
+    'Five Guys': 'The fries are not a side. They are an event.',
+    IHOP: 'Pancakes are a personality test.',
+    'Jersey Mike’s': 'Mini, tub, or regular. Choose your fighter.',
+    KFC: 'The chicken is iconic. The sides are persuasive.',
+    'McDonald’s': 'The drive-thru can be negotiated with.',
+    Panera: 'Bakery case temptation is legally very strong.',
+    Popeyes: 'Blackened tenders are doing the heavy lifting.',
+    Qdoba: 'Queso is a condiment and a lifestyle choice.',
+    'Shake Shack': 'Burger math, but cuter.',
+    Starbucks: 'Breakfast that does not have to be a cake slice.',
+    Subway: 'Sauce restraint is the plot twist.',
+    'Taco Bell': 'Customization is the love language.',
+    'The Cheesecake Factory': 'The menu is a novel. We brought bookmarks.',
+    'Wendy’s': 'Chili and baked potato remain suspiciously useful.',
+    'White Castle': 'Tiny sliders, big decisions.',
+    Wingstop: 'Ranch is where calories go to hide.',
+  };
+
+  return quips[name] || 'Fast food, but with a tiny bit of strategy.';
+}
+
+function mangoVerdict(item: MenuItem) {
+  const tags = item.tags.map(normalize);
+
+  if (tags.includes('side') || tags.includes('fries')) return 'Cute little side quest';
+  if (item.protein >= 45 && item.calories <= 750) return 'Protein hero';
+  if (item.calories <= 500 && item.protein >= 20) return 'Suspiciously solid';
+  if (item.calories >= 900) return 'Worth it, but behave';
+  if (item.calories >= 700) return 'Split with a friend';
+  if (tags.includes('breakfast')) return 'Morning chaos approved';
+  if (tags.includes('vegetarian')) return 'Plant-ish plot twist';
+
+  return 'Actually pretty solid';
+}
+
 export default function Page() {
   const [selectedRestaurantName, setSelectedRestaurantName] =
     useState('Chipotle');
@@ -184,6 +235,7 @@ export default function Page() {
 
   const displayTitle = restaurant ? restaurant.name : selectedRestaurantName;
   const displayNote = restaurant?.note || 'Pick a restaurant to get started.';
+  const pickButtonLabel = pickedItemName ? 'The mango has spoken' : 'Pick for me';
   const maxCaloriesMin = 250;
   const maxCaloriesMax = 1500;
   const minProteinMin = 0;
@@ -327,9 +379,12 @@ export default function Page() {
             <p className="sectionKicker">Best bets right now</p>
             <h2>{displayTitle}</h2>
             <p>{displayNote}</p>
+            <p className="restaurantQuip">{restaurantQuip(displayTitle)}</p>
           </div>
           <div className="countBubble">{results.length} matches</div>
         </section>
+
+        <p className="categoryHint">{categoryMicrocopy(categoryFilter)}</p>
 
         <section className="categoryBar" aria-label="Meal categories">
           <button
@@ -338,7 +393,7 @@ export default function Page() {
             onClick={pickForMe}
             disabled={results.length === 0}
           >
-            Pick for me
+            {pickButtonLabel}
           </button>
 
           {CATEGORY_FILTERS.map((filter) => (
@@ -379,7 +434,7 @@ export default function Page() {
                 <div className="resultMain">
                   <div className="resultMeta">
                     <span>
-                      {pickedForUser ? 'Picked for you' : 'Best match'}
+                      {pickedForUser ? 'Mango picked this' : 'Best match'}
                     </span>
                     <span>•</span>
                     <span className="scoreWithInfo">
@@ -399,6 +454,8 @@ export default function Page() {
                       </span>
                     </span>
                   </div>
+
+                  <div className="verdictBadge">{mangoVerdict(item)}</div>
 
                   <h3>{item.name}</h3>
 
@@ -462,7 +519,7 @@ export default function Page() {
             <section className="empty glassCard">
               <h2>No options match those filters</h2>
               <p>
-                Try another chain, raise max calories, or lower minimum protein.
+                Nothing matches. The sliders are being a little dramatic.
               </p>
             </section>
           )}
@@ -903,10 +960,17 @@ export default function Page() {
           line-height: 1.08;
         }
 
-        .resultHeader p:last-child {
+        .resultHeader p {
           margin: 6px 0 0;
           color: rgba(75, 85, 99, 0.84);
           line-height: 1.45;
+        }
+
+        .restaurantQuip {
+          margin: 8px 0 0;
+          color: #8a3a11;
+          font-size: 14px;
+          font-weight: 900;
         }
 
         .countBubble {
@@ -925,7 +989,14 @@ export default function Page() {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
-          margin: -4px 0 18px;
+          margin: 0 0 18px;
+        }
+
+        .categoryHint {
+          margin: -4px 0 12px;
+          color: rgba(92, 38, 12, 0.78);
+          font-size: 14px;
+          font-weight: 900;
         }
 
         .categoryPill {
@@ -960,12 +1031,17 @@ export default function Page() {
           box-shadow:
             0 14px 32px rgba(154, 63, 18, 0.22),
             inset 0 1px 0 rgba(255, 255, 255, 0.28);
+          animation: softGlow 2.6s ease-in-out infinite;
         }
 
         .categoryPill.pickForMe {
           background: linear-gradient(135deg, rgba(251, 146, 60, 0.94), rgba(154, 63, 18, 0.88));
           border-color: rgba(255, 255, 255, 0.78);
           color: white;
+        }
+
+        .categoryPill.pickForMe:not(:disabled):active {
+          transform: translateY(1px) scale(0.98);
         }
 
         .categoryPill:disabled {
@@ -1006,6 +1082,7 @@ export default function Page() {
             inset 0 1px 0 rgba(255, 255, 255, 0.9),
             0 24px 70px rgba(120, 45, 8, 0.16),
             0 0 0 4px rgba(251, 146, 60, 0.24);
+          animation: pickedPop 0.28s ease-out;
         }
 
         .resultCard.picked::before {
@@ -1048,6 +1125,20 @@ export default function Page() {
           text-transform: uppercase;
           letter-spacing: 0.7px;
           margin-bottom: 10px;
+        }
+
+        .verdictBadge {
+          width: fit-content;
+          max-width: 100%;
+          margin: 0 0 12px;
+          border-radius: 999px;
+          padding: 8px 11px;
+          background: rgba(255, 247, 237, 0.78);
+          border: 1px solid rgba(154, 63, 18, 0.18);
+          color: #8a3a11;
+          font-size: 12px;
+          font-weight: 950;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76);
         }
 
         .scoreWithInfo {
@@ -1274,6 +1365,38 @@ export default function Page() {
         .showMoreButton.secondary {
           background: rgba(255, 255, 255, 0.38);
           color: rgba(138, 58, 17, 0.82);
+        }
+
+        @keyframes pickedPop {
+          0% {
+            transform: translateY(8px) scale(0.985);
+          }
+
+          100% {
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        @keyframes softGlow {
+          0%,
+          100% {
+            box-shadow:
+              0 14px 32px rgba(154, 63, 18, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.28);
+          }
+
+          50% {
+            box-shadow:
+              0 16px 38px rgba(154, 63, 18, 0.32),
+              inset 0 1px 0 rgba(255, 255, 255, 0.34);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .categoryPill.selected,
+          .resultCard.picked {
+            animation: none;
+          }
         }
 
         @media (min-width: 980px) {
