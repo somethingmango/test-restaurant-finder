@@ -538,17 +538,6 @@ export default function Page() {
           pointer-events: none;
         }
 
-        .page::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background:
-            linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.26) 21%, transparent 39%),
-            radial-gradient(circle at 72% 10%, rgba(255, 255, 255, 0.32), transparent 24%);
-          mix-blend-mode: soft-light;
-          pointer-events: none;
-        }
-
         .shell {
           position: relative;
           z-index: 1;
@@ -567,13 +556,10 @@ export default function Page() {
           justify-content: center;
           padding: 9px 14px;
           border-radius: 999px;
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.34)),
-            rgba(255, 255, 255, 0.46);
-          border: 1px solid rgba(255, 255, 255, 0.82);
+          background: rgba(255, 255, 255, 0.46);
+          border: 1px solid rgba(255, 255, 255, 0.58);
           box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.95),
-            inset 0 -10px 22px rgba(255, 255, 255, 0.16),
+            inset 0 1px 0 rgba(255, 255, 255, 0.7),
             0 12px 30px rgba(120, 45, 8, 0.12);
           backdrop-filter: blur(18px);
           color: #9a3f12;
@@ -686,49 +672,23 @@ export default function Page() {
         .filterGlass,
         .glassCard,
         .resultCard {
-          position: relative;
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.28) 48%, rgba(255, 255, 255, 0.42)),
-            linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 247, 237, 0.24));
-          border: 1px solid rgba(255, 255, 255, 0.88);
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.68),
+            rgba(255, 255, 255, 0.34)
+          );
+          border: 1px solid rgba(255, 255, 255, 0.74);
           box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.96),
-            inset 0 -18px 34px rgba(255, 255, 255, 0.18),
-            0 2px 0 rgba(255, 255, 255, 0.44),
-            0 28px 76px rgba(120, 45, 8, 0.18);
-          backdrop-filter: blur(30px) saturate(1.55);
-          -webkit-backdrop-filter: blur(30px) saturate(1.55);
-        }
-
-        .pickerGlass::before,
-        .filterGlass::before,
-        .glassCard::before,
-        .resultCard::after {
-          content: '';
-          position: absolute;
-          left: 18px;
-          right: 18px;
-          top: 10px;
-          height: 36%;
-          border-radius: inherit;
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.06));
-          pointer-events: none;
-          z-index: 0;
+            inset 0 1px 0 rgba(255, 255, 255, 0.86),
+            0 24px 70px rgba(120, 45, 8, 0.16);
+          backdrop-filter: blur(24px) saturate(1.4);
+          -webkit-backdrop-filter: blur(24px) saturate(1.4);
         }
 
         .pickerGlass {
           border-radius: 30px;
           padding: 20px;
           overflow: hidden;
-        }
-
-        .sectionHeader,
-        .restaurantGrid,
-        .filters,
-        .resultHeader > *,
-        .resultCard > * {
-          position: relative;
-          z-index: 1;
         }
 
         .sectionHeader {
@@ -787,13 +747,9 @@ export default function Page() {
           gap: 8px;
           border-radius: 999px;
           padding: 7px 8px 7px 13px;
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.36)),
-            rgba(255, 255, 255, 0.58);
-          border: 1px solid rgba(255, 255, 255, 0.82);
-          box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.9),
-            0 10px 22px rgba(120, 45, 8, 0.08);
+          background: rgba(255, 255, 255, 0.58);
+          border: 1px solid rgba(154, 63, 18, 0.18);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74);
           color: #8a3a11;
           font-size: 12px;
           font-weight: 950;
@@ -804,7 +760,7 @@ export default function Page() {
         .sortControl select {
           border: none;
           border-radius: 999px;
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.7));
+          background: rgba(255, 255, 255, 0.78);
           color: #111827;
           font: inherit;
           text-transform: none;
@@ -823,17 +779,13 @@ export default function Page() {
         .restaurantChip {
           min-height: 72px;
           border: 1px solid rgba(154, 63, 18, 0.18);
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.34)),
-            rgba(255, 255, 255, 0.48);
+          background: rgba(255, 255, 255, 0.48);
           color: #5c260c;
           border-radius: 20px;
           padding: 13px 14px;
           text-align: left;
           cursor: pointer;
-          box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.86),
-            inset 0 -12px 22px rgba(255, 255, 255, 0.12);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
           transition:
             transform 0.18s ease,
             background 0.18s ease,
@@ -847,9 +799,7 @@ export default function Page() {
         }
 
         .restaurantChip.selected {
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent 44%),
-            linear-gradient(135deg, rgba(154, 63, 18, 0.96), rgba(194, 65, 12, 0.9));
+          background: linear-gradient(135deg, rgba(154, 63, 18, 0.96), rgba(194, 65, 12, 0.9));
           border-color: rgba(255, 255, 255, 0.7);
           color: white;
           box-shadow:
@@ -893,14 +843,11 @@ export default function Page() {
 
         .sliderCard {
           border-radius: 24px;
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.3)),
-            rgba(255, 255, 255, 0.52);
-          border: 1px solid rgba(255, 255, 255, 0.82);
+          background: rgba(255, 255, 255, 0.52);
+          border: 1px solid rgba(255, 255, 255, 0.72);
           padding: 18px;
           box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.94),
-            inset 0 -14px 24px rgba(255, 255, 255, 0.14),
+            inset 0 1px 0 rgba(255, 255, 255, 0.76),
             0 12px 30px rgba(120, 45, 8, 0.08);
         }
 
@@ -1041,15 +988,12 @@ export default function Page() {
           border: 1px solid rgba(154, 63, 18, 0.18);
           border-radius: 999px;
           padding: 10px 14px;
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.34)),
-            rgba(255, 255, 255, 0.54);
+          background: rgba(255, 255, 255, 0.54);
           color: #8a3a11;
           font-size: 13px;
           font-weight: 950;
           box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.92),
-            inset 0 -10px 18px rgba(255, 255, 255, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.72),
             0 10px 24px rgba(120, 45, 8, 0.08);
           cursor: pointer;
           transition:
@@ -1065,9 +1009,7 @@ export default function Page() {
         }
 
         .categoryPill.selected {
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 44%),
-            linear-gradient(135deg, rgba(138, 58, 17, 0.96), rgba(234, 88, 12, 0.84));
+          background: linear-gradient(135deg, rgba(138, 58, 17, 0.96), rgba(234, 88, 12, 0.84));
           border-color: rgba(255, 255, 255, 0.72);
           color: white;
           box-shadow:
@@ -1077,9 +1019,7 @@ export default function Page() {
         }
 
         .categoryPill.pickForMe {
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 44%),
-            linear-gradient(135deg, rgba(251, 146, 60, 0.94), rgba(154, 63, 18, 0.88));
+          background: linear-gradient(135deg, rgba(251, 146, 60, 0.94), rgba(154, 63, 18, 0.88));
           border-color: rgba(255, 255, 255, 0.78);
           color: white;
         }
@@ -1114,12 +1054,10 @@ export default function Page() {
           position: absolute;
           inset: 0;
           background:
-            linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.26) 32%, transparent 50%),
-            radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 34%),
+            radial-gradient(circle at top left, rgba(255, 255, 255, 0.65), transparent 34%),
             radial-gradient(circle at bottom right, rgba(22, 163, 74, 0.11), transparent 36%);
           pointer-events: none;
           border-radius: inherit;
-          z-index: 0;
         }
 
         .resultCard.picked {
@@ -1146,9 +1084,7 @@ export default function Page() {
           display: grid;
           place-items: center;
           border-radius: 999px;
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.48)),
-            rgba(255, 255, 255, 0.72);
+          background: rgba(255, 255, 255, 0.72);
           border: 1px solid rgba(255, 255, 255, 0.86);
           color: #9a3f12;
           font-weight: 950;
@@ -1247,7 +1183,6 @@ export default function Page() {
           font-size: 12px;
           font-weight: 950;
           border: 1px solid transparent;
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
         }
 
         .tagBadge.positive {
@@ -1285,14 +1220,10 @@ export default function Page() {
           margin-top: 16px;
           border-radius: 22px;
           padding: 16px;
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(220, 252, 231, 0.44)),
-            rgba(220, 252, 231, 0.55);
-          border: 1px solid rgba(255, 255, 255, 0.76);
+          background: rgba(220, 252, 231, 0.55);
+          border: 1px solid rgba(22, 163, 74, 0.22);
           color: #14532d;
-          box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.9),
-            inset 0 -14px 24px rgba(255, 255, 255, 0.12);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
         }
 
         .orderBox strong {
@@ -1326,13 +1257,10 @@ export default function Page() {
           border-radius: 24px;
           padding: 18px;
           text-align: center;
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.34)),
-            rgba(255, 255, 255, 0.58);
-          border: 1px solid rgba(255, 255, 255, 0.88);
+          background: rgba(255, 255, 255, 0.58);
+          border: 1px solid rgba(255, 255, 255, 0.76);
           box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.96),
-            inset 0 -16px 28px rgba(255, 255, 255, 0.14),
+            inset 0 1px 0 rgba(255, 255, 255, 0.85),
             0 12px 26px rgba(120, 45, 8, 0.08);
         }
 
