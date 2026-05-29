@@ -126,15 +126,7 @@ export default function Page() {
       <section className="shell">
         <header className="hero">
           <div className="eyebrow">Like, fast food, but make it skinny.</div>
-          <h1>
-            <img
-              className="mangoMark"
-              src="/mango-logo.png?v=2"
-              alt=""
-              aria-hidden="true"
-            />
-            Skinny Mango
-          </h1>
+          <h1>Skinny Mango</h1>
           <p className="tagline">Healthy Food Finder</p>
           <p className="subtag">
             Pick a chain and find lower-calorie, higher-protein options that
