@@ -702,7 +702,8 @@ export default function Page() {
 
         .pickerGlass::before,
         .filterGlass::before,
-        .glassCard::before {
+        .glassCard::before,
+        .resultCard::after {
           content: '';
           position: absolute;
           left: 18px;
@@ -1161,16 +1162,6 @@ export default function Page() {
           z-index: 1;
         }
 
-        .resultMain {
-          grid-column: 1;
-          grid-row: 1;
-        }
-
-        .metrics {
-          grid-column: 2;
-          grid-row: 1;
-        }
-
         .resultMeta {
           display: flex;
           align-items: center;
@@ -1463,19 +1454,6 @@ export default function Page() {
 
           .resultCard {
             grid-template-columns: 1fr;
-          }
-
-          .resultMain,
-          .metrics {
-            grid-column: 1;
-          }
-
-          .resultMain {
-            grid-row: 1;
-          }
-
-          .metrics {
-            grid-row: 2;
           }
 
           .metrics {
