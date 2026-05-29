@@ -127,17 +127,80 @@ export default function Page() {
         <header className="hero">
           <div className="eyebrow">Like, fast food, but make it skinny.</div>
           <h1>
-            <span className="mangoMark" aria-hidden="true">
-              <span className="mangoLeaf" />
-              <span className="mangoInnerRim" />
-              <span className="mangoShine" />
-              <span className="mangoFace">
-                <span className="mangoEye open" />
-                <span className="mangoEye wink" />
-                <span className="mangoSmile" />
-              </span>
-              <span className="mangoCheek" />
-            </span>
+            <svg
+              className="mangoMark"
+              viewBox="0 0 180 230"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="mangoBody" x1="30" y1="58" x2="148" y2="207">
+                  <stop offset="0" stopColor="#ffdf38" />
+                  <stop offset="0.5" stopColor="#ffc21e" />
+                  <stop offset="1" stopColor="#ff8518" />
+                </linearGradient>
+                <linearGradient id="mangoLeaf" x1="58" y1="14" x2="166" y2="59">
+                  <stop offset="0" stopColor="#71e9a4" />
+                  <stop offset="0.58" stopColor="#36ce76" />
+                  <stop offset="1" stopColor="#20a951" />
+                </linearGradient>
+                <radialGradient id="leafShine" cx="33%" cy="24%" r="60%">
+                  <stop offset="0" stopColor="#a7f3c4" stopOpacity="0.78" />
+                  <stop offset="0.42" stopColor="#a7f3c4" stopOpacity="0" />
+                </radialGradient>
+                <radialGradient id="bodyGlow" cx="24%" cy="29%" r="72%">
+                  <stop offset="0" stopColor="#fff085" stopOpacity="0.68" />
+                  <stop offset="0.54" stopColor="#fff085" stopOpacity="0.16" />
+                  <stop offset="1" stopColor="#fff085" stopOpacity="0" />
+                </radialGradient>
+                <linearGradient id="bodyShade" x1="81" y1="57" x2="145" y2="197">
+                  <stop offset="0" stopColor="#f59e0b" stopOpacity="0" />
+                  <stop offset="1" stopColor="#ef6c00" stopOpacity="0.22" />
+                </linearGradient>
+              </defs>
+              <path
+                className="mangoBodyStroke"
+                d="M88 50C44 54 16 99 14 142c-2 56 34 89 82 91 49 2 79-34 77-88-2-55-34-99-85-95Z"
+              />
+              <path
+                className="mangoBodyFill"
+                d="M88 50C44 54 16 99 14 142c-2 56 34 89 82 91 49 2 79-34 77-88-2-55-34-99-85-95Z"
+              />
+              <path
+                className="mangoBodyGlow"
+                d="M88 50C44 54 16 99 14 142c-2 56 34 89 82 91 49 2 79-34 77-88-2-55-34-99-85-95Z"
+              />
+              <path
+                className="mangoBodyShade"
+                d="M99 55c30 30 43 74 35 113-8 38-36 58-76 57 12 6 25 8 38 8 49 2 79-34 77-88-2-48-26-88-74-90Z"
+              />
+              <path
+                className="mangoInnerRim"
+                d="M78 58C48 66 25 101 25 142c0 44 25 72 61 80"
+              />
+              <path
+                className="mangoLeafStroke"
+                d="M74 18c25 2 66 10 85 18 22 9 29 31 17 47-10 14-31 13-52 8L53 75c5-29 8-58 21-57Z"
+              />
+              <path
+                className="mangoLeafFill"
+                d="M74 18c25 2 66 10 85 18 22 9 29 31 17 47-10 14-31 13-52 8L53 75c5-29 8-58 21-57Z"
+              />
+              <path
+                className="mangoLeafHighlight"
+                d="M74 18c25 2 66 10 85 18 22 9 29 31 17 47-10 14-31 13-52 8L53 75c5-29 8-58 21-57Z"
+              />
+              <path className="mangoWink" d="M47 132c8-16 30-16 39 0" />
+              <circle className="mangoEye" cx="112" cy="125" r="15" />
+              <path className="mangoSmile" d="M66 160c10 28 48 28 58 0" />
+              <ellipse
+                className="mangoCheek"
+                cx="128"
+                cy="151"
+                rx="18"
+                ry="13"
+                transform="rotate(-12 128 151)"
+              />
+            </svg>
             Skinny Mango
           </h1>
           <p className="tagline">Healthy Food Finder</p>
@@ -415,116 +478,70 @@ export default function Page() {
         }
 
         .mangoMark {
-          position: relative;
-          width: 82px;
-          height: 112px;
+          width: 128px;
+          height: 164px;
           flex: 0 0 auto;
-          border-radius: 52% 48% 50% 50% / 58% 54% 46% 42%;
-          background:
-            radial-gradient(ellipse at 29% 30%, rgba(255, 239, 148, 0.78), transparent 34%),
-            radial-gradient(ellipse at 32% 72%, rgba(255, 219, 92, 0.72), transparent 42%),
-            linear-gradient(122deg, #ffd433 0%, #ffc01f 44%, #ff9d19 70%, #ff7a18 100%);
-          border: 7px solid #6f43d6;
-          box-shadow:
-            inset -18px -18px 0 rgba(232, 102, 13, 0.15),
-            0 14px 26px rgba(109, 40, 217, 0.18);
-          transform: rotate(4deg);
           overflow: visible;
+          filter: drop-shadow(0 14px 20px rgba(109, 40, 217, 0.22));
         }
 
-        .mangoLeaf {
-          position: absolute;
-          top: -22px;
-          right: -9px;
-          width: 78px;
-          height: 40px;
-          border-radius: 34px 38px 35px 10px;
-          background:
-            radial-gradient(circle at 28% 24%, rgba(134, 239, 172, 0.82), transparent 24%),
-            linear-gradient(135deg, #62dda0 0%, #24c06d 60%, #16a34a 100%);
-          border: 7px solid #6f43d6;
-          transform: rotate(12deg);
-          box-shadow:
-            inset 0 2px 0 rgba(255, 255, 255, 0.35),
-            inset -8px -5px 0 rgba(21, 128, 61, 0.12);
-          z-index: 1;
+        .mangoBodyStroke,
+        .mangoLeafStroke {
+          fill: none;
+          stroke: #6f43d6;
+          stroke-linejoin: round;
+          stroke-linecap: round;
+        }
+
+        .mangoBodyStroke {
+          stroke-width: 16;
+        }
+
+        .mangoLeafStroke {
+          stroke-width: 14;
+        }
+
+        .mangoBodyFill {
+          fill: url(#mangoBody);
+        }
+
+        .mangoBodyGlow {
+          fill: url(#bodyGlow);
+        }
+
+        .mangoBodyShade {
+          fill: url(#bodyShade);
         }
 
         .mangoInnerRim {
-          position: absolute;
-          inset: 10px 9px 8px 7px;
-          border-radius: 52% 48% 50% 50% / 58% 54% 46% 42%;
-          border-left: 5px solid rgba(255, 247, 204, 0.9);
-          border-top: 4px solid rgba(255, 247, 204, 0.84);
-          transform: rotate(-1deg);
-          pointer-events: none;
-          z-index: 2;
+          fill: none;
+          stroke: rgba(255, 247, 204, 0.92);
+          stroke-width: 7;
+          stroke-linecap: round;
         }
 
-        .mangoShine {
-          position: absolute;
-          right: 10px;
-          bottom: 20px;
-          width: 38px;
-          height: 70px;
-          border-radius: 999px;
-          background: linear-gradient(180deg, rgba(255, 214, 93, 0.24), rgba(255, 122, 24, 0.15));
-          transform: rotate(-20deg);
-          z-index: 2;
+        .mangoLeafFill {
+          fill: url(#mangoLeaf);
         }
 
-        .mangoFace {
-          position: absolute;
-          inset: 44px 20px 25px 18px;
-          transform: rotate(-3deg);
-          z-index: 3;
+        .mangoLeafHighlight {
+          fill: url(#leafShine);
+        }
+
+        .mangoWink,
+        .mangoSmile {
+          fill: none;
+          stroke: #581c87;
+          stroke-width: 8;
+          stroke-linecap: round;
         }
 
         .mangoEye {
-          position: absolute;
-          top: 0;
-          width: 15px;
-          height: 15px;
-          background: #581c87;
-        }
-
-        .mangoEye.open {
-          right: 4px;
-          border-radius: 999px;
-        }
-
-        .mangoEye.wink {
-          left: 2px;
-          top: 6px;
-          width: 28px;
-          height: 14px;
-          border-radius: 999px;
-          background: transparent;
-          border-top: 6px solid #581c87;
-          transform: rotate(2deg);
-        }
-
-        .mangoSmile {
-          position: absolute;
-          left: 16px;
-          top: 34px;
-          width: 30px;
-          height: 18px;
-          border-bottom: 6px solid #581c87;
-          border-radius: 0 0 999px 999px;
-          transform: rotate(0deg);
+          fill: #581c87;
         }
 
         .mangoCheek {
-          position: absolute;
-          right: 14px;
-          bottom: 32px;
-          width: 25px;
-          height: 17px;
-          border-radius: 999px;
-          background: rgba(251, 113, 133, 0.74);
-          transform: rotate(-8deg);
-          z-index: 3;
+          fill: rgba(251, 113, 133, 0.76);
         }
 
         .tagline {
@@ -1130,36 +1147,8 @@ export default function Page() {
           }
 
           .mangoMark {
-            width: 55px;
-            height: 75px;
-            border-width: 5px;
-          }
-
-          .mangoFace {
-            inset: 29px 13px 14px 11px;
-            transform: rotate(-3deg) scale(0.72);
-            transform-origin: top left;
-          }
-
-          .mangoLeaf {
-            top: -16px;
-            right: -7px;
-            width: 52px;
-            height: 28px;
-            border-width: 5px;
-          }
-
-          .mangoInnerRim {
-            inset: 7px 6px 6px 5px;
-            border-left-width: 4px;
-            border-top-width: 3px;
-          }
-
-          .mangoCheek {
-            width: 18px;
-            height: 12px;
-            right: 9px;
-            bottom: 22px;
+            width: 86px;
+            height: 110px;
           }
 
           .tagline {
@@ -1209,31 +1198,13 @@ export default function Page() {
 
         @media (max-width: 520px) {
           h1 {
-            font-size: 48px;
+            font-size: 44px;
+            gap: 8px;
           }
 
           .mangoMark {
-            width: 46px;
-            height: 63px;
-            border-width: 4px;
-          }
-
-          .mangoFace {
-            inset: 23px 9px 11px 8px;
-            transform: rotate(-3deg) scale(0.6);
-            transform-origin: top left;
-          }
-
-          .mangoLeaf {
-            width: 43px;
-            height: 23px;
-            border-width: 4px;
-          }
-
-          .mangoInnerRim {
-            inset: 6px 5px 5px 4px;
-            border-left-width: 3px;
-            border-top-width: 2px;
+            width: 72px;
+            height: 92px;
           }
 
           .pickerActions {
