@@ -3226,5 +3226,922 @@ export const RESTAURANTS: Restaurant[] = [
         "source": "The Cheesecake Factory official nutritional guide"
       }
     ]
+  },
+  {
+    "name": "Five Guys",
+    "aliases": [
+      "five guys",
+      "5 guys",
+      "five guys burgers"
+    ],
+    "note": "Search across burgers, bunless-style orders, hot dogs, grilled cheese, fries, and higher-calorie builds.",
+    "items": [
+      {
+        "name": "Little Hamburger — No Bun",
+        "calories": 300,
+        "protein": 23,
+        "description": "Single beef patty with toppings, ordered without the bun.",
+        "customization": "Ask for it in a bowl or lettuce wrap. Skip mayo to keep it lighter.",
+        "tags": [
+          "burger",
+          "low carb",
+          "lower calorie"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Little Cheeseburger — No Bun",
+        "calories": 370,
+        "protein": 27,
+        "description": "Single beef patty with cheese, ordered without the bun.",
+        "customization": "Good if you want cheese without the bun calories. We are allowing joy.",
+        "tags": [
+          "burger",
+          "has cheese",
+          "low carb"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Little Hamburger",
+        "calories": 540,
+        "protein": 23,
+        "description": "Single beef patty on a bun with standard toppings.",
+        "customization": "Keep toppings vegetable-heavy and skip mayo if you want room for fries.",
+        "tags": [
+          "burger",
+          "lower calorie"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Hot Dog",
+        "calories": 520,
+        "protein": 18,
+        "description": "All-beef hot dog on a bun.",
+        "customization": "Simple order. Go easy on mayo-style sauces.",
+        "tags": [
+          "hot dog",
+          "lower calorie"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Little Cheeseburger",
+        "calories": 610,
+        "protein": 27,
+        "description": "Single cheeseburger on a bun.",
+        "customization": "A more controlled burger than the regular double-patty cheeseburger.",
+        "tags": [
+          "burger",
+          "has cheese"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Little Bacon Burger",
+        "calories": 620,
+        "protein": 27,
+        "description": "Single beef patty with bacon on a bun.",
+        "customization": "Bacon adds calories quickly, but this is still smaller than the full burger builds.",
+        "tags": [
+          "burger",
+          "bacon"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Little Bacon Cheeseburger",
+        "calories": 690,
+        "protein": 31,
+        "description": "Single beef patty with bacon and cheese on a bun.",
+        "customization": "A good compromise if you want the full Five Guys vibe without the double patty.",
+        "tags": [
+          "burger",
+          "bacon",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Cheese Dog",
+        "calories": 590,
+        "protein": 22,
+        "description": "Hot dog with cheese on a bun.",
+        "customization": "Skip fries or split them if this is the main event.",
+        "tags": [
+          "hot dog",
+          "has cheese"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Hamburger",
+        "calories": 840,
+        "protein": 39,
+        "description": "Two beef patties on a bun with standard toppings.",
+        "customization": "High protein, high calories. Best as the meal, not the meal plus fries plus shake.",
+        "tags": [
+          "burger",
+          "high protein",
+          "high calorie"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Cheeseburger",
+        "calories": 980,
+        "protein": 47,
+        "description": "Two beef patties with cheese on a bun.",
+        "customization": "Very filling. Consider bunless or little size if calories matter today.",
+        "tags": [
+          "burger",
+          "has cheese",
+          "high protein",
+          "high calorie"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Little Fries",
+        "calories": 530,
+        "protein": 8,
+        "description": "Smallest listed fry size, cooked in peanut oil.",
+        "customization": "Fries are iconic here. Split them and pretend that was always the plan.",
+        "tags": [
+          "side",
+          "fries",
+          "high calorie"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Grilled Cheese",
+        "calories": 470,
+        "protein": 11,
+        "description": "Grilled cheese sandwich on a bun-style bread.",
+        "customization": "Not high protein, but useful for vegetarian-ish fast food moments.",
+        "tags": [
+          "sandwich",
+          "has cheese",
+          "vegetarian"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      }
+    ]
+  },
+  {
+    "name": "White Castle",
+    "aliases": [
+      "white castle",
+      "whitecastle",
+      "castle"
+    ],
+    "note": "Search across sliders, chicken, fish, breakfast, sides, and small-order combos.",
+    "items": [
+      {
+        "name": "Original Slider",
+        "calories": 140,
+        "protein": 6,
+        "description": "Classic small beef slider with onions and bun.",
+        "customization": "Order two or three instead of turning this into a suitcase of sliders.",
+        "tags": [
+          "burger",
+          "slider",
+          "lower calorie"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Cheese Slider",
+        "calories": 170,
+        "protein": 8,
+        "description": "Original slider with cheese.",
+        "customization": "Still small and manageable. The cheese is not the villain here.",
+        "tags": [
+          "burger",
+          "slider",
+          "has cheese",
+          "lower calorie"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Jalapeño Cheese Slider",
+        "calories": 170,
+        "protein": 8,
+        "description": "Slider with jalapeño cheese.",
+        "customization": "Same general lane as the cheese slider with more attitude.",
+        "tags": [
+          "burger",
+          "slider",
+          "has cheese",
+          "spicy"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Impossible Slider",
+        "calories": 210,
+        "protein": 12,
+        "description": "Plant-based slider on a bun.",
+        "customization": "Vegetarian-friendly, but still fast food. Add cheese only if you want it.",
+        "tags": [
+          "slider",
+          "vegetarian",
+          "lower calorie"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "1921 Slider",
+        "calories": 250,
+        "protein": 14,
+        "description": "Beef slider with lettuce, tomato, grilled onions, and cheese.",
+        "customization": "More substantial than the original without going full meal chaos.",
+        "tags": [
+          "burger",
+          "slider",
+          "has cheese"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Double Cheese Slider",
+        "calories": 300,
+        "protein": 16,
+        "description": "Double beef slider with cheese.",
+        "customization": "Better protein than a single slider, but calories stack quickly.",
+        "tags": [
+          "burger",
+          "slider",
+          "has cheese"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Panko Fish Slider",
+        "calories": 320,
+        "protein": 9,
+        "description": "Breaded fish slider on a bun.",
+        "customization": "Not a protein powerhouse. Choose it because you want it.",
+        "tags": [
+          "fish",
+          "slider"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Chicken Ring Slider",
+        "calories": 380,
+        "protein": 10,
+        "description": "Chicken rings served slider-style on a bun.",
+        "customization": "Fun, but not especially macro-efficient. Sauce lightly.",
+        "tags": [
+          "chicken",
+          "slider"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Breakfast Slider with Bacon, Egg & Cheese",
+        "calories": 300,
+        "protein": 13,
+        "description": "Breakfast slider with bacon, egg, and cheese.",
+        "customization": "Small breakfast option when you do not need a full platter.",
+        "tags": [
+          "breakfast",
+          "has cheese",
+          "bacon"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Breakfast Slider with Sausage, Egg & Cheese",
+        "calories": 350,
+        "protein": 14,
+        "description": "Breakfast slider with sausage, egg, and cheese.",
+        "customization": "More calories than bacon, but still portion-controlled.",
+        "tags": [
+          "breakfast",
+          "has cheese"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Chicken Rings — 6 Piece",
+        "calories": 320,
+        "protein": 14,
+        "description": "Six breaded chicken rings.",
+        "customization": "Better as the main protein than as a side next to sliders.",
+        "tags": [
+          "chicken",
+          "side"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Small French Fries",
+        "calories": 330,
+        "protein": 4,
+        "description": "Small order of fries.",
+        "customization": "Share them if sliders are already happening.",
+        "tags": [
+          "side",
+          "fries"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      }
+    ]
+  },
+  {
+    "name": "Applebee’s",
+    "aliases": [
+      "applebees",
+      "applebee’s",
+      "applebee's"
+    ],
+    "note": "Search across steaks, chicken, seafood, burgers, salads, appetizers, sides, and very high-calorie entrées.",
+    "items": [
+      {
+        "name": "Grilled Chicken Breast",
+        "calories": 190,
+        "protein": 37,
+        "description": "Plain grilled chicken breast add-on or protein option.",
+        "customization": "Pair with broccoli or a salad side. Quiet, boring, effective.",
+        "tags": [
+          "chicken",
+          "grilled",
+          "lowest calorie",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "6 oz Top Sirloin",
+        "calories": 200,
+        "protein": 33,
+        "description": "Six-ounce sirloin steak without heavier add-ons.",
+        "customization": "Choose vegetables instead of fries or loaded potatoes.",
+        "tags": [
+          "steak",
+          "high protein",
+          "lower calorie"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Classic Broccoli",
+        "calories": 100,
+        "protein": 6,
+        "description": "Steamed broccoli side.",
+        "customization": "The side dish that keeps the whole plate from becoming a situation.",
+        "tags": [
+          "side",
+          "vegetable",
+          "lower calorie"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Garlic Mashed Potatoes",
+        "calories": 250,
+        "protein": 5,
+        "description": "Garlic mashed potato side.",
+        "customization": "A more controlled comfort side than fries or loaded potatoes.",
+        "tags": [
+          "side",
+          "filling"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Blackened Tilapia",
+        "calories": 500,
+        "protein": 32,
+        "description": "Blackened fish entrée with sides included.",
+        "customization": "Good lighter seafood move if available at your location.",
+        "tags": [
+          "fish",
+          "lower calorie",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Cedar Grilled Lemon Chicken",
+        "calories": 600,
+        "protein": 43,
+        "description": "Grilled chicken entrée with lemon flavor and sides.",
+        "customization": "One of the more balanced full entrées. Still watch sodium.",
+        "tags": [
+          "chicken",
+          "grilled",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Shrimp ’N Parmesan Sirloin",
+        "calories": 620,
+        "protein": 57,
+        "description": "Sirloin topped with shrimp and parmesan sauce.",
+        "customization": "High protein. Swap heavy sides if you want this to stay reasonable.",
+        "tags": [
+          "steak",
+          "shrimp",
+          "has cheese",
+          "highest protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Bourbon Street Steak",
+        "calories": 670,
+        "protein": 49,
+        "description": "Seasoned steak entrée with side included.",
+        "customization": "Solid protein. The side choice matters a lot here.",
+        "tags": [
+          "steak",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Blackened Cajun Salmon",
+        "calories": 660,
+        "protein": 43,
+        "description": "Blackened salmon entrée with sides.",
+        "customization": "Good protein and healthy-fat energy, but not automatically low calorie.",
+        "tags": [
+          "fish",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Chicken Wonton Tacos",
+        "calories": 571,
+        "protein": 36,
+        "description": "Chicken wonton tacos appetizer.",
+        "customization": "Better as a shared starter or lighter meal than a pre-meal appetizer.",
+        "tags": [
+          "chicken",
+          "appetizer",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Bourbon Street Chicken & Shrimp",
+        "calories": 800,
+        "protein": 56,
+        "description": "Chicken and shrimp with mushrooms, onions, and garlic mashed potatoes.",
+        "customization": "High protein, but the buttery skillet energy is real.",
+        "tags": [
+          "chicken",
+          "shrimp",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Chicken Wonton Stir-Fry",
+        "calories": 791,
+        "protein": 51,
+        "description": "Chicken stir-fry style entrée with wonton strips.",
+        "customization": "Good protein, but watch the sauce and rice situation.",
+        "tags": [
+          "chicken",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Classic Cheeseburger",
+        "calories": 781,
+        "protein": 41,
+        "description": "Classic cheeseburger entrée.",
+        "customization": "Skip fries or split them if you want the burger to be the main event.",
+        "tags": [
+          "burger",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Classic Bacon Cheeseburger",
+        "calories": 881,
+        "protein": 48,
+        "description": "Cheeseburger with bacon.",
+        "customization": "High protein, high calorie. Very much a planned order.",
+        "tags": [
+          "burger",
+          "bacon",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Chicken Tenders Plate",
+        "calories": 1151,
+        "protein": 36,
+        "description": "Chicken tenders entrée plate.",
+        "customization": "Split, box some, or choose grilled chicken if you want a lighter chicken order.",
+        "tags": [
+          "chicken",
+          "high calorie"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Chicken Tenders Platter",
+        "calories": 1461,
+        "protein": 49,
+        "description": "Larger chicken tenders platter.",
+        "customization": "This is more of a shareable plate than a solo macro win.",
+        "tags": [
+          "chicken",
+          "high protein",
+          "high calorie"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Quesadilla Burger",
+        "calories": 1590,
+        "protein": 74,
+        "description": "Burger served quesadilla-style with cheese and toppings.",
+        "customization": "Huge protein, huge calories. Box half immediately if you are trying to be strategic.",
+        "tags": [
+          "burger",
+          "has cheese",
+          "highest protein",
+          "high calorie"
+        ],
+        "source": "Applebee’s official nutrition information"
+      },
+      {
+        "name": "Double Crunch Shrimp",
+        "calories": 1130,
+        "protein": 38,
+        "description": "Breaded shrimp entrée.",
+        "customization": "More crunchy than macro-friendly. Choose grilled seafood if available.",
+        "tags": [
+          "shrimp",
+          "high calorie"
+        ],
+        "source": "Applebee’s official nutrition information"
+      }
+    ]
+  },
+  {
+    "name": "Jersey Mike’s",
+    "aliases": [
+      "jersey mikes",
+      "jersey mike’s",
+      "jersey mike's",
+      "jersey mike"
+    ],
+    "note": "Search across mini subs, regular subs, Sub in a Tub orders, cheesesteaks, turkey, roast beef, and Italian builds.",
+    "items": [
+      {
+        "name": "#7 Turkey Breast & Provolone — Sub in a Tub",
+        "calories": 190,
+        "protein": 29,
+        "description": "Turkey and provolone served bowl-style without bread.",
+        "customization": "Go vinegar/mustard over oil and mayo if you want the leanest version.",
+        "tags": [
+          "turkey",
+          "bowl",
+          "low carb",
+          "lowest calorie"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#3 Ham & Provolone — Sub in a Tub",
+        "calories": 260,
+        "protein": 30,
+        "description": "Ham and provolone served bowl-style without bread.",
+        "customization": "A strong protein-per-calorie option when you skip the bread.",
+        "tags": [
+          "ham",
+          "bowl",
+          "low carb",
+          "high protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#7 Turkey Breast & Provolone Mini",
+        "calories": 320,
+        "protein": 21,
+        "description": "Mini turkey and provolone sub.",
+        "customization": "Mini size is the easiest portion-control win here.",
+        "tags": [
+          "turkey",
+          "sandwich",
+          "lower calorie"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#8 Club Sub — Sub in a Tub",
+        "calories": 400,
+        "protein": 36,
+        "description": "Turkey, ham, bacon, and provolone served bowl-style.",
+        "customization": "Skip oil/mayo if you want the tub to stay light.",
+        "tags": [
+          "bowl",
+          "bacon",
+          "high protein",
+          "low carb"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#7 Turkey Breast & Provolone Regular",
+        "calories": 480,
+        "protein": 31,
+        "description": "Regular turkey and provolone sub.",
+        "customization": "Mustard, vinegar, and vegetables keep it reasonable.",
+        "tags": [
+          "turkey",
+          "sandwich",
+          "high protein",
+          "lower calorie"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#3 Ham & Provolone Regular",
+        "calories": 540,
+        "protein": 32,
+        "description": "Regular ham and provolone sub.",
+        "customization": "Go easy on oil and mayo. The sandwich is already doing enough.",
+        "tags": [
+          "ham",
+          "sandwich",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#13 Original Italian — Sub in a Tub",
+        "calories": 570,
+        "protein": 41,
+        "description": "Italian meats and provolone served bowl-style.",
+        "customization": "Strong protein, but oil and meats make calories climb.",
+        "tags": [
+          "bowl",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#8 Club Sub Regular",
+        "calories": 680,
+        "protein": 38,
+        "description": "Turkey, ham, bacon, and provolone regular sub.",
+        "customization": "Ask light mayo or no mayo if you want to keep it tighter.",
+        "tags": [
+          "sandwich",
+          "bacon",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#6 Roast Beef & Provolone Regular",
+        "calories": 720,
+        "protein": 41,
+        "description": "Regular roast beef and provolone sub.",
+        "customization": "High protein. Watch oil and mayo.",
+        "tags": [
+          "sandwich",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#17 Famous Philly Regular",
+        "calories": 780,
+        "protein": 47,
+        "description": "Steak, peppers, onions, and cheese.",
+        "customization": "High protein and very filling. Not the lightest, but workable.",
+        "tags": [
+          "steak",
+          "sandwich",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#13 Original Italian Regular",
+        "calories": 850,
+        "protein": 43,
+        "description": "Regular Italian sub with meats and provolone.",
+        "customization": "Tastes great, calorie-dense. Light oil is your friend.",
+        "tags": [
+          "sandwich",
+          "has cheese",
+          "high protein",
+          "high calorie"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#56 Big Kahuna Chicken Cheese Steak",
+        "calories": 870,
+        "protein": 57,
+        "description": "Chicken cheesesteak with peppers, onions, mushrooms, jalapeños, and cheese.",
+        "customization": "Big protein, big sandwich. Consider half now, half later.",
+        "tags": [
+          "chicken",
+          "sandwich",
+          "has cheese",
+          "highest protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      }
+    ]
+  },
+  {
+    "name": "Wingstop",
+    "aliases": [
+      "wingstop",
+      "wing stop"
+    ],
+    "note": "Search across classic wings, boneless wings, tenders, fries, corn, veggie sticks, sauces, and shareable sides.",
+    "items": [
+      {
+        "name": "Veggie Sticks — Celery",
+        "calories": 5,
+        "protein": 0,
+        "description": "Celery sticks side.",
+        "customization": "Ranch is the calorie jump scare, not the celery.",
+        "tags": [
+          "side",
+          "vegetable",
+          "lowest calorie"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "Veggie Sticks — Carrots",
+        "calories": 17,
+        "protein": 0,
+        "description": "Carrot sticks side.",
+        "customization": "Add for crunch. Keep dips intentional.",
+        "tags": [
+          "side",
+          "vegetable",
+          "lowest calorie"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "6 Plain Classic Wings",
+        "calories": 480,
+        "protein": 60,
+        "description": "Six bone-in classic wings with plain seasoning.",
+        "customization": "Best protein move here. Add dry rub or sauce lightly.",
+        "tags": [
+          "chicken",
+          "wings",
+          "highest protein",
+          "low carb"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "6 Cajun Classic Wings",
+        "calories": 540,
+        "protein": 60,
+        "description": "Six bone-in classic wings with Cajun seasoning.",
+        "customization": "High protein with more flavor. Watch sodium.",
+        "tags": [
+          "chicken",
+          "wings",
+          "spicy",
+          "high protein"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "6 Atomic Classic Wings",
+        "calories": 540,
+        "protein": 60,
+        "description": "Six bone-in classic wings with Atomic sauce.",
+        "customization": "Spicy, high protein, and not breaded.",
+        "tags": [
+          "chicken",
+          "wings",
+          "spicy",
+          "high protein"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "3 Plain Tenders",
+        "calories": 420,
+        "protein": 30,
+        "description": "Three chicken tenders without sauce.",
+        "customization": "Sauce on the side keeps this more predictable.",
+        "tags": [
+          "chicken",
+          "tenders",
+          "high protein"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "4 Plain Tenders",
+        "calories": 560,
+        "protein": 40,
+        "description": "Four chicken tenders without sauce.",
+        "customization": "A better protein play than boneless wings for many orders.",
+        "tags": [
+          "chicken",
+          "tenders",
+          "high protein"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "6 Garlic Parmesan Classic Wings",
+        "calories": 720,
+        "protein": 60,
+        "description": "Six bone-in classic wings with Garlic Parmesan.",
+        "customization": "Higher calorie because garlic parm does garlic parm things.",
+        "tags": [
+          "chicken",
+          "wings",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "8 Plain Boneless Wings",
+        "calories": 640,
+        "protein": 32,
+        "description": "Eight breaded boneless wings without sauce.",
+        "customization": "More breading, less protein efficiency than classic wings.",
+        "tags": [
+          "chicken",
+          "boneless",
+          "high protein"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "8 Original Hot Boneless Wings",
+        "calories": 640,
+        "protein": 32,
+        "description": "Eight breaded boneless wings with Original Hot sauce.",
+        "customization": "Saucy and workable, but classic wings are leaner per gram of protein.",
+        "tags": [
+          "chicken",
+          "boneless",
+          "spicy",
+          "high protein"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "Seasoned Fries — Regular",
+        "calories": 390,
+        "protein": 7,
+        "description": "Regular order of seasoned fries.",
+        "customization": "Share them. Wingstop fries have main-character energy.",
+        "tags": [
+          "side",
+          "fries"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "Cajun Fried Corn — Regular",
+        "calories": 300,
+        "protein": 5,
+        "description": "Regular order of Cajun fried corn.",
+        "customization": "Fun side, but not exactly a vegetable loophole.",
+        "tags": [
+          "side",
+          "vegetable"
+        ],
+        "source": "Wingstop official nutritional guide"
+      }
+    ]
   }
 ];
