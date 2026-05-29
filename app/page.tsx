@@ -173,9 +173,21 @@ export default function Page() {
     return smartRank(filteredItems);
   }, [restaurant, categoryFilter, maxCalories, minProtein]);
 
+  const orderedResults = useMemo<MenuItem[]>(() => {
+    if (!pickedItemName) return results;
+
+    const pickedItem = results.find((item) => item.name === pickedItemName);
+    if (!pickedItem) return results;
+
+    return [
+      pickedItem,
+      ...results.filter((item) => item.name !== pickedItemName),
+    ];
+  }, [results, pickedItemName]);
+
   const visibleResults = showAllResults
-    ? results
-    : results.slice(0, DEFAULT_VISIBLE_RESULTS);
+    ? orderedResults
+    : orderedResults.slice(0, DEFAULT_VISIBLE_RESULTS);
 
   const hiddenResultCount = Math.max(results.length - visibleResults.length, 0);
 
@@ -188,15 +200,8 @@ export default function Page() {
         ? pickableResults.filter((item) => item.name !== pickedItemName)
         : pickableResults;
     const nextPick = freshPicks[Math.floor(Math.random() * freshPicks.length)];
-    const nextPickIndex = results.findIndex(
-      (item) => item.name === nextPick.name
-    );
 
     setPickedItemName(nextPick.name);
-
-    if (nextPickIndex >= DEFAULT_VISIBLE_RESULTS) {
-      setShowAllResults(true);
-    }
   }
 
   const visibleRestaurants = useMemo(() => {
