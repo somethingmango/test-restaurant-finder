@@ -686,6 +686,46 @@ export const RESTAURANTS: Restaurant[] = [
           "high calorie"
         ],
         "source": "Taco Bell official nutrition information"
+      },
+      {
+        "name": "Cheesy Bean & Rice Burrito",
+        "calories": 420,
+        "protein": 9,
+        "description": "Bean and rice burrito with cheese sauce.",
+        "customization": "Vegetarian and filling, but not especially high protein.",
+        "tags": [
+          "burrito",
+          "vegetarian",
+          "has cheese"
+        ],
+        "source": "Taco Bell official nutrition calculator"
+      },
+      {
+        "name": "Cantina Chicken Soft Taco",
+        "calories": 260,
+        "protein": 20,
+        "description": "Soft taco with Cantina chicken, cheese, and toppings.",
+        "customization": "Good higher-protein taco option. Sauce lightly if customizing.",
+        "tags": [
+          "chicken",
+          "taco",
+          "has cheese"
+        ],
+        "source": "Taco Bell official nutrition calculator"
+      },
+      {
+        "name": "Cantina Chicken Bowl",
+        "calories": 490,
+        "protein": 25,
+        "description": "Cantina chicken bowl with rice, beans, vegetables, cheese, and sauce.",
+        "customization": "A more complete bowl option. Skip extra sauces if calories matter.",
+        "tags": [
+          "chicken",
+          "bowl",
+          "has rice",
+          "has cheese"
+        ],
+        "source": "Taco Bell official nutrition calculator"
       }
     ]
   },
@@ -864,6 +904,48 @@ export const RESTAURANTS: Restaurant[] = [
           "has cheese"
         ],
         "source": "Chipotle official nutrition calculator / nutrition facts PDF"
+      },
+      {
+        "name": "Steak Burrito Bowl — No Rice",
+        "calories": 555,
+        "protein": 36,
+        "description": "Steak, black beans, fajita veggies, tomato salsa, sour cream, cheese, and lettuce.",
+        "customization": "No rice keeps it lower while still feeling like a real bowl.",
+        "tags": [
+          "steak",
+          "bowl",
+          "has cheese",
+          "lower calorie"
+        ],
+        "source": "Chipotle official nutrition calculator / nutrition facts PDF"
+      },
+      {
+        "name": "Chicken Salad Bowl — No Cheese",
+        "calories": 355,
+        "protein": 41,
+        "description": "Romaine, chicken, black beans, fajita veggies, tomato salsa, and lettuce.",
+        "customization": "Basically the lean-bowl cheat code. Add salsa for flavor.",
+        "tags": [
+          "chicken",
+          "salad",
+          "lowest calorie",
+          "high protein"
+        ],
+        "source": "Chipotle official nutrition calculator / nutrition facts PDF"
+      },
+      {
+        "name": "Barbacoa Salad Bowl",
+        "calories": 455,
+        "protein": 39,
+        "description": "Romaine, barbacoa, black beans, fajita veggies, tomato salsa, and cheese.",
+        "customization": "A good beef option when you want something richer than chicken.",
+        "tags": [
+          "barbacoa",
+          "salad",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Chipotle official nutrition calculator / nutrition facts PDF"
       }
     ]
   },
@@ -1023,6 +1105,45 @@ export const RESTAURANTS: Restaurant[] = [
         "tags": [
           "fries",
           "low protein"
+        ],
+        "source": "Shake Shack official nutrition information"
+      },
+      {
+        "name": "Veggie Shack",
+        "calories": 630,
+        "protein": 19,
+        "description": "Vegetarian burger with vegetables, grains, and toppings.",
+        "customization": "Vegetarian pick, not automatically low calorie. Skip fries if this is the meal.",
+        "tags": [
+          "burger",
+          "vegetarian"
+        ],
+        "source": "Shake Shack official nutrition information"
+      },
+      {
+        "name": "Shroom Burger",
+        "calories": 510,
+        "protein": 18,
+        "description": "Crisp-fried portobello mushroom burger with cheese.",
+        "customization": "Vegetarian and satisfying, but fried cheese is still fried cheese.",
+        "tags": [
+          "burger",
+          "vegetarian",
+          "has cheese"
+        ],
+        "source": "Shake Shack official nutrition information"
+      },
+      {
+        "name": "Shack Stack",
+        "calories": 800,
+        "protein": 44,
+        "description": "Cheeseburger stacked with a Shroom Burger.",
+        "customization": "Huge protein, huge calories. Split or make it the whole meal.",
+        "tags": [
+          "burger",
+          "has cheese",
+          "high protein",
+          "high calorie"
         ],
         "source": "Shake Shack official nutrition information"
       }
@@ -1190,6 +1311,44 @@ export const RESTAURANTS: Restaurant[] = [
           "burger"
         ],
         "source": "IHOP official nutrition calculator"
+      },
+      {
+        "name": "55+ Grilled Chicken Dinner",
+        "calories": 420,
+        "protein": 38,
+        "description": "Smaller grilled chicken dinner with sides.",
+        "customization": "Senior menu energy, honestly useful portion control.",
+        "tags": [
+          "chicken",
+          "grilled",
+          "high protein"
+        ],
+        "source": "IHOP official nutrition information"
+      },
+      {
+        "name": "Turkey Bacon Strips",
+        "calories": 90,
+        "protein": 10,
+        "description": "Side of turkey bacon.",
+        "customization": "Tiny side protein. Add eggs if you need a real meal.",
+        "tags": [
+          "breakfast",
+          "side",
+          "lower calorie"
+        ],
+        "source": "IHOP official nutrition information"
+      },
+      {
+        "name": "Pork Sausage Links",
+        "calories": 210,
+        "protein": 10,
+        "description": "Side of pork sausage links.",
+        "customization": "Small side protein, but higher calorie than turkey bacon.",
+        "tags": [
+          "breakfast",
+          "side"
+        ],
+        "source": "IHOP official nutrition information"
       }
     ]
   },
@@ -1361,6 +1520,47 @@ export const RESTAURANTS: Restaurant[] = [
           "bowl"
         ],
         "source": "QDOBA official nutrition information"
+      },
+      {
+        "name": "Grilled Steak Protein Bowl",
+        "calories": 640,
+        "protein": 42,
+        "description": "Steak-based bowl with beans, vegetables, salsa, and toppings.",
+        "customization": "Good steak option. Keep sauces light.",
+        "tags": [
+          "steak",
+          "bowl",
+          "high protein"
+        ],
+        "source": "Qdoba official nutrition calculator"
+      },
+      {
+        "name": "3-Cheese Nachos with Chicken",
+        "calories": 1040,
+        "protein": 48,
+        "description": "Chicken nachos with queso, chips, beans, and toppings.",
+        "customization": "High protein, very high calorie. Share or treat it like the whole meal.",
+        "tags": [
+          "chicken",
+          "has cheese",
+          "high protein",
+          "high calorie"
+        ],
+        "source": "Qdoba official nutrition calculator"
+      },
+      {
+        "name": "Brisket Birria Bowl",
+        "calories": 720,
+        "protein": 44,
+        "description": "Brisket birria bowl with rice, beans, and toppings.",
+        "customization": "High protein, richer than chicken. Keep queso and sour cream light.",
+        "tags": [
+          "brisket",
+          "bowl",
+          "has rice",
+          "high protein"
+        ],
+        "source": "Qdoba official nutrition calculator"
       }
     ]
   },
@@ -1525,6 +1725,42 @@ export const RESTAURANTS: Restaurant[] = [
         "tags": [
           "side",
           "has rice"
+        ],
+        "source": "Popeyes official nutrition information"
+      },
+      {
+        "name": "Cajun Fries — Regular",
+        "calories": 270,
+        "protein": 4,
+        "description": "Regular Cajun fries side.",
+        "customization": "Fries are fries. Add because you want them, not because they are helping.",
+        "tags": [
+          "side",
+          "fries"
+        ],
+        "source": "Popeyes official nutrition information"
+      },
+      {
+        "name": "Mashed Potatoes with Cajun Gravy — Regular",
+        "calories": 110,
+        "protein": 3,
+        "description": "Regular mashed potatoes with Cajun gravy.",
+        "customization": "A lighter side than fries, though not much protein.",
+        "tags": [
+          "side",
+          "lower calorie"
+        ],
+        "source": "Popeyes official nutrition information"
+      },
+      {
+        "name": "Coleslaw — Regular",
+        "calories": 140,
+        "protein": 1,
+        "description": "Regular coleslaw side.",
+        "customization": "Cool crunchy side. Not protein, but useful next to tenders.",
+        "tags": [
+          "side",
+          "lower calorie"
         ],
         "source": "Popeyes official nutrition information"
       }
@@ -1715,6 +1951,18 @@ export const RESTAURANTS: Restaurant[] = [
           "low protein"
         ],
         "source": "KFC official nutrition guide"
+      },
+      {
+        "name": "Cole Slaw — Individual",
+        "calories": 170,
+        "protein": 1,
+        "description": "Individual side of cole slaw.",
+        "customization": "A lighter side option than fries or mac and cheese.",
+        "tags": [
+          "side",
+          "lower calorie"
+        ],
+        "source": "KFC official nutrition guide"
       }
     ]
   },
@@ -1864,6 +2112,58 @@ export const RESTAURANTS: Restaurant[] = [
           "burger",
           "has cheese",
           "high protein"
+        ],
+        "source": "Wendy’s official nutrition information"
+      },
+      {
+        "name": "4 Piece Crispy Chicken Nuggets",
+        "calories": 180,
+        "protein": 10,
+        "description": "Four-piece crispy chicken nuggets.",
+        "customization": "Snack-sized. Sauce is the wildcard.",
+        "tags": [
+          "chicken",
+          "nuggets",
+          "lower calorie"
+        ],
+        "source": "Wendy’s official nutrition information"
+      },
+      {
+        "name": "6 Piece Crispy Chicken Nuggets",
+        "calories": 270,
+        "protein": 15,
+        "description": "Six-piece crispy chicken nuggets.",
+        "customization": "Easy portion-controlled protein when paired with a lighter side.",
+        "tags": [
+          "chicken",
+          "nuggets",
+          "lower calorie"
+        ],
+        "source": "Wendy’s official nutrition information"
+      },
+      {
+        "name": "Plain Baked Potato",
+        "calories": 270,
+        "protein": 7,
+        "description": "Plain baked potato side.",
+        "customization": "Filling side with fewer calories than fries. Add chili if you need protein.",
+        "tags": [
+          "side",
+          "filling",
+          "lower calorie"
+        ],
+        "source": "Wendy’s official nutrition information"
+      },
+      {
+        "name": "Jr. Bacon Cheeseburger",
+        "calories": 370,
+        "protein": 18,
+        "description": "Smaller cheeseburger with bacon, lettuce, tomato, and mayo.",
+        "customization": "Smaller burger with enough protein to count. Skip fries if you want it lighter.",
+        "tags": [
+          "burger",
+          "bacon",
+          "has cheese"
         ],
         "source": "Wendy’s official nutrition information"
       }
@@ -2034,6 +2334,44 @@ export const RESTAURANTS: Restaurant[] = [
           "chicken",
           "wrap",
           "has cheese",
+          "high protein"
+        ],
+        "source": "Chick-fil-A official nutrition guide"
+      },
+      {
+        "name": "Fruit Cup",
+        "calories": 70,
+        "protein": 1,
+        "description": "Fresh fruit side cup.",
+        "customization": "Good side when fries are trying to make eye contact.",
+        "tags": [
+          "side",
+          "lowest calorie"
+        ],
+        "source": "Chick-fil-A official nutrition guide"
+      },
+      {
+        "name": "Kale Crunch Side",
+        "calories": 170,
+        "protein": 4,
+        "description": "Kale and cabbage side with almonds.",
+        "customization": "A crunchy side that keeps the meal lighter than fries.",
+        "tags": [
+          "side",
+          "vegetable",
+          "lower calorie"
+        ],
+        "source": "Chick-fil-A official nutrition guide"
+      },
+      {
+        "name": "12 Count Chick-fil-A Nuggets",
+        "calories": 380,
+        "protein": 40,
+        "description": "Classic breaded chicken nuggets, twelve count.",
+        "customization": "High protein, more calories than grilled, still a reasonable main.",
+        "tags": [
+          "chicken",
+          "nuggets",
           "high protein"
         ],
         "source": "Chick-fil-A official nutrition guide"
@@ -2208,6 +2546,44 @@ export const RESTAURANTS: Restaurant[] = [
           "high calorie"
         ],
         "source": "Panera official nutrition guide"
+      },
+      {
+        "name": "Half Turkey & Cheddar Sandwich",
+        "calories": 440,
+        "protein": 25,
+        "description": "Half portion of turkey and cheddar sandwich.",
+        "customization": "A clean You Pick Two anchor with soup or salad.",
+        "tags": [
+          "sandwich",
+          "turkey",
+          "has cheese"
+        ],
+        "source": "Panera official nutrition guide"
+      },
+      {
+        "name": "Half Bacon Turkey Bravo Sandwich",
+        "calories": 505,
+        "protein": 27,
+        "description": "Half portion of the Bacon Turkey Bravo sandwich.",
+        "customization": "Still rich, but half size makes it much easier to work with.",
+        "tags": [
+          "sandwich",
+          "turkey",
+          "bacon"
+        ],
+        "source": "Panera official nutrition guide"
+      },
+      {
+        "name": "Tuna Salad Sandwich",
+        "calories": 640,
+        "protein": 35,
+        "description": "Tuna salad sandwich on bread.",
+        "customization": "Decent protein, but mayo-based. Half sandwich is the lighter move.",
+        "tags": [
+          "sandwich",
+          "high protein"
+        ],
+        "source": "Panera official nutrition guide"
       }
     ]
   },
@@ -2346,6 +2722,70 @@ export const RESTAURANTS: Restaurant[] = [
           "breakfast",
           "sandwich",
           "has cheese"
+        ],
+        "source": "Starbucks official nutrition information"
+      },
+      {
+        "name": "Sausage, Cheddar & Egg Sandwich",
+        "calories": 480,
+        "protein": 18,
+        "description": "Breakfast sandwich with sausage, cheddar, and egg.",
+        "customization": "More filling than pastry. Not lean, but realistic.",
+        "tags": [
+          "breakfast",
+          "sandwich",
+          "has cheese"
+        ],
+        "source": "Starbucks official nutrition information"
+      },
+      {
+        "name": "Ham & Swiss Croissant",
+        "calories": 320,
+        "protein": 14,
+        "description": "Croissant with ham and Swiss cheese.",
+        "customization": "Small savory option. Pair with unsweetened coffee, not a sugar bomb.",
+        "tags": [
+          "breakfast",
+          "sandwich",
+          "has cheese"
+        ],
+        "source": "Starbucks official nutrition information"
+      },
+      {
+        "name": "Chicken, Maple Butter & Egg Sandwich",
+        "calories": 450,
+        "protein": 26,
+        "description": "Chicken, egg, and maple butter breakfast sandwich.",
+        "customization": "Higher protein breakfast pick, but sweeter/richer than it looks.",
+        "tags": [
+          "breakfast",
+          "chicken",
+          "sandwich"
+        ],
+        "source": "Starbucks official nutrition information"
+      },
+      {
+        "name": "Cheddar & Uncured Salami Protein Box",
+        "calories": 470,
+        "protein": 22,
+        "description": "Protein box with salami, cheddar, crackers, and sides.",
+        "customization": "Portable and filling. Watch sodium if that matters to you.",
+        "tags": [
+          "protein box",
+          "has cheese",
+          "filling"
+        ],
+        "source": "Starbucks official nutrition information"
+      },
+      {
+        "name": "PB&J Protein Box",
+        "calories": 520,
+        "protein": 20,
+        "description": "Protein box with peanut butter, jam, bread, cheese, and fruit.",
+        "customization": "Not low calorie, but filling and easy when you need grab-and-go.",
+        "tags": [
+          "protein box",
+          "filling"
         ],
         "source": "Starbucks official nutrition information"
       }
@@ -2489,6 +2929,71 @@ export const RESTAURANTS: Restaurant[] = [
           "has cheese"
         ],
         "source": "Dunkin’ official nutrition information"
+      },
+      {
+        "name": "English Muffin",
+        "calories": 190,
+        "protein": 6,
+        "description": "Plain English muffin.",
+        "customization": "A simple side. Add egg if you need protein.",
+        "tags": [
+          "breakfast",
+          "side",
+          "lower calorie"
+        ],
+        "source": "Dunkin’ official nutrition information"
+      },
+      {
+        "name": "Multigrain Bagel",
+        "calories": 350,
+        "protein": 14,
+        "description": "Multigrain bagel.",
+        "customization": "More filling than a donut, but cream cheese changes the math.",
+        "tags": [
+          "breakfast",
+          "filling"
+        ],
+        "source": "Dunkin’ official nutrition information"
+      },
+      {
+        "name": "Wake-Up Wrap with Ham, Egg & Cheese",
+        "calories": 190,
+        "protein": 11,
+        "description": "Ham, egg, and cheese in a small wrap.",
+        "customization": "Small savory breakfast with better protein than it looks.",
+        "tags": [
+          "breakfast",
+          "has cheese",
+          "lower calorie"
+        ],
+        "source": "Dunkin’ official nutrition information"
+      },
+      {
+        "name": "Ham, Egg & Cheese Sandwich",
+        "calories": 450,
+        "protein": 24,
+        "description": "Ham, egg, and cheese breakfast sandwich.",
+        "customization": "Solid breakfast protein. Skip sweet drinks if you want balance.",
+        "tags": [
+          "breakfast",
+          "sandwich",
+          "has cheese"
+        ],
+        "source": "Dunkin’ official nutrition information"
+      },
+      {
+        "name": "Sausage, Egg & Cheese Sandwich",
+        "calories": 680,
+        "protein": 26,
+        "description": "Sausage, egg, and cheese breakfast sandwich.",
+        "customization": "Filling, but calorie-dense. Better as the whole meal.",
+        "tags": [
+          "breakfast",
+          "sandwich",
+          "has cheese",
+          "high calorie"
+        ],
+        "source": "Dunkin’ official nutrition information"
       }
     ]
   },
@@ -2625,6 +3130,66 @@ export const RESTAURANTS: Restaurant[] = [
           "wrap",
           "has cheese",
           "high protein"
+        ],
+        "source": "Subway U.S. nutrition PDF"
+      },
+      {
+        "name": "6-Inch Black Forest Ham",
+        "calories": 280,
+        "protein": 19,
+        "description": "Ham 6-inch sub with standard vegetables.",
+        "customization": "Add veggies and mustard. Keep creamy sauces light.",
+        "tags": [
+          "sandwich",
+          "lower calorie"
+        ],
+        "source": "Subway U.S. nutrition PDF"
+      },
+      {
+        "name": "6-Inch Rotisserie-Style Chicken",
+        "calories": 350,
+        "protein": 29,
+        "description": "Rotisserie-style chicken 6-inch sub.",
+        "customization": "Good chicken pick. Skip creamy sauces if cutting calories.",
+        "tags": [
+          "chicken",
+          "sandwich",
+          "high protein"
+        ],
+        "source": "Subway U.S. nutrition PDF"
+      },
+      {
+        "name": "6-Inch Sweet Onion Chicken Teriyaki",
+        "calories": 370,
+        "protein": 25,
+        "description": "Chicken teriyaki 6-inch sub with sweet onion sauce.",
+        "customization": "A little sweeter, still workable. Add vegetables for volume.",
+        "tags": [
+          "chicken",
+          "sandwich"
+        ],
+        "source": "Subway U.S. nutrition PDF"
+      },
+      {
+        "name": "Tuna Protein Bowl",
+        "calories": 550,
+        "protein": 27,
+        "description": "Tuna served bowl-style with vegetables.",
+        "customization": "Higher calorie because tuna salad includes mayo, but bread-free helps.",
+        "tags": [
+          "bowl",
+          "low carb"
+        ],
+        "source": "Subway U.S. nutrition PDF"
+      },
+      {
+        "name": "6-Inch Tuna",
+        "calories": 430,
+        "protein": 20,
+        "description": "Tuna 6-inch sub with standard vegetables.",
+        "customization": "Not the leanest sub, but portion-controlled compared with a footlong.",
+        "tags": [
+          "sandwich"
         ],
         "source": "Subway U.S. nutrition PDF"
       }
@@ -3388,6 +3953,43 @@ export const RESTAURANTS: Restaurant[] = [
           "vegetarian"
         ],
         "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Bacon Dog",
+        "calories": 600,
+        "protein": 23,
+        "description": "Hot dog with bacon on a bun.",
+        "customization": "Rich, salty, and filling. Skip fries if you are keeping it tighter.",
+        "tags": [
+          "hot dog",
+          "bacon"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "Bacon Cheese Dog",
+        "calories": 670,
+        "protein": 26,
+        "description": "Hot dog with bacon and cheese on a bun.",
+        "customization": "High-calorie hot dog build. Treat it like the main meal.",
+        "tags": [
+          "hot dog",
+          "bacon",
+          "has cheese"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
+      },
+      {
+        "name": "BLT Sandwich",
+        "calories": 600,
+        "protein": 19,
+        "description": "Bacon, lettuce, and tomato sandwich.",
+        "customization": "Not a lean protein pick, but smaller than many full burger builds.",
+        "tags": [
+          "sandwich",
+          "bacon"
+        ],
+        "source": "Five Guys official nutrition and allergen guide"
       }
     ]
   },
@@ -3550,6 +4152,44 @@ export const RESTAURANTS: Restaurant[] = [
         "tags": [
           "side",
           "fries"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Bacon Cheese Slider",
+        "calories": 220,
+        "protein": 10,
+        "description": "Cheese slider with bacon.",
+        "customization": "Still small. The danger is ordering six because they are tiny.",
+        "tags": [
+          "burger",
+          "slider",
+          "bacon",
+          "has cheese"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Crispy Chicken Slider",
+        "calories": 230,
+        "protein": 12,
+        "description": "Crispy chicken slider on a bun.",
+        "customization": "A small chicken option. Sauce lightly if customizing.",
+        "tags": [
+          "chicken",
+          "slider"
+        ],
+        "source": "White Castle official restaurant nutrition PDF"
+      },
+      {
+        "name": "Hash Brown Nibblers — Small",
+        "calories": 360,
+        "protein": 4,
+        "description": "Small order of hash brown nibblers.",
+        "customization": "Breakfast side energy. Share if sliders are also happening.",
+        "tags": [
+          "breakfast",
+          "side"
         ],
         "source": "White Castle official restaurant nutrition PDF"
       }
@@ -3972,6 +4612,48 @@ export const RESTAURANTS: Restaurant[] = [
           "highest protein"
         ],
         "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#10 Tuna Fish — Sub in a Tub",
+        "calories": 430,
+        "protein": 30,
+        "description": "Tuna salad served bowl-style without bread.",
+        "customization": "Mayo-based, but skipping bread keeps the total more controlled.",
+        "tags": [
+          "bowl",
+          "low carb",
+          "high protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#44 Buffalo Chicken Cheese Steak Regular",
+        "calories": 850,
+        "protein": 55,
+        "description": "Buffalo chicken cheesesteak with cheese.",
+        "customization": "High protein and spicy. Consider half if you are not starving.",
+        "tags": [
+          "chicken",
+          "sandwich",
+          "has cheese",
+          "spicy",
+          "high protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
+      },
+      {
+        "name": "#17 Famous Philly — Sub in a Tub",
+        "calories": 490,
+        "protein": 39,
+        "description": "Steak, peppers, onions, and cheese served bowl-style.",
+        "customization": "Good low-carb steak option if your location can make it tub-style.",
+        "tags": [
+          "steak",
+          "bowl",
+          "has cheese",
+          "high protein"
+        ],
+        "source": "Jersey Mike’s official nutrition calculator"
       }
     ]
   },
@@ -4139,6 +4821,44 @@ export const RESTAURANTS: Restaurant[] = [
         "tags": [
           "side",
           "vegetable"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "6 Lemon Pepper Classic Wings",
+        "calories": 540,
+        "protein": 60,
+        "description": "Six bone-in classic wings with Lemon Pepper seasoning.",
+        "customization": "High protein, big flavor, not breaded. Sodium is doing jumping jacks.",
+        "tags": [
+          "chicken",
+          "wings",
+          "high protein"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "6 Mild Classic Wings",
+        "calories": 540,
+        "protein": 60,
+        "description": "Six bone-in classic wings with Mild sauce.",
+        "customization": "Good classic wing order. Keep dips intentional.",
+        "tags": [
+          "chicken",
+          "wings",
+          "high protein"
+        ],
+        "source": "Wingstop official nutritional guide"
+      },
+      {
+        "name": "Ranch Dip",
+        "calories": 313,
+        "protein": 1,
+        "description": "Side cup of ranch dip.",
+        "customization": "Listed because this is where the calories sneak in.",
+        "tags": [
+          "side",
+          "high calorie"
         ],
         "source": "Wingstop official nutritional guide"
       }
