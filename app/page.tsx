@@ -3,6 +3,18 @@
 import React, { useMemo, useState } from 'react';
 import { RESTAURANTS, type MenuItem, type Restaurant } from './data/restaurants';
 
+type CategoryFilter = 'best' | 'under500' | 'highProtein' | 'sides' | 'breakfast';
+
+const CATEGORY_FILTERS: { id: CategoryFilter; label: string }[] = [
+  { id: 'best', label: 'Best Picks' },
+  { id: 'under500', label: 'Under 500' },
+  { id: 'highProtein', label: 'High Protein' },
+  { id: 'sides', label: 'Sides' },
+  { id: 'breakfast', label: 'Breakfast' },
+];
+
+const DEFAULT_VISIBLE_RESULTS = 5;
+
 function normalize(input: string) {
   return input.trim().toLowerCase();
 }
@@ -17,8 +29,29 @@ function smartRank(items: MenuItem[]) {
       const scoreA = scoreItem(a) * 10 + a.protein * 0.8 - a.calories * 0.01;
       const scoreB = scoreItem(b) * 10 + b.protein * 0.8 - b.calories * 0.01;
       return scoreB - scoreA;
-    })
-    .slice(0, 5);
+    });
+}
+
+function matchesCategory(item: MenuItem, category: CategoryFilter) {
+  const tags = item.tags.map(normalize);
+  const searchable = normalize(`${item.name} ${item.description} ${tags.join(' ')}`);
+
+  if (category === 'under500') return item.calories <= 500;
+  if (category === 'highProtein') return item.protein >= 30;
+  if (category === 'sides') {
+    return (
+      tags.includes('side') ||
+      searchable.includes('fries') ||
+      searchable.includes('broccoli') ||
+      searchable.includes('beans') ||
+      searchable.includes('apple slices')
+    );
+  }
+  if (category === 'breakfast') {
+    return tags.includes('breakfast') || searchable.includes('breakfast');
+  }
+
+  return true;
 }
 
 function formatTag(tag: string) {
@@ -89,6 +122,8 @@ export default function Page() {
   const [restaurantSort, setRestaurantSort] = useState<'featured' | 'az'>(
     'featured'
   );
+  const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('best');
+  const [showAllResults, setShowAllResults] = useState(false);
 
   const restaurant = useMemo<Restaurant | undefined>(() => {
     return RESTAURANTS.find(
@@ -100,11 +135,18 @@ export default function Page() {
     const baseItems = restaurant ? restaurant.items : [];
 
     const filteredItems = baseItems
+      .filter((item) => matchesCategory(item, categoryFilter))
       .filter((item) => item.calories <= maxCalories)
       .filter((item) => item.protein >= minProtein);
 
     return smartRank(filteredItems);
-  }, [restaurant, maxCalories, minProtein]);
+  }, [restaurant, categoryFilter, maxCalories, minProtein]);
+
+  const visibleResults = showAllResults
+    ? results
+    : results.slice(0, DEFAULT_VISIBLE_RESULTS);
+
+  const hiddenResultCount = Math.max(results.length - visibleResults.length, 0);
 
   const visibleRestaurants = useMemo(() => {
     if (restaurantSort === 'az') {
@@ -167,7 +209,10 @@ export default function Page() {
                   key={chain.name}
                   type="button"
                   className={`restaurantChip ${selected ? 'selected' : ''}`}
-                  onClick={() => setSelectedRestaurantName(chain.name)}
+                  onClick={() => {
+                    setSelectedRestaurantName(chain.name);
+                    setShowAllResults(false);
+                  }}
                   aria-pressed={selected}
                 >
                   <span>{chain.name}</span>
@@ -250,11 +295,30 @@ export default function Page() {
             <h2>{displayTitle}</h2>
             <p>{displayNote}</p>
           </div>
-          <div className="countBubble">{results.length} picks</div>
+          <div className="countBubble">{results.length} matches</div>
+        </section>
+
+        <section className="categoryBar" aria-label="Meal categories">
+          {CATEGORY_FILTERS.map((filter) => (
+            <button
+              key={filter.id}
+              type="button"
+              className={`categoryPill ${
+                categoryFilter === filter.id ? 'selected' : ''
+              }`}
+              onClick={() => {
+                setCategoryFilter(filter.id);
+                setShowAllResults(false);
+              }}
+              aria-pressed={categoryFilter === filter.id}
+            >
+              {filter.label}
+            </button>
+          ))}
         </section>
 
         <section className="results">
-          {results.map((item, index) => (
+          {visibleResults.map((item, index) => (
             <article key={`${item.name}-${index}`} className="resultCard">
               <div className="rankBadge">#{index + 1}</div>
 
@@ -316,6 +380,26 @@ export default function Page() {
               </div>
             </article>
           ))}
+
+          {hiddenResultCount > 0 && (
+            <button
+              type="button"
+              className="showMoreButton"
+              onClick={() => setShowAllResults(true)}
+            >
+              Show {hiddenResultCount} more picks
+            </button>
+          )}
+
+          {showAllResults && results.length > DEFAULT_VISIBLE_RESULTS && (
+            <button
+              type="button"
+              className="showMoreButton secondary"
+              onClick={() => setShowAllResults(false)}
+            >
+              Show fewer picks
+            </button>
+          )}
 
           {results.length === 0 && (
             <section className="empty glassCard">
@@ -780,6 +864,47 @@ export default function Page() {
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
         }
 
+        .categoryBar {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin: -4px 0 18px;
+        }
+
+        .categoryPill {
+          min-height: 42px;
+          border: 1px solid rgba(124, 58, 237, 0.16);
+          border-radius: 999px;
+          padding: 10px 14px;
+          background: rgba(255, 255, 255, 0.54);
+          color: #5b21b6;
+          font-size: 13px;
+          font-weight: 950;
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.72),
+            0 10px 24px rgba(76, 29, 149, 0.08);
+          cursor: pointer;
+          transition:
+            transform 0.18s ease,
+            background 0.18s ease,
+            color 0.18s ease,
+            border-color 0.18s ease;
+        }
+
+        .categoryPill:hover {
+          transform: translateY(-1px);
+          background: rgba(255, 255, 255, 0.74);
+        }
+
+        .categoryPill.selected {
+          background: linear-gradient(135deg, rgba(109, 40, 217, 0.95), rgba(22, 163, 74, 0.82));
+          border-color: rgba(255, 255, 255, 0.72);
+          color: white;
+          box-shadow:
+            0 14px 32px rgba(109, 40, 217, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.28);
+        }
+
         .results {
           display: grid;
           gap: 18px;
@@ -1040,6 +1165,34 @@ export default function Page() {
           color: rgba(75, 85, 99, 0.82);
         }
 
+        .showMoreButton {
+          min-height: 52px;
+          border: 1px solid rgba(124, 58, 237, 0.18);
+          border-radius: 999px;
+          padding: 14px 18px;
+          background: rgba(255, 255, 255, 0.62);
+          color: #5b21b6;
+          font-size: 15px;
+          font-weight: 950;
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.76),
+            0 18px 42px rgba(76, 29, 149, 0.12);
+          cursor: pointer;
+          transition:
+            transform 0.18s ease,
+            background 0.18s ease;
+        }
+
+        .showMoreButton:hover {
+          transform: translateY(-1px);
+          background: rgba(255, 255, 255, 0.78);
+        }
+
+        .showMoreButton.secondary {
+          background: rgba(255, 255, 255, 0.38);
+          color: rgba(91, 33, 182, 0.82);
+        }
+
         @media (min-width: 980px) {
           h1 {
             font-size: 104px;
@@ -1098,6 +1251,16 @@ export default function Page() {
           .restaurantGrid,
           .filters {
             grid-template-columns: 1fr;
+          }
+
+          .categoryBar {
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            padding-bottom: 4px;
+          }
+
+          .categoryPill {
+            flex: 0 0 auto;
           }
 
           .restaurantChip {
