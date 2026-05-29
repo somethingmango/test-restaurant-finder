@@ -114,6 +114,36 @@ function proteinMood(minProtein: number) {
   return 'Casual mode. No spreadsheet behavior.';
 }
 
+function whyWeLikeIt(item: MenuItem, rank: number) {
+  const tags = item.tags.map(normalize);
+
+  if (rank === 0) {
+    return 'Best overall fit for your filters. The math is behaving, which is always suspicious but welcome.';
+  }
+
+  if (item.protein >= 45 && item.calories <= 700) {
+    return 'Big protein without turning lunch into a whole budgeting exercise.';
+  }
+
+  if (item.calories <= 500 && item.protein >= 25) {
+    return 'Light enough to feel strategic, with enough protein to actually count.';
+  }
+
+  if (tags.includes('side')) {
+    return 'Good side energy. Helpful when you want something extra without doing too much.';
+  }
+
+  if (tags.includes('breakfast')) {
+    return 'A breakfast pick that gives you more than vibes and a coffee receipt.';
+  }
+
+  if (item.protein >= 30) {
+    return 'Solid protein, realistic order, no secret-menu gymnastics required.';
+  }
+
+  return 'Not the leanest thing here, but still a workable order when it sounds good.';
+}
+
 export default function Page() {
   const [selectedRestaurantName, setSelectedRestaurantName] =
     useState('Chipotle');
@@ -124,6 +154,7 @@ export default function Page() {
   );
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('best');
   const [showAllResults, setShowAllResults] = useState(false);
+  const [pickedItemName, setPickedItemName] = useState<string | null>(null);
 
   const restaurant = useMemo<Restaurant | undefined>(() => {
     return RESTAURANTS.find(
@@ -147,6 +178,26 @@ export default function Page() {
     : results.slice(0, DEFAULT_VISIBLE_RESULTS);
 
   const hiddenResultCount = Math.max(results.length - visibleResults.length, 0);
+
+  function pickForMe() {
+    if (results.length === 0) return;
+
+    const pickableResults = results.slice(0, Math.min(results.length, 8));
+    const freshPicks =
+      pickableResults.length > 1
+        ? pickableResults.filter((item) => item.name !== pickedItemName)
+        : pickableResults;
+    const nextPick = freshPicks[Math.floor(Math.random() * freshPicks.length)];
+    const nextPickIndex = results.findIndex(
+      (item) => item.name === nextPick.name
+    );
+
+    setPickedItemName(nextPick.name);
+
+    if (nextPickIndex >= DEFAULT_VISIBLE_RESULTS) {
+      setShowAllResults(true);
+    }
+  }
 
   const visibleRestaurants = useMemo(() => {
     if (restaurantSort === 'az') {
@@ -212,6 +263,7 @@ export default function Page() {
                   onClick={() => {
                     setSelectedRestaurantName(chain.name);
                     setShowAllResults(false);
+                    setPickedItemName(null);
                   }}
                   aria-pressed={selected}
                 >
@@ -258,7 +310,10 @@ export default function Page() {
                     'rgba(255, 255, 255, 0.62)'
                   ),
                 }}
-                onChange={(e) => setMaxCalories(Number(e.target.value))}
+                onChange={(e) => {
+                  setMaxCalories(Number(e.target.value));
+                  setPickedItemName(null);
+                }}
               />
             </label>
 
@@ -283,7 +338,10 @@ export default function Page() {
                     'rgba(255, 255, 255, 0.62)'
                   ),
                 }}
-                onChange={(e) => setMinProtein(Number(e.target.value))}
+                onChange={(e) => {
+                  setMinProtein(Number(e.target.value));
+                  setPickedItemName(null);
+                }}
               />
             </label>
           </div>
@@ -299,6 +357,15 @@ export default function Page() {
         </section>
 
         <section className="categoryBar" aria-label="Meal categories">
+          <button
+            type="button"
+            className="categoryPill pickForMe"
+            onClick={pickForMe}
+            disabled={results.length === 0}
+          >
+            Pick for me
+          </button>
+
           {CATEGORY_FILTERS.map((filter) => (
             <button
               key={filter.id}
@@ -309,6 +376,7 @@ export default function Page() {
               onClick={() => {
                 setCategoryFilter(filter.id);
                 setShowAllResults(false);
+                setPickedItemName(null);
               }}
               aria-pressed={categoryFilter === filter.id}
             >
@@ -318,68 +386,87 @@ export default function Page() {
         </section>
 
         <section className="results">
-          {visibleResults.map((item, index) => (
-            <article key={`${item.name}-${index}`} className="resultCard">
-              <div className="rankBadge">#{index + 1}</div>
+          {visibleResults.map((item, index) => {
+            const actualRank = results.findIndex(
+              (result) => result.name === item.name
+            );
+            const pickedForUser = item.name === pickedItemName;
 
-              <div className="resultMain">
-                <div className="resultMeta">
-                  <span>Best match</span>
-                  <span>•</span>
-                  <span className="scoreWithInfo">
-                    {scoreItem(item)} protein score
-                    <span className="infoWrap">
-                      <button
-                        type="button"
-                        className="infoButton"
-                        aria-label="Protein score explanation"
-                      >
-                        i
-                      </button>
-                      <span className="scoreTooltip" role="tooltip">
-                        Protein score compares protein to calories. Higher
-                        means more protein for fewer calories.
+            return (
+              <article
+                key={`${item.name}-${index}`}
+                className={`resultCard ${pickedForUser ? 'picked' : ''}`}
+              >
+                <div className="rankBadge">
+                  #{Math.max(actualRank, index) + 1}
+                </div>
+
+                <div className="resultMain">
+                  <div className="resultMeta">
+                    <span>
+                      {pickedForUser ? 'Picked for you' : 'Best match'}
+                    </span>
+                    <span>•</span>
+                    <span className="scoreWithInfo">
+                      {scoreItem(item)} protein score
+                      <span className="infoWrap">
+                        <button
+                          type="button"
+                          className="infoButton"
+                          aria-label="Protein score explanation"
+                        >
+                          i
+                        </button>
+                        <span className="scoreTooltip" role="tooltip">
+                          Protein score compares protein to calories. Higher
+                          means more protein for fewer calories.
+                        </span>
                       </span>
                     </span>
-                  </span>
+                  </div>
+
+                  <h3>{item.name}</h3>
+
+                  <div className="tagRow">
+                    {item.tags.slice(0, 5).map((tag) => (
+                      <span key={tag} className={`tagBadge ${tagTone(tag)}`}>
+                        {formatTag(tag)}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="description">{item.description}</p>
+
+                  <div className="whyBox">
+                    <strong>Why we like it</strong>
+                    <p>{whyWeLikeIt(item, Math.max(actualRank, index))}</p>
+                  </div>
+
+                  <div className="orderBox">
+                    <strong>How to order it</strong>
+                    <p>{item.customization}</p>
+                  </div>
+
+                  <p className="sourceLine">Source: {item.source}</p>
                 </div>
 
-                <h3>{item.name}</h3>
-
-                <div className="tagRow">
-                  {item.tags.slice(0, 5).map((tag) => (
-                    <span key={tag} className={`tagBadge ${tagTone(tag)}`}>
-                      {formatTag(tag)}
-                    </span>
-                  ))}
+                <div className="metrics">
+                  <div className="metricBubble calories">
+                    <strong>{item.calories}</strong>
+                    <span>calories</span>
+                  </div>
+                  <div className="metricBubble protein">
+                    <strong>{item.protein}g</strong>
+                    <span>protein</span>
+                  </div>
+                  <div className="metricBubble score">
+                    <strong>{scoreItem(item)}</strong>
+                    <span>score</span>
+                  </div>
                 </div>
-
-                <p className="description">{item.description}</p>
-
-                <div className="orderBox">
-                  <strong>How to order it</strong>
-                  <p>{item.customization}</p>
-                </div>
-
-                <p className="sourceLine">Source: {item.source}</p>
-              </div>
-
-              <div className="metrics">
-                <div className="metricBubble calories">
-                  <strong>{item.calories}</strong>
-                  <span>calories</span>
-                </div>
-                <div className="metricBubble protein">
-                  <strong>{item.protein}g</strong>
-                  <span>protein</span>
-                </div>
-                <div className="metricBubble score">
-                  <strong>{scoreItem(item)}</strong>
-                  <span>score</span>
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
 
           {hiddenResultCount > 0 && (
             <button
@@ -905,6 +992,18 @@ export default function Page() {
             inset 0 1px 0 rgba(255, 255, 255, 0.28);
         }
 
+        .categoryPill.pickForMe {
+          background: linear-gradient(135deg, rgba(250, 204, 21, 0.9), rgba(236, 72, 153, 0.78));
+          border-color: rgba(255, 255, 255, 0.78);
+          color: #3b0764;
+        }
+
+        .categoryPill:disabled {
+          cursor: not-allowed;
+          opacity: 0.54;
+          transform: none;
+        }
+
         .results {
           display: grid;
           gap: 18px;
@@ -929,6 +1028,20 @@ export default function Page() {
             radial-gradient(circle at bottom right, rgba(22, 163, 74, 0.11), transparent 36%);
           pointer-events: none;
           border-radius: inherit;
+        }
+
+        .resultCard.picked {
+          border-color: rgba(236, 72, 153, 0.36);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.9),
+            0 24px 70px rgba(88, 28, 135, 0.16),
+            0 0 0 4px rgba(250, 204, 21, 0.22);
+        }
+
+        .resultCard.picked::before {
+          background:
+            radial-gradient(circle at top left, rgba(250, 204, 21, 0.28), transparent 34%),
+            radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.18), transparent 36%);
         }
 
         .rankBadge {
@@ -1070,6 +1183,30 @@ export default function Page() {
           color: rgba(55, 65, 81, 0.88);
           font-size: 16px;
           line-height: 1.55;
+        }
+
+        .whyBox {
+          margin-top: 16px;
+          border-radius: 22px;
+          padding: 16px;
+          background: rgba(255, 255, 255, 0.58);
+          border: 1px solid rgba(124, 58, 237, 0.14);
+          color: #312e81;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68);
+        }
+
+        .whyBox strong {
+          display: block;
+          margin-bottom: 6px;
+          color: #6d28d9;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 0.7px;
+        }
+
+        .whyBox p {
+          margin: 0;
+          line-height: 1.5;
         }
 
         .orderBox {
